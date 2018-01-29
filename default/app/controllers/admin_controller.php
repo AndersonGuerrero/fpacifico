@@ -3,6 +3,7 @@ Load::models(
     "user","general","banner","servicios","empresa","sucursales",
     "categorias","promociones","requisitos", 'solicitudes');
 
+// Load::lib('excel');
 class AdminController extends AppController
 {
     public function index(){
