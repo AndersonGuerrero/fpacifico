@@ -433,8 +433,8 @@ class AdminController extends AppController
     public function solicitudesFile(){
       View::template(NULL); //Agregado para que no envié todo el html(Beta2). En Beta1 $this->template=NULL
       View::response('xls');
-      $usuarios = new Usuarios();
-      if(!$this->usuarios = $usuarios->findByName('%')){
+      $solicitudes = new Solicitudes();
+      if(!$this->solicitudes = $solicitudes->find()){
         Flash::warning('No existen registros para exportar');
         $this->render(NULL);
       }
