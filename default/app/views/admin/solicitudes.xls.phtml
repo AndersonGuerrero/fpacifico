@@ -1,0 +1,27 @@
+<?php
+$libro = new Spreadsheet_Excel_Writer();
+echo 'pass';
+
+//creo una hoja, es decir, puedo crear N hojas
+$hoja1 = $libro->addWorksheet("Hoja1");
+
+//charset
+$hoja1->setInputEncoding('utf-8');
+
+//Formato de letra, en este caso negrita, existen más, números, fecha, etc...
+$negrita =& $libro->addFormat();
+$negrita->setBold();
+
+//titulos
+$hoja1->write(0, 0, "ID", $negrita);
+$hoja1->write(0, 1, "NOMBRE", $negrita);
+
+//detalle
+$row = 1;
+foreach($solicitudes as $solicitud):
+$hoja1->write($row, 0, $usuario->id);
+$hoja1->write($row, 1, $usuario->nombre);
+$row++;
+endforeach;
+$libro->send("Libro1.xls");
+$libro->close();

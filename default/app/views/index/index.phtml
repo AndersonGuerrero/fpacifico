@@ -1,0 +1,311 @@
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav") ?>
+</div>
+
+<section class="home-area" style="margin-top:20px;margin-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <?php echo View::partial("menu_prestamos") ?>
+            </div>
+             <?php echo View::partial("slider") ?>
+        </div>
+    </div>
+</section>
+
+<?php echo View::partial("plan"); ?>
+<?php $servicio_a = Load::model("servicios")->find_by_id("1"); ?>
+<?php $servicio_b = Load::model("servicios")->find_by_id("2"); ?>
+<?php $servicio_c = Load::model("servicios")->find_by_id("3"); ?>
+<?php $servicio_d = Load::model("servicios")->find_by_id("4"); ?>
+<?php $servicio_e = Load::model("servicios")->find_by_id("5"); ?>
+
+<section id="servicios" class="why-chose-avacuse section-padding" style="background:#fff">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="section-title">
+                        <h4>Tu Aplicas</h4>
+                        <h2>Solicita tu préstamo ya!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9 latest-project-slider" style="margin-bottom:40px">
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/equipo.jpg","","style='width:100%'") ?>
+                                <div class="why-content">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <h4 style="line-height:14px"><span><?php echo Html::img("images/prestamo1.png",'','alt="icon"') ?></span><span><?php echo $servicio_a->nombre ?></span></h4>
+                                            <p style="font-size:12px"><?php echo $servicio_a->descripcion ?></p>
+                                            <?php echo Html::link("prestamos/solicitud/1",'Aplicar <span class="fa fa-angle-right"></span>') ?>
+                                            <?php echo Html::link("servicios/detalle/1",'Leer mas','class="yellow"') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/hipoteca.jpg","","style='width:100%'") ?>
+                                <div class="why-content">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <h4 style="line-height:14px"><span><?php echo Html::img("images/prestamo2.png",'','alt="icon"') ?></span><span><?php echo $servicio_b->nombre ?></span></h4>
+                                            <p style="font-size:12px"><?php echo $servicio_b->descripcion ?></p>
+                                            <?php echo Html::link("prestamos/solicitud/2",'Aplicar <span class="fa fa-angle-right"></span>') ?>
+                                            <?php echo Html::link("servicios/detalle/2",'Leer mas','class="yellow"') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/carro.jpg","","style='width:100%'") ?>
+                                <div class="why-content">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <h4 style="line-height:14px"><span><?php echo Html::img("images/prestamo3.png",'','alt="icon"') ?></span><span><?php echo $servicio_c->nombre ?></span></h4>
+                                            <p style="font-size:12px"><?php echo $servicio_c->descripcion ?></p>
+                                            <?php echo Html::link("prestamos/solicitud/3",'Aplicar <span class="fa fa-angle-right"></span>') ?>
+                                            <?php echo Html::link("servicios/detalle/3",'Leer mas','class="yellow"') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/moto.jpg","","style='width:100%'") ?>
+                                <div class="why-content">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <h4 style="line-height:14px"><span><?php echo Html::img("images/prestamo4.png",'','alt="icon"') ?></span><span><?php echo $servicio_d->nombre ?></span></h4>
+                                            <p style="font-size:12px"><?php echo $servicio_d->descripcion ?></p>
+                                            <?php echo Html::link("prestamos/solicitud/4",'Aplicar <span class="fa fa-angle-right"></span>') ?>
+                                            <?php echo Html::link("servicios/detalle/4",'Leer mas','class="yellow"') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="requisitos">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/empresarios.jpg","","style='width:100%'") ?>
+                                <div class="why-content">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <h4 style="line-height:14px"><span><?php echo Html::img("images/prestamo5.png",'','alt="icon"') ?></span><span><?php echo $servicio_e->nombre ?></span></h4>
+                                            <p style="font-size:12px"><?php echo $servicio_e->descripcion ?></p>
+                                            <?php echo Html::link("prestamos/solicitud/5",'Aplicar <span class="fa fa-angle-right"></span>') ?>
+                                            <?php echo Html::link("servicios/detalle/5",'Leer mas','class="yellow"') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 case-stady" style="margin-top:0;background:#009245">
+                   <div class="case-list" style="padding:10px;margin:0">
+                                <h4 style="color:#fff;margin-bottom:10px">Requisitos</h4>
+                                <ul style="border-top:1px solid #fff">
+                                    <?php foreach ($requisitos as $req): ?>
+                                         <li><?php echo Html::link("requisitos/detalle/".$req->id,$req->nombre) ?></li>
+                                    <?php endforeach ?>
+
+                                </ul>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promociones" class="avacus-latest-project-section projectpage section-padding" style="min-height:750px">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="section-title" style="padding-bottom:40px">
+                        <h2>Promociones</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <ul class="project-nav">
+                        <li data-filter="*" class="current">Todas</li>
+                        <?php foreach ($categorias as $cat_promo): ?>
+                            <li data-filter=".<?php echo $cat_promo->label ?>"> <?php echo $cat_promo->nombre ?> </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row fourcolumn isotop-active">
+
+                <?php foreach ($promociones as $promo): ?>
+                    <?php $categoria_promocion = Load::model("categorias")->find_by_id($promo->categorias_id); ?>
+                    <div class="col-md-4 <?php echo $categoria_promocion->label ?>">
+                        <div class="single-news single-grid">
+                            <div class="news-thumb">
+                                <?php echo Html::img($promo->img) ?>
+                                <div class="thumb-hover">
+                                    <?php echo Html::link("promociones/detalle/".$promo->id,Html::img("plus.png")) ?>
+                                </div>
+                            </div>
+                            <div style="background:#fff;padding:20px">
+                                <?php echo Html::link("promociones/detalle/".$promo->id,'<h3>'.$promo->nombre.'</h3>') ?>
+                                <div class="news-details">
+                                    <small>Finaliza el <?php echo implode( '/', array_reverse( explode( '-', $promo->fecha_finaliza ) ) )?></small>
+                                    <p style="margin-top:20px"><?php echo $promo->descripcion ?></p>
+                                     <div class="why-content-2">
+                                        <?php echo Html::link("promociones/detalle/".$promo->id,'aplicar <span class="fa fa-angle-right"></span>') ?>
+                                        <?php echo Html::link("promociones/detalle/".$promo->id,"Leer mas",'class="yellow"') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+
+
+            </div>
+        </div>
+    </section>
+
+    <?php echo View::partial("parallax") ?>
+
+    <section id="contacto" class="avacus-consultation-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="fomr-title">Formulario de Contacto</h3>
+                    <form name="form-home" action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="single-inpuut">
+                                    <input type="text" name="name" placeholder="Nombre completo *" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single-inpuut">
+                                    <input type="number" name="phone" placeholder="Telefono">
+                                </div>
+                            </div>
+                             <div class="col-md-12">
+                                <div class="single-inpuut">
+                                    <input type="email" name="email" placeholder="Email *" required>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="select-arrow">
+                                    <select>
+                                        <option value="0">Interesado en</option>
+                                        <option value="Préstamo personal">Préstamo personal</option>
+                                        <option value="Préstamo con garantía hipotecaria">Préstamo con garantía hipotecaria</option>
+                                        <option value="Financiamiento de autos">Financiamiento de autos</option>
+                                        <option value="Financiamiento de motos">Financiamiento de motos</option>
+                                        <option value="Préstamo para  micro empresarios">Préstamo para  micro empresarios</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="select-arrow">
+                                    <select>
+                                        <option value="0">Como supo de nosotros</option>
+                                        <option value="Google">Google</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="TV">TV</option>
+                                        <option value="Amigo">Amigo</option>
+                                        <option value="Periodico">Periodico</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single-inpuut">
+                                    <textarea rows="5" cols="45" name="message" id="message" placeholder="Mensaje" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="submit-button">
+                                    <input type="submit" name="submit" class="hvr-sweep-to-left" value="Enviar">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="fomr-title">Informacion de Contacto</h3>
+                    <?php echo Html::img("images/sucursales/CASA MATRIZ.jpg",'','alt="" width="100px" style="float:left;margin-right:10px"') ?>
+                    <p><strong>Sucursal Principal:</strong><br> CALLE 50 - CASA MATRIZ - Panamá</p>
+                    <div class="map-accourdion" style="float:left;margin-top:20px">
+                                        <div class="contact-address">
+                                            <ul>
+                                                <li>
+                                                    <span class="fa fa-home"></span>
+                                                    <p><strong>Dirección:</strong> Calle 50 entre Ave. Federico Boyd y Calle Uruguay, Edificio Pacífico Planta Baja.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="fa fa-phone"></span>
+                                                    <p><strong>Teléfonos fijos:</strong></p>
+                                                    <p>340-9000 </p>
+                                                </li>
+                                                <li>
+                                                    <span class="fa fa-whatsapp"></span>
+                                                    <p><strong>Celular, Whatsapp:</strong></p>
+                                                    <p> 6349-2140</p>
+                                                </li>
+
+                                                <li>
+                                                    <span class="fa fa-envelope"></span>
+                                                    <p><strong>Email:</strong></p>
+                                                    <p><a href="mailto:<?php echo $general->email ?>" style="color:#fff"><?php echo $general->email ?></a></p>
+                                                </li>
+                                                <li>
+                                                    <span class="fa fa-clock-o"></span>
+                                                    <p><strong>Horario:</strong></p>
+                                                    <p>Lunes-Viernes: 08:00am-05:00pm</p>
+                                                    <p>Sábados: 09:00am-01:00pm</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                    </div>
+
+                </div>
+                 <div class="col-md-4">
+                    <h3 class="fomr-title">Mapa</h3>
+                    <div class="map-accourdion">
+                        <?php echo Html::img("images/mapas/mapa calle 50.jpg",'','alt="" width="100%"') ?>
+                    </div>
+                    <div class="services-side-img">
+                        <div class="side-img">
+                            <div class="sideimg-title">
+                                <?php echo Html::link("sucursales",Html::img("images/mapa.png")."Ver todas las sucursales") ?>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php echo View::partial("footer") ?>

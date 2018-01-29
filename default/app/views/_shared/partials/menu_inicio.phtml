@@ -1,0 +1,143 @@
+<?php $generales = Load::model("general")->find_by_id("1"); ?>
+<?php $servicio_a = Load::model("servicios")->find_by_id("1"); ?>
+<?php $servicio_b = Load::model("servicios")->find_by_id("2"); ?>
+<?php $servicio_c = Load::model("servicios")->find_by_id("3"); ?>
+<?php $servicio_d = Load::model("servicios")->find_by_id("4"); ?>
+<?php $servicio_e = Load::model("servicios")->find_by_id("5"); ?>
+
+        <div class="top_bar_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 topbarleft">
+                        <ul class="single-topbar">
+                            <li>
+                                <?php echo Html::img("images/es.png",'','alt="" width="18px" style="margin-right:4px"') ?>
+                                <span style="margin-right:10px">ES</span><?php echo Html::img("images/en.png",'','alt="" width="18px" style="margin-right:4px"') ?>
+                                <span>EN</span></li></li>
+                            
+                            <li>
+                            <li>
+                                <span class="fa fa-phone"></span>
+                                <span><a style="color:#fff" href="tel:<?php echo $generales->tlfa ?>"><?php echo $generales->tlfa ?></a></span></li>
+                            <li>
+                                <span class="fa fa-whatsapp"></span>
+                                <span><a style="color:#fff" href="tel:<?php echo $generales->tlfb ?>"><?php echo $generales->tlfb ?></a></span>
+                            </li>
+                            <li>
+                                <span class="fa fa-envelope"></span>
+                                <span><a style="color:#fff" href="mailto:<?php echo $generales->email ?>"><?php echo $generales->email ?></a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="topbar-right">
+                            <ul>
+                                <li class="social-icon">
+                                    <a href="<?php echo $generales->facebook ?>" class="fa fa-facebook"></a>
+                                    <a href="<?php echo $generales->twitter ?>" class="fa fa-twitter"></a>
+                                    <a href="<?php echo $generales->youtube ?>" class="fa fa-youtube"></a>
+                                    <a href="<?php echo $generales->instagram ?>" class="fa fa-instagram"></a>
+                                </li>
+                                <li><a class="getAquate" href="#" data-toggle="modal" data-target="#Prestamos">Solicitar Prestamo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="col-md-12 modal fade" id="Prestamos" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+           <div class="modal-dialog" style="background:#fff">
+              <div class="modal-content" style="border-radius:0;background:#fff;border:0">
+                    <div class="col-md-12 modal-header" style="background:#fff;border-top:3px solid #009245">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title" id="myModalLabel">Solicita tu Préstamo Ahora</h5>
+                    </div>
+                    <div class="col-md-12 modal-body" style="margin-top:0;background:#fff">
+                        <p style="margin-bottom:20px">Aplica ya!</p>
+                       
+
+                       <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/equipo.jpg","","style='width:100%'") ?>
+                                <div class="why-content" style="padding:20px">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <?php echo Html::link("prestamos/solicitud/1",'<h4 style="line-height:14px;font-size:12px;text-align:center">'.$servicio_a->nombre.'</h4>') ?>
+                                            
+                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/hipoteca.jpg","","style='width:100%'") ?>
+                                <div class="why-content" style="padding:20px">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <?php echo Html::link("prestamos/solicitud/2",'<h4 style="line-height:14px;font-size:12px;text-align:center">'.$servicio_b->nombre.'</h4>') ?>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/carro.jpg","","style='width:100%'") ?>
+                                <div class="why-content" style="padding:20px">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <?php echo Html::link("prestamos/solicitud/3",'<h4 style="line-height:14px;font-size:12px;text-align:center">'.$servicio_c->nombre.'</h4>') ?>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/moto.jpg","","style='width:100%'") ?>
+                                <div class="why-content" style="padding:20px">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <?php echo Html::link("prestamos/solicitud/4",'<h4 style="line-height:14px;font-size:12px;text-align:center">'.$servicio_d->nombre.'</h4>') ?>      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="requisitos">
+                        <div class="single-why-chose">
+                            <div class="why-thumb">
+                                <?php echo Html::img("images/empresarios.jpg","","style='width:100%'") ?>
+                                <div class="why-content" style="padding:20px">
+                                    <div class="display-table">
+                                        <div class="display-cell">
+                                            <?php echo Html::link("prestamos/solicitud/5",'<h4 style="line-height:14px;font-size:12px;text-align:center">'.$servicio_e->nombre.'</h4>') ?>   
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+                 
+              </div>
+           </div>
+        </div>
+    

@@ -1,0 +1,126 @@
+<style>
+   select {
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+}
+select{
+    float:left;
+    margin-right:5px;
+}
+</style> 
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent"> 
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Nueva Promocion</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label>Fecha Finaliza</label>
+                                                            <input class="form-control" type="text" id="promociones_fecha_finaliza" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="promociones[fecha_finaliza]" value="<?php echo date('d-m-Y') ?>">
+
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="first-name">Categoria</label>
+                                                            <select name="promociones[categorias_id]" class="form-control mb-10" data-parsley-trigger="change" data-parsley-id="1064">
+                                                                <option value="-">Seleccione..</option>
+                                                                <?php foreach ($categorias as $value) {
+                                                                    echo '<option value="'.$value->id.'">'.$value->nombre.'</option>';
+                                                                } ?>
+                                                            </select>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Promocion en Spanish</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('promociones.nombre','class="form-control"') ?>
+                                                        </div> 
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Descripcion</label>
+                                                            <?php echo Form::textarea('promociones.descripcion','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto</label>
+                                                            <?php echo Form::textarea('promociones.texto','class="form-control"') ?>
+                                                        </div>
+                                                       
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Promocion en English</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('promociones.nombre_en','class="form-control"') ?>
+                                                        </div> 
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Descripcion</label>
+                                                            <?php echo Form::textarea('promociones.descripcion_en','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto</label>
+                                                            <?php echo Form::textarea('promociones.texto_en','class="form-control"') ?>
+                                                        </div>
+
+                                                    </div>
+
+                                                 
+                                                   
+                                                   
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file' style='width:100%'><?php echo Form::file('images',"","") ?>Imagen</div>
+                                                        </div>
+                                                    </div>                                                
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <?php echo Html::link("admin/promociones","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+<script>
+
+$(function(){
+    $('#promociones_fecha_finaliza').combodate({
+    minYear: (new Date).getFullYear(),
+    maxYear:  (new Date).getFullYear() + 4,
+});     
+});
+
+CKEDITOR.replace( 'promociones[texto]' );
+CKEDITOR.replace( 'promociones[texto_en]' );
+</script>

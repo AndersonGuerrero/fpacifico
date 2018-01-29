@@ -1,0 +1,57 @@
+<?php $pdfnombre = Load::model("general")->find_by_id("1"); ?>
+<?php $servicioa = Load::model("servicios")->find_by_id("1"); ?>
+<?php $serviciob = Load::model("servicios")->find_by_id("2"); ?>
+<?php $servicioc = Load::model("servicios")->find_by_id("3"); ?>
+<?php $serviciod = Load::model("servicios")->find_by_id("4"); ?>
+<?php $servicioe = Load::model("servicios")->find_by_id("5"); ?>
+
+<div class="btn-grey-all">
+  <?php echo Html::link("servicios/detalle/1",Html::img("images/prestamopersonal.png").$servicioa->nombre,'class="btn-grey"') ?>
+</div>
+<div class="btn-otro">
+  <?php echo Html::link("servicios/detalle/2",Html::img("images/prestamohipoteca.png").$serviciob->nombre,'class="btn-grey"') ?>
+</div>
+<div class="btn-grey-all">
+  <?php echo Html::link("servicios/detalle/3",Html::img("images/prestamoautos.png").$servicioc->nombre,'class="btn-grey"') ?>
+</div>
+<div class="btn-grey-all">
+  <?php echo Html::link("servicios/detalle/4",Html::img("images/prestamomotos.png").$serviciod->nombre,'class="btn-grey"') ?>
+</div>
+<div class="btn-otro">
+  <?php echo Html::link("servicios/detalle/5",Html::img("images/prestamoempresarios.png").$servicioe->nombre,'class="btn-grey"') ?>
+</div>
+
+
+
+                   <div class="btn-vacio">
+                        <?php echo $pdfnombre->nombre_pdf ?>
+                   </div>
+                   <div>
+                   <?php if ($pdfnombre->pdfaimg==''): ?>
+                      <?php $urla= '#'; ?>
+                   <?php else: ?>
+                      <?php $urla='files/'.$pdfnombre->pdfaimg; ?>
+                   <?php endif ?>
+
+                   <?php if ($pdfnombre->pdfbimg==''): ?>
+                      <?php $urlb= '#'; ?>
+                   <?php else: ?>
+                      <?php $urlb='files/'.$pdfnombre->pdfbimg; ?>
+                   <?php endif ?>
+
+                   <?php if ($pdfnombre->pdfcimg==''): ?>
+                      <?php $urlc= '#'; ?>
+                   <?php else: ?>
+                      <?php $urlc='files/'.$pdfnombre->pdfcimg; ?>
+                   <?php endif ?>
+
+                   <?php if ($pdfnombre->pdfdimg==''): ?>
+                      <?php $urld= '#'; ?>
+                   <?php else: ?>
+                      <?php $urld='files/'.$pdfnombre->pdfdimg; ?>
+                   <?php endif ?>
+                   <?php echo Html::link($urla,'<i class="fa fa-file-pdf-o"></i>'.$pdfnombre->pdfa,'class="btn-blue" target="_blank"') ?>
+                   <?php echo Html::link($urlb,'<i class="fa fa-file-pdf-o"></i>'.$pdfnombre->pdfb,'class="btn-blue" target="_blank"') ?>
+                   <?php echo Html::link($urlc,'<i class="fa fa-file-pdf-o"></i>'.$pdfnombre->pdfc,'class="btn-blue" target="_blank"') ?>
+                   <?php echo Html::link($urld,'<i class="fa fa-file-pdf-o"></i>'.$pdfnombre->pdfd,'class="btn-blue" target="_blank"') ?>
+                   </div>

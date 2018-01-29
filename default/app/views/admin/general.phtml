@@ -1,0 +1,293 @@
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent">
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Configuraciones Generales</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> de Contacto</h4>
+                                                            <p>Info Basica</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="first-name">Telf. Principal *</label>
+                                                            <?php echo Form::text('general.tlfa','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="last-name">Celular o WhatsApp *</label>
+                                                            <?php echo Form::text('general.tlfb','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="email">E-mail *</label>
+                                                            <?php echo Form::email('general.email','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                        
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Redes</strong> Sociales</h4>
+                                                            <p>Conecta a tus clientes con tus redes sociales</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="facebook">Facebook *</label>
+                                                            <?php echo Form::text('general.facebook','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="dribbble">Twitter *</label>
+                                                            <?php echo Form::text('general.twitter','class="form-control"') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="pinterest">Instagram *</label>
+                                                            <?php echo Form::text('general.instagram','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="flickr">Youtube *</label>
+                                                            <?php echo Form::text('general.youtube','class="form-control"') ?>
+                                                        </div>
+                                                    </div>                                                 
+                                                    <hr>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Apartado</strong> PDF</h4>
+                                                            <p>Titulo del listado de pdfs</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="facebook">Nombre *</label>
+                                                            <?php echo Form::text('general.nombre_pdf','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="dribbble">Nombre en English*</label>
+                                                            <?php echo Form::text('general.nombre_pdf_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Lista de</strong> PDFs</h4>
+                                                            <p>Indique los titulos version Spanish</p>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row">
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="facebook">PDF 1 *</label>
+                                                            <?php echo Form::text('general.pdfa','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="dribbble">PDF 2*</label>
+                                                            <?php echo Form::text('general.pdfb','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="facebook">PDF 3 *</label>
+                                                            <?php echo Form::text('general.pdfc','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="dribbble">PDF 4*</label>
+                                                            <?php echo Form::text('general.pdfd','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                           <div class='custom-input-file'><?php echo Form::file('pdfaimg',"","") ?>PDF 1</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfbimg',"","") ?>PDF 2</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfcimg',"","") ?>PDF 3</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfdimg',"","") ?>PDF 4</div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <p>Indique los titulos version English</p>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row">
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="facebook">PDF 1 *</label>
+                                                            <?php echo Form::text('general.pdfa_en','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="dribbble">PDF 2*</label>
+                                                            <?php echo Form::text('general.pdfb_en','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="facebook">PDF 3 *</label>
+                                                            <?php echo Form::text('general.pdfc_en','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="dribbble">PDF 4*</label>
+                                                            <?php echo Form::text('general.pdfd_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                           <div class='custom-input-file'><?php echo Form::file('pdfaimg_en',"","") ?>PDF 1</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfbimg_en',"","") ?>PDF 2</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfcimg_en',"","") ?>PDF 3</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('pdfdimg_en',"","") ?>PDF 4</div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <hr>
+
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Plan</strong> Chispa</h4>
+                                                            <p>Franja</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="facebook">Texto *</label>
+                                                            <?php echo Form::text('general.texto_referir','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="dribbble">Texto English*</label>
+                                                            <?php echo Form::text('general.texto_referir_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="facebook">Titulo Boton *</label>
+                                                            <?php echo Form::text('general.titulo_btn','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="dribbble">Titulo Boton English *</label>
+                                                            <?php echo Form::text('general.titulo_btn_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+               
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                           <?php echo Html::img($general->img,"","width='100%'") ?>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('images',"","") ?>Imagen</div>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                           <?php echo Html::img($general->img_en,"","width='100%'") ?>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('images_en',"","") ?>Imagen version English</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Apartado</strong> Parallax</h4>
+                                                            <p>Espacio para mostrar una frase referente a la empresa</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="facebook">Titulo en Amarillo *</label>
+                                                            <?php echo Form::text('general.titulo_am','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="facebook">Titulo en Amarillo English*</label>
+                                                            <?php echo Form::text('general.titulo_am_en','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="facebook">Titulo en Blanco *</label>
+                                                            <?php echo Form::text('general.titulo_bl','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="facebook">Titulo en Blanco English*</label>
+                                                            <?php echo Form::text('general.titulo_bl_en','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="facebook">Texto*</label>
+                                                            <?php echo Form::textarea('general.texto','class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="facebook">Texto English*</label>
+                                                            <?php echo Form::textarea('general.texto_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                           <?php echo Html::img($general->parallax_img,"","width='100%'") ?>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('parallax',"","") ?>Imagen</div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <hr>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Bolsa de</strong> Trabajo</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="first-name">Texto Spanish*</label>
+                                                            <?php echo Form::textarea('general.bolsa','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                      
+                                                      <div class="form-group col-sm-6">
+                                                            <label for="first-name">Texto English*</label>
+                                                            <?php echo Form::textarea('general.bolsa_en','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                      
+                                                    </div>
+
+
+                                                    <?php echo Form::hidden('general.id') ?>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <?php echo Html::link("admin/config","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+<script>
+    CKEDITOR.replace( 'general[bolsa]' );
+CKEDITOR.replace( 'general[bolsa_en]' );
+</script>

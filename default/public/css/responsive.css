@@ -1,0 +1,876 @@
+    @media only screen and (min-width: 1400px) {}
+    
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+        .service-icon {
+            float: none;
+        }
+        .service-ttile {
+            margin-top: 20px;
+            float: none;
+        }
+        .service-ttile>h4 {
+            line-height: normal;
+        }
+        .menu {
+            padding-right: 0
+        }
+        .clientnext {
+            bottom: -60px;
+            height: 40px;
+            line-height: 40px;
+            right: 44%;
+            top: auto;
+            width: 40px;
+        }
+        .clientprev {
+            bottom: -60px;
+            height: 40px;
+            left: 44%;
+            line-height: 40px;
+            top: auto;
+            width: 40px;
+        }
+        ul.single-topbar li {
+            margin-right: 10px
+        }
+        .topbar-right ul li.social-icon {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .topbar-right ul li a.getAquate {
+            padding: 13px 30px
+        }
+        .why-content h4 {
+            padding-bottom: 15px;
+            /*top: -11px;*/
+            font-size: 12px
+        }
+        .why-content a {
+            margin-top: 15px;
+        }
+        /*shop page css*/
+        .single-product>h4 {
+            font-size: 16px;
+        }
+        span.price-text {
+            margin-left: 10px;
+        }
+        button.filtedr {
+            width: 60px
+        }
+        span.price-text {
+            margin-left: 1px;
+        }
+        /*start check out page css*/
+        .single-input.halp-input {
+            width: 100%;
+        }
+        /*end of check out page css*/
+        /*start testimonial page css*/
+        section.testimonial-page .avacus-singel-testimonial {
+            height: 265px;
+        }
+        .feedback-section .avacus-singel-testimonial {
+            height: auto;
+        }
+        .feedback-section .client-title {
+            margin-top: 20px
+        }
+        .premium-single-testimonial p {
+            font-size: 18px;
+        }
+        /*end of testimonial page css*/
+        /*bootstrap tab css*/
+        .services-tab-content h2 {
+            font-size: 28px
+        }
+        /*end of bootstrap tab css*/
+        .sidebar.subcribe-widget .subcribe-form input {
+            width: 126px;
+        }
+        .sidebar input {
+            width: 162px;
+        }
+        .ceo-img {
+            float: none;
+            margin-bottom: 10px;
+        }
+
+        /*final css */
+        .single-news h3{
+            font-size: 19px;
+            line-height: 30px
+        }
+.loging-form .form-control.hulp {
+  width: 100%;
+}.share {
+  margin-left: 50px;
+}
+        /*end of final css*/
+    }
+    
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .slick-slide img {
+            width: 100%;
+        }
+        .topbar-right ul li.social-icon {
+            margin-left: -10px;
+            margin-right: 5px;
+        }
+        ul.single-topbar li {
+            font-size: 10px;
+        }
+        ul.single-topbar li {
+            margin-right: 10px;
+        }
+        .topbar-right ul li a.getAquate {
+            padding: 13px 10px
+        }
+        .menu {
+            padding-right: 35px
+        }
+        .service-icon {
+            float: none;
+        }
+        .service-ttile {
+            margin-top: 20px;
+            float: none;
+        }
+        .service-ttile>h4 {
+            line-height: normal;
+        }
+        .avacus-testimonial-section.section-padding {
+            padding-bottom: 150px
+        }
+        .clientnext {
+            bottom: -60px;
+            height: 40px;
+            line-height: 40px;
+            right: 44%;
+            top: auto;
+            width: 40px;
+        }
+        .clientprev {
+            bottom: -60px;
+            height: 40px;
+            left: 44%;
+            line-height: 40px;
+            top: auto;
+            width: 40px;
+        }
+        .single-news h3 {
+            font-size: 18px;
+            line-height: 25px;
+        }
+        .wedget .social-icon a {
+            height: 30px;
+            line-height: 30px;
+            margin-right: 5px;
+            width: 30px;
+        }
+        .why-content {
+            padding-left: 10px;
+            padding-right: 10px
+        }
+        .why-content h4 span:first-child {
+            width: 38px
+        }
+        .why-content h4 {
+            font-size: 12px;
+            padding-bottom: 10px;
+            /*top: -1px;*/
+        }
+        .why-content a {
+            margin-top: 10px
+        }
+        .why-content p {
+            font-size: 12px;
+        }
+        /*start shop page css*/
+        .single-product>h4 {
+            font-size: 15px;
+        }
+        .widget input {
+            padding-left: 0
+        }
+        span.price-text {
+            margin-left: 10px
+        }
+        input#price {
+            width: 75px;
+        }
+        .puplar-rating {
+            text-align: left;
+        }
+        .widget button {
+            width: 40px;
+        }
+        .product-filtaring h4 {
+            line-height: 20px;
+        }
+        /*end of shop page css*/
+        /*start checkout page css*/
+        .single-input.halp-input {
+            width: 100%;
+        }
+        .basick-hisab>li {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        /*end of check out page css*/
+        /*start about page css*/
+        .team-social-icon a {
+            font-size: 15px;
+            font-weight: 700;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 5px;
+            width: 40px;
+        }
+        .team-title h3 {
+            font-size: 19px
+        }
+        .quote-text h3 {
+            font-size: 17px;
+        }
+        .single-history::after {
+            left: 75px;
+        }
+        .single-history::before {
+            left: 80px;
+        }
+        /*end of about us page css*/
+        /*start testimonial page css*/
+        .feedback-section .avacus-singel-testimonial {
+            height: auto;
+        }
+        .feedback-section .avacus-singel-testimonial {
+            padding: 20px;
+        }
+        .feedback-section .client-title {
+            margin-top: 20px
+        }
+        .premium-single-testimonial p {
+            font-size: 15px;
+        }
+        /*end of testimonial page css*/
+        /*start testimonial page css*/
+        .cash-thumb {
+            width: 100%;
+        }
+        .case-list {
+            width: 100%;
+        }
+        .sideimg-title a {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        .sideimg-title a i {
+            padding-left: 0;
+        }
+        /*end of testimonial page css*/
+        /*start bootstrap tab css*/
+        .services-tab-content h2 {
+            font-size: 30px
+        }
+        /*end of bootstrap tab css*/
+        .wedget h5 {
+            font-size: 11px;
+        }
+        .sidebar input {
+            width: 170px;
+        }
+        .sidebar.subcribe-widget .subcribe-form input {
+            width: 134px;
+        }
+        .share {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        .ceo-img {
+            float: left;
+            margin-bottom: 10px;
+        }
+        .related-product .single-product {
+            margin-bottom: 50px
+        }
+        .single-pagetab.nav-tabs>li>a {
+            width: 140px;
+        }
+        .widget input {
+            padding-left: 10px;
+        }
+        /*avacus cart page css*/
+        .couponbtn.update-cart {
+            margin-left: 0;
+            width: 150px;
+        }
+        input.coupon {
+            width: 170px;
+        }
+        /*end of avacus cart page css*/
+
+        /*final css*/
+        
+
+.padding-right-0 {
+  padding-right: 15px;
+}
+.loging-form .form-control.hulp {
+  width: 100%;
+}
+.project-caption h3 {
+  line-height: 30px;
+}
+.project-caption{
+    padding-left: 10px;
+    padding-right: 10px
+}
+        .fourcolumn h3{
+            font-size: 20px
+        }
+        .right-side-button {
+  padding-left: 10px;
+}
+        h1.welcome-title{
+            font-size: 45px;
+        }
+        input#price {
+  width: 95px;
+}
+        .widget button {
+  width: 70px;
+}
+        /*end of final css*/
+
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .topbar-right ul li.social-icon {
+            margin-left: 0;
+            margin-right: 35px;
+        }
+        .topbar-right ul li a.getAquate {
+            padding: 13px 20px;
+        }
+        .topbarleft {
+            display: none;
+        }
+        .blacknav span {
+            background: #fde428 none repeat scroll 0 0;
+        }
+        .blacknav {
+            margin-top: 20px;
+        }
+        .menu > li{
+            text-align: left;
+        }
+        .menu li a{
+            line-height: 30px;
+            padding-top: 0;
+            
+        }
+        .menu li ul{
+            left: 100px;
+            padding-left: 20px;
+        }
+        .menu li ul li:hover {
+            background-color: transparent;
+        }
+        .menu li ul li:hover a{
+            color: #fde428
+        }
+        .menu>li:hover>ul{
+            top: 0
+        }
+        /*welcome text responsive css*/
+        .welcome-text h1 {
+            font-size: 24px;
+        }
+        .welcome-text p {
+            display: inline;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .welcome-text h1.hero-title {
+            padding-top: 15px;
+        }
+        .welcome-text .hero-subtitle {
+            padding-bottom: 10px;
+        }
+        .welcome-btn a {
+            height: 40px;
+            line-height: 42px;
+            width: 130px;
+            font-size: 12px;
+        }
+        .welcome-btn a.read-btn {
+            margin-right: 5px;
+            transition: all 0.4s ease 0s;
+        }
+        .welcome-btn {
+            margin-top: 15px;
+        }
+        .Modern-Slider .slick-dots {
+            bottom: 3%
+        }
+        .PrevArrow {
+            height: 40px;
+            width: 40px;
+            left: 0;
+            line-height: 40px;
+        }
+        .NextArrow {
+            height: 40px;
+            width: 40px;
+            right: 0;
+            line-height: 40px;
+        }
+        /*end of welcome text responsive css*/
+        /*start why chose us responsive css*/
+        .single-why-chose {
+            margin-bottom: 30px
+        }
+        .why-content h4 span:last-child {
+            line-height: 14px;
+        }
+        .why-content h4 span:first-child {
+            float: left;
+            padding-right: 20px;
+        }
+        .why-content h4 {
+            font-size: 12px;
+            padding-bottom: 10px;
+            /*top: -13px;*/
+        }
+        .why-content {
+            padding-left: 10px;
+            padding-right: 10px
+        }
+        .why-content a {
+            margin-top: 15px
+        }
+        /*end of why chosse us responsive css*/
+        /*start services section css*/
+        .service-ttile>h4 {
+            line-height: normal;
+            margin-top: 20px;
+        }
+        .services-icon-title {
+            margin-bottom: 20px;
+        }
+        .service-icon {
+            display: inline-block;
+            float: none;
+        }
+        .service-ttile {
+            display: block;
+            float: none;
+            width: 100%;
+        }
+        .avacus-single-services {
+            text-align: center;
+        }
+        /*end of services resopnsive css*/
+        /*start count dwons section css*/
+        .single-count-down {
+            margin-bottom: 20px;
+        }
+        .avacus-count-down-section {
+            padding-bottom: 80px
+        }
+        /*end of countdown section*/
+        /*start latest project section*/
+        .avacus-single-project img {
+            width: 100%;
+        }
+        .clientnext {
+            bottom: -60px;
+            height: 40px;
+            line-height: 40px;
+            right: 35%;
+            top: auto;
+            width: 40px;
+        }
+        .clientprev {
+            bottom: -60px;
+            height: 40px;
+            left: 35%;
+            line-height: 40px;
+            top: auto;
+            width: 40px;
+        }
+        .avacus-testimonial-section.section-padding {
+            padding-bottom: 150px;
+        }
+        /*end of latest project */
+        /*start get quate section css*/
+        .quote-btn {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .quote-text h3 {
+            line-height: 30px;
+        }
+        /*end of get quate section css*/
+        /*star consultation section*/
+        .single-inpuut {
+            margin-bottom: 15px;
+        }
+        .padding-right-0 {
+            padding-right: 15px
+        }
+        /*end of consultation section*/
+        /*start news section css*/
+        .news-details a {
+            font-size: 11px;
+            font-weight: 400;
+            margin-right: 10px;
+        }
+        .news-details a span {
+            color: #fde428;
+            padding-right: 6px;
+        }
+        .single-news h3 {
+            font-weight: 700;
+            line-height: 32px;
+            margin-bottom: 4px;
+            margin-top: 20px;
+        }
+        .single-news {
+            margin-bottom: 40px;
+        }
+        .avacus-latest-news-section.section-padding {
+            padding-bottom: 60px;
+        }
+        .wedget {
+            margin-bottom: 50px;
+        }
+        footer.avacus-footer-section {
+            padding-bottom: 50px;
+        }
+        .wedget-title {
+            margin-bottom: 20px;
+        }
+        .notification li {
+            display: inline-block;
+        }
+        .notification {
+            text-align: center;
+            margin-left: 0 !important
+        }
+        .searchbox {
+            right: -64px;
+            top: 82px;
+            width: 300px;
+            z-index: 5;
+        }
+        li.search {
+            top: -4px
+        }
+        .searchbox input {
+            color: #003445
+        }
+        .menu li ul li {
+            padding-left: 0
+        }
+        .menu {
+            padding-right: 0;
+            text-align: center;
+            margin-left: 0 !important
+        }
+        .navbar.sticky .navbar-collapse {
+            overflow-y: scroll !important;
+            height: 300px !important;
+        }
+        /*start shop page responsive css*/
+        .data-shorting {
+            text-align: center;
+        }
+        .product-img>img {
+            width: 100%;
+        }
+        .product-filtaring>div {
+            text-align: left;
+        }
+        .pagination>li>a,
+        .pagination>li>span {
+            height: 40px;
+            line-height: 40px;
+            width: 30px;
+            margin-left: 0
+        }
+        /*end of shop page responsive css*/
+        /*start checkout page css*/
+        .single-input.halp-input {
+            width: 100%;
+        }
+        .basick-hisab>li {
+            font-size: 13px;
+            padding: 25px 0;
+        }
+        .type-select {
+            width: 30px;
+        }
+        .bank-condition {
+            padding-left: 50px;
+        }
+        /*end of checkout page css*/
+        /*start about us page css*/
+        .company-video,
+        #bg_video {
+            height: 170px;
+        }
+        .about-right-content {
+            margin-top: 50px;
+        }
+        .about-right-content .section-title {
+            padding-bottom: 30px;
+        }
+        .section-title h2 {
+            font-size: 27px;
+        }
+        .about-right-content .section-title h4 {
+            padding-bottom: 10px;
+        }
+        .single-history::after {
+            left: 65px;
+        }
+        .single-history::before {
+            left: 70px;
+        }
+        .single-history {
+            padding-left: 90px;
+        }
+        .history-title.section-title {
+            margin-top: 70px;
+            padding-bottom: 30px;
+        }
+        .single-team {
+            margin-bottom: 50px;
+        }
+        .avacus-team-section.section-padding {
+            padding-bottom: 50px;
+        }
+        .subscribe-form input[type="email"] {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .news-latter-title {
+            text-align: left;
+        }
+        .subscribe-form {
+            text-align: left;
+        }
+        /*end of about us page css*/
+        /*start testimonial page css*/
+        .page-title h2 {
+            font-size: 35px;
+        }
+        .client-title {
+            margin-top: 25px;
+        }
+        .feedback-section .avacus-singel-testimonial {
+            height: auto;
+        }
+        .avacus-testimonial-section.feedback-section.section-padding {
+            padding-bottom: 50px;
+        }
+        /*end of testimonial page css*/
+        /*services page tow layout */
+        .services-single-content {
+            margin-top: 50px;
+        }
+        .cash-thumb {
+            float: none;
+            width: 100%;
+        }
+        .case-list {
+            width: 100%;
+            float: none;
+        }
+        .services-tab-content h2 {
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        /*end of services page tow layout*/
+        /*faq page */
+        .faqpage .consultation-text {
+            margin-bottom: 20px;
+        }
+        /*end of faq page */
+        /*start partner page*/
+        .partners-content h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: normal;
+        }
+        /*strart single page css*/
+        .author.comments.authore-reply {
+            margin-left: 0;
+        }
+        .single-comments-input {
+            width: 100%;
+        }
+        .sidebar input {
+            margin-top: 50px;
+            width: 82.5%;
+        }
+        .author-description.comment-description>h4 span {
+            float: none;
+            line-height: 25px;
+            display: block;
+        }
+        .author-description h4 {
+            margin-bottom: 10px
+        }
+        .author-details .author-img {
+            float: none;
+            margin-right: 0;
+            text-align: left;
+        }
+        .author-details .about-author {
+            margin-top: 20px;
+            padding-left: 0;
+        }
+        .subcribe-form input {
+            margin-top: 0;
+        }
+        /*end of single page css*/
+        /*contact page css*/
+        .single-input-contact input {
+            margin-bottom: 10px;
+        }
+        .single-input-contact.selectarrow {
+            margin-bottom: 10px;
+        }
+        .ceo-img {
+            float: none;
+            margin-bottom: 10px;
+        }
+        .single-ceo-address:first-child {
+            margin-top: 20px;
+        }
+        .single-product-name {
+            margin-top: 50px;
+        }
+        .related-product .single-product {
+            margin-bottom: 50px
+        }
+        /*end of contact page css*/
+        /*start avacus cart page*/
+
+        button.update-cart{
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        .update-cart-btn{
+            text-align: left;
+        }
+        .cart-totals ul {
+  padding: 0 20px;
+}
+.avacus-blogpage-area.section-padding {
+  padding-bottom: 50px;
+}
+
+        /*end of avacus cart page*/
+
+
+/*final css*/
+.blog-list .news-thumb {
+  margin-bottom: 20px;
+}
+.country-select {
+
+  margin-bottom: 10px;
+
+  width: 100%;
+}
+.padding-right-0 {
+  padding-right: 15px;
+}
+.loging-form .form-control.hulp {
+  width: 100%;
+}
+
+.forget-pass {
+    display: block;
+    text-align: left;
+}
+.squaredThree {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.project-caption.two_column h3 {
+  font-size: 30px;
+  line-height: normal;
+}
+.share {
+  margin-left: 0;
+  margin-top: 20px;
+}
+section.blog-post-area {
+  padding-bottom: 50px;
+}
+        .welcome-text h3{
+            font-size: 22px
+        }
+        h3.fomr-title{
+            margin-top: 20px
+        }
+/*end of final css*/
+
+section.button-section::before {
+    display: none;
+}
+.right-side-button {
+    background: #003445 none repeat scroll 0 0;
+    padding: 20px;
+}
+.button-three {
+    margin-bottom: 10px;
+}
+.button-light-screen {
+    margin-bottom: 30px;
+}
+a.button-tow {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+    }
+    
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .why-content {
+            padding-left: 60px;
+            padding-right: 40px;
+        }
+        .why-thumb img {
+            width: 100%;
+        }
+        .news-thumb img {
+            width: 100%;
+        }
+        .client-title {
+            margin-top: 5px;
+        }
+        .accourdion-img {
+            text-align: left;
+        }
+        .sidebar.subcribe-widget .subcribe-form input {
+            width: 87%;
+        }
+        .sidebar input {
+            width: 88.5%;
+        }
+        .ceo-img {
+            float: left;
+        }
+        .single-pagetab.nav-tabs>li>a {
+            width: 140px;
+        }
+        .side-img img {
+    width: 100%;
+}
+    }

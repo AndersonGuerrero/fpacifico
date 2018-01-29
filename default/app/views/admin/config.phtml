@@ -1,0 +1,35 @@
+		<div class="page profile-page" style="padding-bottom:0">
+			<div class="pagecontent"> 
+				<div class="bg-light lter b-b wrapper-md mb-10">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
+								<small class="text-muted">Bienvenido al administrador</small>
+							</div>
+						</div>
+					</div>
+				<div class="row">
+						<div class="col-md-12">
+						<section class="boxs boxs-simple">
+                            <div class="profile-header">
+                                <div class="profile_info">
+                                    <div class="profile-image">
+                                        <?php echo Html::img("images/avatar2.png") ?>
+                                    </div>
+                                   <h4 class="mb-0"><strong><?php echo Auth::get("usuario") ?></strong></h4>
+                                   	<?php if (Auth::get("admin")=='1'): ?>
+                                    	<span class="text-muted">Administrador</span>
+                                	<?php else: ?>
+                                		<span class="text-muted">Editor</span>
+                                	<?php endif ?>
+                                    <!--<div class="mt-10">
+                                        <button class="btn btn-raised btn-primary">Editar Perfil</button>
+                                    </div>-->
+                                </div>
+                            </div>
+                            
+						</section>						
+					</div>
+				</div>
+			</div>
+		</div>				

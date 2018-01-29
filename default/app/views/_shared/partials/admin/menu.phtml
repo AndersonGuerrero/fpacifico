@@ -1,0 +1,100 @@
+	<!--<section id="header">
+		<header class="clearfix"> 
+			<div class="branding"> <a class="brand" href="index-2.html"><span>Grupo B&G</span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a> </div>
+	
+			
+			<ul class="nav-right pull-right list-inline">
+				<li class="dropdown nav-profile"> <a href class="dropdown-toggle" data-toggle="dropdown"> 
+					<?php //echo Html::img("images/avatar5.png",'','alt="" class="0 size-30x30"') ?></a>	
+					<ul class="dropdown-menu" role="menu">
+						<li>
+							<div class="user-info">
+								<div class="user-name">Administrador</div>
+								<div class="user-position online">Activo</div>
+							</div>
+						</li>
+						<li><a href="#" role="button" tabindex="0"><i class="fa fa-user"></i>Perfil</a></li>
+						
+						<li class="divider"></li>
+						<li><a href="login.html" role="button" tabindex="0"><i class="fa fa-sign-out"></i>Salir</a></li>
+					</ul>
+				</li>
+				<li class="dropdown users"> <a href class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-th"></i>					
+					</a>
+					<div class="dropdown-menu pull-right with-arrow panel panel-default" role="menu">						
+						<ul class="app-sortcut">
+							<li>
+								<a href="chat.html" class="connection-item">
+								<i class="fa fa-comments-o"></i>
+								<span class="block">Soporte</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="connection-item">
+								<i class="fa fa-book"></i>
+								<span class="block">Noticias</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="connection-item">
+								<i class="fa fa-envelope"></i>
+								<span class="block">Correos</span>
+								</a>
+							</li>
+						</ul>						
+					</div>
+				</li>
+				<li class="dropdown messages"> <a href class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope"></i>
+					<div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+					</a>
+					<div class="dropdown-menu pull-right with-arrow panel panel-default" role="menu">						
+						<ul class="list-group">
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object thumb thumb-sm"> <?php //echo Html::img("images/pi-avatar.jpg") ?> </span>
+								<div class="media-body"> <span class="block">Lucas sent you a message</span> <small class="text-muted">9 minutes ago</small> </div>
+								</a> </li>
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object  thumb thumb-sm"> <?php //echo Html::img("images/Jane-avatar.jpg") ?></span>
+								<div class="media-body"> <span class="block">Jane sent you a message</span> <small class="text-muted">27 minutes ago</small> </div>
+								</a> </li>
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object  thumb thumb-sm"> <?php //echo Html::img("images/random-avatar2.jpg") ?> </span>
+								<div class="media-body"> <span class="block">Lee sent you a message</span> <small class="text-muted">2 hour ago</small> </div>
+								</a> </li>
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object  thumb thumb-sm"> <?php //echo Html::img("images/random-avatar3.jpg") ?> </span>
+								<div class="media-body"> <span class="block">Rihtik sent you a message</span> <small class="text-muted">8 hours ago</small> </div>
+								</a> </li>
+						</ul>
+						<div class="panel-footer"> <a role="button" tabindex="0">Show all messages <i class="pull-right fa fa-angle-right"></i></a> </div>
+					</div>
+				</li>
+				<li class="dropdown notifications"> <a href class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-bell"></i>
+					<div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+					</a>
+					<div class="dropdown-menu pull-right with-arrow panel panel-default ">					
+						<ul class="list-group">
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object media-icon"> <i class="fa fa-ban"></i> </span>
+								<div class="media-body"> <span class="block">User Lucas cancelled account</span> <small class="text-muted">12 minutes ago</small> </div>
+								</a> </li>
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object media-icon"> <i class="fa fa-spotify"></i> </span>
+								<div class="media-body"> <span class="block">2 voice mails</span> <small class="text-muted">Neque porro quisquam est</small> </div>
+								</a> </li>
+							<li class="list-group-item"> <a role="button" tabindex="0" class="media"> <span class="pull-left media-object media-icon"> <i class="fa fa-whatsapp"></i> </span>
+								<div class="media-body"> <span class="block">8 voice messanger</span> <small class="text-muted">8 texts</small> </div>
+								</a> </li>
+						</ul>
+						<div class="panel-footer"> <a role="button" tabindex="0">Show all notifications <i class="fa fa-angle-right pull-right"></i></a> </div>
+					</div>
+				</li>
+				<li class="toggle-right-leftmenu"><a role="button" tabindex="0"><i class="fa fa-gear"></i></a></li>
+			</ul>
+		</header>
+	</section>-->
+
+		<section id="header">
+		<header class="clearfix"> 
+			<div class="branding"> <a class="brand" href="#"><?php echo Html::img("images/icono.png","","width='30px' style='padding-right:5px'") ?><span>Administrador</span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-th-large"></i></a> </div>
+	
+			
+			<ul class="nav-right pull-right list-inline">
+				<li><?php echo Html::link("admin/logout",'<i class="fa fa-sign-out"></i> Salir','') ?></li>
+			</ul>
+		</header>
+	</section>

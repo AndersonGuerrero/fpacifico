@@ -1,0 +1,75 @@
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav_sucursales") ?>
+</div>
+
+
+            <section class="home-area" style="margin-top:20px;margin-bottom:20px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <?php echo View::partial("menu_prestamos") ?>
+                        </div>
+                        <div class="col-md-9">
+                           <div class="about-right-content" style="padding-top:20px">
+                              <div class="section-title">
+                                  <h2>Sucursales</h2>
+                              </div>
+                              <div class="panel-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5" id="accordion" role="tablist" aria-multiselectable="true">
+                             
+                             <?php $suma = 1; ?>
+                              <?php foreach ($sucursales as $value): ?>
+
+                                <div class="panel panel-item">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $suma?>" aria-expanded="false" aria-controls="collapse<?php echo $suma?>">
+                                              <?php echo $value->nombre ?>
+                                            </a>
+                                          </h4>
+                                    </div>
+                                    <div id="collapse<?php echo $suma?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                          <div class="col-md-2">
+                                            <?php echo Html::img($value->img,'','width="100%"') ?>
+                                          </div>
+                                          <div class="col-md-4">
+                                                      <ul>
+                                                        <li>
+                                                            <p><span class="fa fa-home"></span> <strong>Dirección:</strong> <?php echo $value->direccion ?></p>
+                                                        </li>
+                                                        <li>
+                                                            <p><span class="fa fa-phone"></span> <strong>Teléfonos fijos:</strong> <?php echo $value->telefonos ?></p>
+                                                        </li>
+                                                        <li>
+                                                            <p><span class="fa fa-whatsapp"></span> <strong>Celular, Whatsapp:</strong> <?php echo $value->celular ?></p>
+                                                        </li>
+                                                       
+                                                        <li>
+                                                            <p><span class="fa fa-clock-o"></span> <strong>Horario:</strong> <?php echo $value->horario ?></p>
+                                                        </li>
+                                                    </ul>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <?php echo Html::img($value->mapa,'','width="100%"') ?>
+                                          </div>
+                                                     
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php $suma++ ?>
+                              <?php endforeach ?>
+                                
+                              
+                             </div>
+                   
+                        </div>
+                    </div>
+                </div> 
+            </section>
+  
+
+<?php echo View::partial("plan"); ?>
+<?php echo View::partial("footer") ?>

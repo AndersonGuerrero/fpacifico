@@ -1,0 +1,242 @@
+/* ==== Main CSS === */
+
+.img-fill {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+
+.img-fill img {
+   min-height: 100%
+    min-width: 100%;
+   /*  width: 100%;;*/
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+
+/* ==== Slider Style === */
+
+.Modern-Slider .item .img-fill {
+    background: #000;
+}
+
+.Modern-Slider .item .img-fill .info {
+    position: absolute;
+    width: 100%;
+    /*height: 100%;*/
+    top: 0px;
+    left: 0px;
+    /*background: rgba(0, 52, 69, .85);*/
+}
+
+.Modern-Slider .item {
+    z-index: -10
+}
+
+.welcometext {
+    color: #fff
+    top:100px;
+}
+
+
+/*css code for animation effect*/
+
+.Modern-Slider .item a.read-btn {
+    animation: slideInleft 1s both 1.8s;
+}
+
+.Modern-Slider .item a.buy-btn {
+    animation: slideInleft 1s both 2s;
+}
+
+.Modern-Slider .item h3.subheadin1 {
+    animation: slideInleft 1s both 1s;
+}
+
+.Modern-Slider .item h1 {
+    animation: slideInleft 1s both 1.5s;
+}
+
+.Modern-Slider .item h3.subheadin2 {
+    animation: slideInleft 1s both 2s;
+}
+
+.Modern-Slider .item.slick-active a.read-btn {
+    animation: fadeInUp 1s both 2.5s;
+}
+
+.Modern-Slider .item.slick-active a.buy-btn {
+    animation: fadeInUp 1s both 3s;
+}
+
+.Modern-Slider .item.slick-active h1 {
+    animation: fadeInUp 1s both 1s;
+}
+
+.Modern-Slider .item.slick-active h1.hero-subtitle {
+    animation: fadeInUp 1s both 1.5s;
+}
+
+
+
+
+/*slider arrows*/
+
+.PrevArrow {
+    background: #56757f none repeat scroll 0 0;
+    border: 1px solid #56757f;
+    border-radius: 1px;
+    color: #003445;
+    font-size: 24px;
+    height: 50px;
+    left: 2%;
+    line-height: 50px;
+    margin-top: -25px;
+    opacity: 0.2;
+    position: absolute;
+    top: 50%;
+    transition: all 0.4s ease 0s;
+    width: 50px;
+    z-index: 5;
+}
+
+.NextArrow {
+    background: #56757f none repeat scroll 0 0;
+    border: 1px solid #56757f;
+    font-size: 30px;
+    height: 50px;
+    margin-top: -25px;
+    position: absolute;
+    right: 2%;
+    text-align: center;
+    top: 50%;
+    width: 50px;
+    color: #003445;
+    font-size: 24px;
+    transition: .4s;
+    border-radius: 1px;
+    opacity: .2;
+}
+
+.Modern-Slider .slick-dots li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.Modern-Slider .slick-dots li:last-child {
+    margin-right: 0px;
+}
+
+.Modern-Slider .slick-dots li.slick-active button {
+    background: #FBB737;
+}
+
+.Modern-Slider .slick-dots li button {
+    background: #fff none repeat scroll 0 0;
+    font-size: 0;
+    height: 5px;
+    width: 30px;
+}
+
+.Modern-Slider .slick-dots {
+    bottom: 7%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.slick-arrow:hover {
+    background: #FBB737;
+    border-color: #FBB737;
+    opacity: 1;
+    color: #003445
+}
+
+.Modern-Slider .item h3 {
+    animation: fadeInUp 1s both;
+}
+
+.Modern-Slider .item h5 {
+    animation: fadeInDown 1s both;
+}
+
+.Modern-Slider .item.slick-active h3 {
+    animation: fadeInDown 1s both 1s;
+}
+
+.Modern-Slider .item.slick-active p {
+    animation: fadeInUp 1s both 1.5s;
+}
+
+
+/*animation */
+
+
+/* ==== Slider Image Transition === */
+
+
+/* Animate.css */
+
+@keyframes slideInRight {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        visibility: visible
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+
+/* Animate.css */
+
+@keyframes slideOutRight {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    100% {
+        visibility: hidden;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+}
+
+
+/* Animate.css */
+
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+
+/* Animate.css */
+
+@keyframes slideOutLeft {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    100% {
+        visibility: hidden;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}

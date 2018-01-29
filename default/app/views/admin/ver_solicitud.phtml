@@ -1,0 +1,266 @@
+<div class="page profile-page" style="padding-bottom:0">
+    <div class="pagecontent">
+        <div class="row">
+             <div class="col-md-12">
+                <section class="boxs boxs-simple">
+                    <div class="boxs-body p-0">
+                        <div role="tabpanel">
+                            <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">
+                                  Solicitud de <?php echo $servicio->nombre ?></a>
+                                </li>
+                                <li role="presentation" style="float: right;">
+                                  <a href="<?php echo PUBLIC_PATH.'admin/eliminar_solicitud/'.$solicitudes->id ?>" aria-controls="general">
+                                    Eliminar
+                                  </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                 <div role="tabpanel" class="tab-pane active" id="general">
+                                      <div class="wrap-reset">
+                                        <?php echo Form::open() ?>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="">Nombre:</label>
+                                                <?php echo Form::text('solicitudes.nombre',array(
+                                                  'class'=>'form-control',
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'type'=>'text',
+                                                  'placeholder'=>'Nombre  *'
+                                                ));?>
+                                              </div>
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="">Apellido:</label>
+                                                <?php echo Form::text('solicitudes.apellido',array(
+                                                  'class'=>'form-control',
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'type'=>'text',
+                                                  'placeholder'=>'Apellido *'
+                                                ));?>
+                                              </div>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                                <div class="col-md-6" style="padding:5px">
+                                                  <label for="">Fecha de Nacimiento:</label>
+                                                        <?php echo Form::input('text', '',array(
+                                                          'required'=>'true',
+                                                          'disabled'=>'true',
+                                                          'class'=>'form-control',
+                                                          'placeholder'=>"##"
+                                                        ),
+                                                        $solicitudes->fecha_nac
+                                                      );?>
+                                                  </div>
+                                                <div class="col-md-6" style="padding:5px" >
+                                                    <label >Cedula:</label>
+                                                    <?php echo Form::input('text', '',array(
+                                                      'required'=>'true',
+                                                      'disabled'=>'true',
+                                                      'class'=>'form-control',
+                                                      'placeholder'=>"##"
+                                                    ),
+                                                    $solicitudes->provincia.'-'.$solicitudes->letra.'-'.$solicitudes->folio.'-'.$solicitudes->asiento
+                                                  );?>
+                                                    <label for="" style="font-size:10px">Provincia - letra -  folio  -  Asiento</label>
+                                                </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:5px">
+                                            <div class="col-md-6" style="padding:5px">
+                                              <label for="" style="margin-right:5px">Sexo:</label>
+                                              <?php if ($solicitudes->sexo =='femenino'){ ?>
+                                                <?php echo Html::img("images/femenino.png","",' width="20px"') ?>
+                                                Femenino
+                                                <?php }else{ ?>
+                                                  <?php echo Html::img("images/masculino.png","",' width="25px"') ?>
+                                                  Masculino
+                                                  <?php } ?>
+                                                </div>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:5px">
+                                            <label for="" style="margin-right:5px">Direccion:</label>
+                                            <?php echo Form::text('solicitudes.direccion',array(
+                                              'required'=>'true',
+                                              'disabled'=>'true',
+                                              'style'=>"margin-top:0",
+                                              'class'=>"form-control",
+                                              'placeholder'=>" Dirección Residencial *"
+                                            ));?>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="" style="margin-right:5px">Telefono de Residencia:</label>
+                                                <?php echo Form::text('solicitudes.telefono_residencia',array(
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'style'=>"margin-top:0",
+                                                  'class'=>"form-control",
+                                                  'placeholder'=>"Teléfono Residencial *"
+                                                ));?>
+                                              </div>
+                                              <div class="col-md-3" style="padding:5px">
+                                                <label for="" style="margin-right:5px">Telefono de Oficina:</label>
+                                                <?php echo Form::text('solicitudes.telefono_oficina',array(
+                                                  'required'=>'true',
+                                                  'style'=>"margin-top:0",
+                                                  'disabled'=>'true',
+                                                  'class'=>"form-control",
+                                                  'placeholder'=>"Tlf. Oficina*"
+                                                ));?>
+                                              </div>
+                                              <div class="col-md-3" style="padding:5px">
+                                                 <label for="" style="margin-right:5px">Celular:</label>
+                                                 <?php echo Form::text('solicitudes.celular',array(
+                                                   'required'=>'true',
+                                                   'style'=>"margin-top:0",
+                                                   'disabled'=>'true',
+                                                   'class'=>"form-control",
+                                                   'placeholder'=>"Celular *"
+                                                 ));?>
+                                              </div>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                             <div class="col-md-6" style="padding:5px">
+                                               <label for="" style="margin-right:5px">Correo:</label>
+                                               <?php echo Form::input('email', 'solicitudes.correo',array(
+                                                 'required'=>'true',
+                                                 'style'=>"margin-top:0",
+                                                 'disabled'=>'true',
+                                                 'class'=>"form-control",
+                                                 'placeholder'=>"Email *",
+                                               ));?>
+                                            </div>
+                                             <div class="col-md-6" style="padding:5px">
+                                               <label for="" style="margin-right:5px">Correo 2:</label>
+                                               <?php echo Form::input('email', 'solicitudes.correo2',array(
+                                                 'required'=>'true',
+                                                 'style'=>"margin-top:0",
+                                                 'disabled'=>'true',
+                                                 'class'=>"form-control",
+                                                 'placeholder'=>"Email 2",
+                                               ));?>
+                                            </div>
+                                          </div>
+                                          </div>
+                                          <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
+                                             <h4 style="font-weight:700;margin-top:20px">DATOS LABORALES</h4>
+                                        </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:5px">
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="" style="margin-right:5px">Laboral:</label>
+                                                    <?php echo Form::input('text', '',array(
+                                                      'required'=>'true',
+                                                      'disabled'=>'true',
+                                                      'class'=>'form-control',
+                                                    ),
+                                                    $solicitudes->laboral
+                                                  );?>
+                                              </div>
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="" style="margin-right:5px">Salario:</label>
+                                                    <?php echo Form::input('text', '',array(
+                                                      'required'=>'true',
+                                                      'disabled'=>'true',
+                                                      'class'=>'form-control',
+                                                    ),
+                                                    $solicitudes->salario
+                                                  );?>
+                                              </div>
+                                         </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                               <div class="col-md-6" style="padding:5px">
+                                                 <label for="" style="margin-right:5px">Ocupacion:</label>
+                                                 <?php echo Form::text('solicitudes.ocupacion',array(
+                                                   'required'=>'true',
+                                                   'disabled'=>'true',
+                                                   'style'=>"margin-top:0",
+                                                   'class'=>"form-control"
+                                                 ));?>
+                                              </div>
+                                              <div class="col-md-6" style="padding:5px">
+                                                <label for="" style="margin-right:5px">Tiempo de Servicio:</label>
+                                                <?php echo Form::text('solicitudes.tiempo_servicio',array(
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'style'=>"margin-top:0",
+                                                  'class'=>"form-control"
+                                                ));?>
+                                              </div>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                              <div class="col-md-6" style="padding:5px">
+                                                <?php echo Form::text('solicitudes.lugar_trabajo',array(
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'style'=>"margin-top:0",
+                                                  'class'=>"form-control",
+                                                ));?>
+                                              </div>
+                                              <div class="col-md-6" style="padding:5px">
+                                                <?php echo Form::text('solicitudes.tiempo_servicio',array(
+                                                  'required'=>'true',
+                                                  'disabled'=>'true',
+                                                  'style'=>"margin-top:0",
+                                                  'class'=>"form-control",
+                                                  'placeholder'=>"Tiempo de servicio *"
+                                                ));?>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:0">
+                                                <div class="col-md-6" style="padding:5px">
+                                                  <?php echo Form::text('solicitudes.monto_deseado',array(
+                                                    'required'=>'true',
+                                                    'disabled'=>'true',
+                                                    'style'=>"margin-top:0",
+                                                    'class'=>"form-control",
+                                                    'placeholder'=>"Monto deseado a recibir *"
+                                                  ));?>
+                                                </div>
+                                            <div class="col-md-6" style="padding:5px">
+                                                <input disabled='true' type="text" class="form-control" value="<?php echo $sucursal->nombre ?>">
+                                            </div>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12" style="padding:5px">
+                                              <?php echo Form::textarea('solicitudes.comentario',array(
+                                                'required'=>'true',
+                                                'style'=>"margin-top:0",
+                                                'disabled'=>'true',
+                                                'class'=>"form-control",
+                                                'placeholder'=>"Comentario",
+                                                'cols'=>"30",
+                                                'rows'=>"5"
+                                              ));?>
+                                          </div>
+                                          </div>
+                                          <?php echo Form::close() ?>
+                                      </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav_empresa") ?>
+</div>
+
+
+            <section class="home-area" style="margin-top:20px;margin-bottom:20px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <?php echo View::partial("menu_prestamos") ?>
+                        </div>
+                        <div class="col-md-9">
+                           <div class="about-right-content" style="padding-top:20px">
+                              <div class="section-title">
+                                  <h4>Sobre Nosotros</h4>
+                                  <h2>Misión y Visión</h2>
+                              </div>
+
+                              <h4>MISIÓN</h4>
+                              <p><?php echo $empresa->mision ?></p>
+
+                              <h4>VISIÓN</h4>
+                              <p><?php echo $empresa->vision ?></p>
+                          </div>
+                   
+                        </div>
+                    </div>
+                </div> 
+            </section>
+  
+
+<?php echo View::partial("plan"); ?>
+<?php echo View::partial("footer") ?>

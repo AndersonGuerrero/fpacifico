@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Corporacion Pacifico Admin</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<?php Tag::css('kumbia') ?>
+<link rel="stylesheet" href="../assets/css/vendor/animsition.min.css">
+<link rel="stylesheet" href="../assets/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="../assets/js/vendor/chosen/chosen.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<?php echo Html::includeCss() ?> 
+<link rel="shortcut icon" href="../img/images/icono.png"/>
+</head>
+<body id="oakleaf" class="main_Wrapper">
+	<div id="wrap" class="animsition"> 
+		<?php View::partial("admin/menu") ?>
+		<?php View::partial("admin/nav") ?>
+		<section id="content">
+			<?php View::content() ?>
+		</section>
+	</div>
+    
+	<script src="../assets/bundles/libscripts.bundle.js"></script>
+	<script src="../assets/bundles/vendorscripts.bundle.js"></script>
+	<script src="../assets/js/vendor/chosen/chosen.jquery.min.js"></script> 
+	<script src="../assets/js/vendor/filestyle/bootstrap-filestyle.min.js"></script> 
+	<script src="../assets/js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,369 @@
+<style>
+   .nacimiento select {
+    height: 40px;
+    border-radius: 0px;
+    border: 0px;
+    min-width:50px;
+    padding-left:10px;
+}
+.nacimiento select{
+
+    margin-right:5px;
+}
+
+.cedula input {
+    height: 40px;
+    border-radius: 0px;
+    border: 0px;
+    padding-left:10px;
+}
+.cedula input{
+
+    margin-right:5px;
+}
+</style>
+
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav_servicios") ?>
+</div>
+<section class="home-area" style="margin-top:20px;margin-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <?php echo Html::img($servicio->img,'','alt="" width="100%" style="margin-bottom:3px"') ?>
+                <?php echo View::partial("menu_prestamos") ?>
+            </div>
+           <div id="solicita" class="col-md-9" style="background: #f2f3f4;">
+         <div class="avacus-page-header-section" style="background-image: url(../../img/headerbg.jpg);">
+            <div class="col-md-12 text-center" style="width:100%">
+                <div class="page-title">
+                    <h2>Solicitud de</h2>
+                    <p style="font-size:18px"><?php echo $servicio->nombre ?></p>
+                </div>
+            </div>
+        </div>
+    <?php echo Form::open() ?>
+    <?php echo Form::hidden('solicitudes.servicios_id', NULL, $servicio->id);?>
+    <div class="loging-form">
+      <div class="col-md-12" style="padding:0">
+          <div class="col-md-6" style="padding:5px">
+            <?php echo Form::text('solicitudes.nombre',array(
+              'class'=>'form-control',
+              'required'=>'true',
+              'type'=>'text',
+              'placeholder'=>'Nombre  *'
+            ));?>
+          </div>
+          <div class="col-md-6" style="padding:5px">
+            <?php echo Form::text('solicitudes.apellido',array(
+              'class'=>'form-control',
+              'required'=>'true',
+              'type'=>'text',
+              'placeholder'=>'Apellido *'
+            ));?>
+          </div>
+      </div>
+
+  <div class="col-md-12" style="padding:0">
+    <div class="col-md-6 nacimiento" style="padding:5px;padding-top:10px">
+        <label for="">Fecha de Nacimiento *:</label>
+        <?php echo Form::text('solicitudes.fecha_nac',array(
+          'required'=>'true',
+          'class'=>'single-input full-input selectarrow form-control',
+          'id'=>'fecha',
+          'style'=>"width:40px;margin-left:10px;",
+          'data-format'=>"YYYY-MM-D",
+          'data-template'=>'D MMM YYYY',
+          'value'=>"1992-11-28",
+          'placeholder'=>"##",
+          'onKeyPress'=>"return validar(event)"
+        ));?>
+    </div>
+    <div class="col-md-6 cedula" style="padding:5px;padding-top:10px">
+        <label for="" style="float:left;line-height:40px">Cedula *:</label>
+        <?php echo Form::text('solicitudes.provincia',array(
+          'required'=>'true',
+          'style'=>"width:40px;margin-left:10px;",
+          'maxlength'=>"2",
+          'placeholder'=>"##",
+          'onKeyPress'=>"return validar(event)"
+        ));?>
+        <span>-</span>
+        <?php echo Form::text('solicitudes.letra',array(
+          'required'=>'true',
+          'style'=>"width:40px;",
+          'maxlength'=>"2",
+          'placeholder'=>"XX"
+        ));?>
+        <span>-</span>
+        <?php echo Form::text('solicitudes.folio',array(
+          'required'=>'true',
+          'style'=>"width:70px;",
+          'maxlength'=>"4",
+          'placeholder'=>"####",
+          'onKeyPress'=>"return validar(event)"
+        ));?>
+        <span>-</span>
+        <?php echo Form::text('solicitudes.asiento',array(
+          'required'=>'true',
+          'style'=>"width:90px;",
+          'maxlength'=>"6",
+          'placeholder'=>"######",
+          'onKeyPress'=>"return validar(event)"
+        ));?>
+        <label for="" style="font-size:10px">Provincia - letra -  folio  -  Asiento</label>
+    </div>
+
+<script>
+$(function(){
+    $('#solicitudes_fecha_nac').combodate({
+    minYear: 1950,
+    maxYear:  (new Date).getFullYear() -18});
+});
+</script>
+    <div class="col-md-6" style="padding:5px">
+        <label for="" style="margin-right:5px">Sexo: </label>
+        <?php echo Form::radio('solicitudes.sexo', 'femenino',array(
+          'required'=>'true'
+        ))?>
+        <?php echo Html::img("images/femenino.png","",' width="20px"') ?>
+        Femenino
+        <?php echo Form::radio('solicitudes.sexo', 'masculino',array(
+          'required'=>'true',
+          "style"=>"margin-left:10px"
+        ))?>
+        <?php echo Html::img("images/masculino.png","",' width="25px"') ?>
+        Masculino
+    </div>
+      </div>
+      <div class="col-md-12" style="padding:5px">
+        <?php echo Form::text('solicitudes.direccion',array(
+          'required'=>'true',
+          'style'=>"margin-top:0",
+          'class'=>"form-control",
+          'placeholder'=>" Dirección Residencial *"
+        ));?>
+      </div>
+      <div class="col-md-12" style="padding:0">
+          <div class="col-md-6" style="padding:5px">
+            <?php echo Form::text('solicitudes.telefono_residencia',array(
+              'required'=>'true',
+              'style'=>"margin-top:0",
+              'class'=>"form-control",
+              'placeholder'=>"Teléfono Residencial *"
+            ));?>
+          </div>
+          <div class="col-md-3" style="padding:5px">
+            <?php echo Form::text('solicitudes.telefono_oficina',array(
+              'required'=>'true',
+              'style'=>"margin-top:0",
+              'class'=>"form-control",
+              'placeholder'=>"Tlf. Oficina*"
+            ));?>
+          </div>
+           <div class="col-md-3" style="padding:5px">
+             <?php echo Form::text('solicitudes.celular',array(
+               'required'=>'true',
+               'style'=>"margin-top:0",
+               'class'=>"form-control",
+               'placeholder'=>"Celular *"
+             ));?>
+          </div>
+      </div>
+     <div class="col-md-6" style="padding:5px">
+       <?php echo Form::input('email', 'solicitudes.correo',array(
+         'required'=>'true',
+         'style'=>"margin-top:0",
+         'class'=>"form-control",
+         'placeholder'=>"Email *",
+       ));?>
+    </div>
+     <div class="col-md-6" style="padding:5px">
+       <?php echo Form::input('email', 'solicitudes.correo2',array(
+         'required'=>'true',
+         'style'=>"margin-top:0",
+         'class'=>"form-control",
+         'placeholder'=>"Email 2",
+       ));?>
+    </div>
+
+    <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
+         <h4 style="font-weight:700;margin-top:20px">DATOS LABORALES</h4>
+    </div>
+
+   <div class="col-md-12" style="padding:0" id="content-laboral">
+        <div class="col-md-6" style="padding:5px">
+          <?php echo Form::radio('solicitudes.laboral', 'Fuerza Pública',array('required'=>'true'))?>
+           Fuerza Pública
+           <br>
+           <?php echo Form::radio('solicitudes.laboral', 'Educadores',array('required'=>'true'))?>
+           Educadores
+           <br>
+           <?php echo Form::radio('solicitudes.laboral', 'Jubilados',array('required'=>'true'))?>
+           Jubilados
+           <br>
+           <?php echo Form::radio('solicitudes.laboral', 'Gobierno Central',array('required'=>'true'))?>
+           Gobierno Central
+           <br>
+           <?php echo Form::radio('solicitudes.laboral', 'Entidades Autónomas y Semi-autónomas',array('required'=>'true'))?>
+          Entidades Autónomas y Semi-autónomas
+        </div>
+         <div class="col-md-6" style="padding:5px">
+             <?php echo Form::radio('solicitudes.laboral', 'ACP',array('required'=>'true'))?>
+              ACP<br>
+              <?php echo Form::radio('solicitudes.laboral', 'Empresa Privada',array('required'=>'true'))?>
+              Empresa Privada<br>
+             <?php echo Form::radio('solicitudes.laboral', 'Independiente (micro empresarios)',
+              array('required'=>'true'))?>
+              Independiente (micro empresarios)<br>
+              <?php echo Form::radio('solicitudes.laboral', 'Otros',array('required'=>'true'))?>
+             Otros
+             <?php echo Form::text('solicitudes.laboral',array(
+               'required'=>'true',
+               'style'=>"display:none",
+               'placeholder'=>"Otros *",
+               'class'=>"form-control"
+             ))?>
+        </div>
+   </div>
+  <div class="col-md-12" style="padding:0">
+       <div class="col-md-6" style="padding:5px">
+         <?php echo Form::text('solicitudes.ocupacion',array(
+           'required'=>'true',
+           'style'=>"margin-top:0",
+           'class'=>"form-control",
+           'placeholder'=>"Ocupación *"
+         ));?>
+      </div>
+  <!--<div class="col-md-4" style="padding:5px">
+          <label class="price-text">Salario (400-4000):</label>
+          <input type="range" name="salario" min="400" max="4000" step="1" value="400" onchange="updateTextInput(this.value);">
+      </div>
+        <div class="col-md-2" style="padding:5px">
+          <input type="text" name="valor" id="valor" value="" style="height:40px;width:100%;padding-left:10px;border:0" disabled>
+      </div>
+      <div class="col-md-2" style="padding:5px">
+          <label class="price-text">Salario :</label>
+          <input type="text" class="price-range" id="price">
+      </div>
+        <div class="col-md-4" style="padding:5px">
+          <div id="slider-3" style="margin-top:10px;margin-bottom:10px"></div>
+      </div>-->
+
+      <div class="col-md-6" style="padding:5px">
+        <div class="single-input full-input selectarrow form-control" style="margin-top:0;margin-bottom:0">
+          <select required name="solicitudes[salario]" >
+             <option value>Salario *</option>
+             <option value="$ 500">$ 500</option>
+             <option value="$ 600">$ 600</option>
+             <option value="$ 700">$ 700</option>
+             <option value="$ 800">$ 800</option>
+             <option value="$ 900">$ 900</option>
+             <option value="$ 1,000">$ 1,000</option>
+             <option value="$ 1,500">$ 1,500</option>
+             <option value="$ 2,000">$ 2,000</option>
+             <option value="$ 3,500">$ 3,500</option>
+             <option value="$ 4,000 ó más">$ 4,000 ó más</option>
+          </select>
+      </div>
+  </div>
+  </div>
+    <div class="col-md-6" style="padding:5px">
+      <?php echo Form::text('solicitudes.lugar_trabajo',array(
+        'required'=>'true',
+        'style'=>"margin-top:0",
+        'class'=>"form-control",
+        'placeholder'=>"Lugar de Trabajo *"
+      ));?>
+  </div>
+    <div class="col-md-6" style="padding:5px">
+      <?php echo Form::text('solicitudes.tiempo_servicio',array(
+        'required'=>'true',
+        'style'=>"margin-top:0",
+        'class'=>"form-control",
+        'placeholder'=>"Tiempo de servicio *"
+      ));?>
+  </div>
+    <div class="col-md-6" style="padding:5px">
+      <?php echo Form::text('solicitudes.monto_deseado',array(
+        'required'=>'true',
+        'style'=>"margin-top:0",
+        'class'=>"form-control",
+        'placeholder'=>"Monto deseado a recibir *"
+      ));?>
+  </div>
+    <div class="col-md-6" style="padding:5px">
+        <div class="single-input full-input selectarrow form-control" style="margin-top:0;margin-bottom:0">
+          <?php echo Form::dbSelect('solicitudes.sucursales_id', $show = NULL,
+          $data = NULL,'Sucursal mas cercana',
+        $attrs = array(
+          'required'=>'true'
+        ));?>
+        </div>
+  </div>
+  <div class="col-md-12" style="padding:5px">
+          <?php echo Form::textarea('solicitudes.comentario',array(
+            'required'=>'true',
+            'style'=>"margin-top:0",
+            'class'=>"form-control",
+            'placeholder'=>"Comentario",
+            'cols'=>"30",
+            'rows'=>"10"
+          ));?>
+        </div>
+        <div class="col-md-12" style="padding:5px">
+        <div class="col-md-4" style="padding:5px">
+          <button class="login-btn text-left">Enviar Ahora</button>
+        </div>
+        <div class="col-md-8" style="padding:5px">
+          <label><?php echo View::content();?></label>
+        </div>
+        </div>
+    </div>
+   <?php echo Form::close() ?>
+        </div>
+    </div>
+</div>
+</section>
+<?php echo View::partial("plan"); ?>
+<?php echo View::partial("footer") ?>
+
+<script>
+if($('#solicitudes_laboral8').is(':checked')){
+  $('#solicitudes_laboral').attr('required', true)
+  $('#solicitudes_laboral').attr('style', '')
+}
+$('#content-laboral').on('change', 'input', function(event) {
+  if(event.currentTarget.value =='Otros'){
+    $('#solicitudes_laboral').attr('required', true)
+    $('#solicitudes_laboral').attr('style', '')
+  }else{
+    $('#solicitudes_laboral').attr('required', false)
+    $('#solicitudes_laboral').attr('style', 'display:none')
+  }
+})
+
+function updateTextInput(val) {
+  document.getElementById('valor').value=val;
+}
+
+function validar(e){
+     key = e.keyCode || e.which;
+     tecla = String.fromCharCode(key).toLowerCase();
+     letras = "0123456789:";
+     especiales = "-";
+
+     tecla_especial = false
+     for(var i in especiales){
+          if(key == especiales[i]){
+              tecla_especial = true;
+              break;
+          }
+      }
+      if(letras.indexOf(tecla)==-1 && !tecla_especial){
+          return false;
+      }
+  }
+</script>

@@ -1,0 +1,103 @@
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent"> 
+
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Editar Servicio</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                                     <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Servicio en Spanish</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('servicios.nombre','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Descripcion Breve</label>
+                                                            <?php echo Form::text('servicios.descripcion','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Texto</label>
+                                                            <?php echo Form::textarea('servicios.texto','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <hr>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Servicio en English</h4>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('servicios.nombre_en','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                     <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Descripcion Breve</label>
+                                                            <?php echo Form::text('servicios.descripcion_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Texto</label>
+                                                            <?php echo Form::textarea('servicios.texto_en','class="form-control" required') ?>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                         <div class="col-md-3">
+                                                           <?php echo Html::img($servicios->img,'','width="100%"') ?>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('images',"","") ?>Cambiar Imagen</div>
+                                                        </div>
+                                                    </div>     
+                                                                                   
+                                                    <hr>
+                                                     <?php echo Form::hidden('servicios.id') ?>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <?php echo Html::link("admin/servicios","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  
+ <script>
+ CKEDITOR.replace( 'servicios[texto]' );
+ CKEDITOR.replace( 'servicios[texto_en]' );
+</script>

@@ -1,0 +1,133 @@
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent"> 
+
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Editar Banner</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                                     <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Banner en Spanish</h4>
+                                                            <p>Info de Slider</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="first-name">Titulo Blanco</label>
+                                                            <?php echo Form::text('banner.titulo_blanco','class="form-control" autofocus') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="last-name">Titulo Amarillo</label>
+                                                            <?php echo Form::text('banner.titulo_amarillo','class="form-control"') ?>
+                                                        </div>
+
+                                                    </div>
+                                                   
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Texto</label>
+                                                            <?php echo Form::text('banner.texto','class="form-control"') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="pinterest">Button 1</label>
+                                                            <?php echo Form::text('banner.btna','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="flickr">Url 1</label>
+                                                            <?php echo Form::text('banner.urla','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="pinterest">Button 2</label>
+                                                            <?php echo Form::text('banner.btnb','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="flickr">Url 2</label>
+                                                            <?php echo Form::text('banner.urlb','class="form-control"') ?>
+                                                        </div>
+                                                    </div> 
+                                                    <hr>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Banner en English</h4>
+                                                            <p>Info de Slider</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="first-name">Titulo Blanco</label>
+                                                            <?php echo Form::text('banner.titulo_blanco_en','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="last-name">Titulo Amarillo</label>
+                                                            <?php echo Form::text('banner.titulo_amarillo_en','class="form-control"') ?>
+                                                        </div>
+
+                                                    </div>
+                                                   
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="facebook">Texto</label>
+                                                            <?php echo Form::text('banner.texto_en','class="form-control"') ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="pinterest">Button 1</label>
+                                                            <?php echo Form::text('banner.btna_en','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="flickr">Url 1</label>
+                                                            <?php echo Form::text('banner.urla_en','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="pinterest">Button 2</label>
+                                                            <?php echo Form::text('banner.btnb_en','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="flickr">Url 2</label>
+                                                            <?php echo Form::text('banner.urlb_en','class="form-control"') ?>
+                                                        </div>
+                                                    </div> 
+                                                    <hr>
+                                                    <div class="row">
+                                                         <div class="col-md-3">
+                                                           <?php echo Html::img($banner->img,'','width="100%"') ?>
+                                                        </div>
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file'><?php echo Form::file('images',"","") ?>Cambiar Imagen 1920x1024px</div>
+                                                        </div>
+                                                    </div>     
+                                                                                   
+                                                    <hr>
+                                                     <?php echo Form::hidden('banner.id') ?>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <?php echo Html::link("admin/banners","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Editar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  

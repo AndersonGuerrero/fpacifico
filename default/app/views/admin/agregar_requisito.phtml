@@ -1,0 +1,82 @@
+
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent"> 
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Nuevo Requisito</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Requisito en Spanish</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('requisitos.nombre','class="form-control"') ?>
+                                                        </div> 
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto</label>
+                                                            <?php echo Form::textarea('requisitos.texto','class="form-control"') ?>
+                                                        </div>
+                                                       
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong> Requisito en English</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Nombre</label>
+                                                            <?php echo Form::text('requisitos.nombre_en','class="form-control"') ?>
+                                                        </div> 
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto</label>
+                                                            <?php echo Form::textarea('requisitos.texto_en','class="form-control"') ?>
+                                                        </div>
+
+                                                    </div>
+                                                   
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file' style='width:100%'><?php echo Form::file('images',"","") ?>Imagen</div>
+                                                        </div>
+                                                    </div>                                                
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <?php echo Html::link("admin/requisitos","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+<script>
+
+CKEDITOR.replace( 'requisitos[texto]' );
+CKEDITOR.replace( 'requisitos[texto_en]' );
+</script>

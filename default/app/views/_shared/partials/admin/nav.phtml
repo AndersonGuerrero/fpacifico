@@ -1,0 +1,79 @@
+<div id="controls">
+		<aside id="leftmenu">
+			<div id="leftmenu-wrap">
+				<div class="panel-group slim-scroll" role="tablist">
+					<div class="panel panel-default">
+						<div id="leftmenuNav" class="panel-collapse collapse in" role="tabpanel">
+							<div class="panel-body">
+								<ul id="navigation">
+									<li><?php echo Html::link("admin/config",'<i class="fa fa-dashboard"></i> <span>Principal</span>') ?></li>
+
+									<li><?php echo Html::link("admin/general",'<i class="fa fa-arrow-right"></i> <span>Configuraciones Generales</span>') ?></li>
+									<li><a role="button" tabindex="0"><i class="fa fa-photo"></i> <span>Banners</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/banners",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+											<li><?php echo Html::link("admin/nuevo_banner",'<i class="fa fa-angle-right"></i> Agregar nuevo') ?></li>
+										</ul>
+									</li>
+									<li> <?php echo Html::link("admin/servicios",'<i class="fa fa-magic"></i> <span>Servicios</span>') ?></li>
+									<li> <?php echo Html::link("admin/empresa",'<i class="fa fa-star"></i> <span>Empresa</span>') ?></li>
+
+									<li> <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>Sucursales</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/sucursales",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+											<li><?php echo Html::link("admin/nueva_sucursal",'<i class="fa fa-angle-right"></i> Agregar Nueva') ?></li>
+										</ul>
+									</li>
+									<li> <a role="button" tabindex="0"><i class="fa fa-book"></i> <span>Promociones</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/promociones",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+											<li><?php echo Html::link("admin/agregar_promocion",'<i class="fa fa-angle-right"></i> Agregar') ?></li>
+											<li><?php //echo Html::link("admin/categorias",'<i class="fa fa-angle-right"></i> Listado Categorias') ?></li>
+										</ul>
+									</li>
+									<li> <a role="button" tabindex="0"><i class="fa fa-book"></i> <span>Requisitos</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/requisitos",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+											<li><?php echo Html::link("admin/agregar_requisito",'<i class="fa fa-angle-right"></i> Agregar') ?></li>
+										</ul>
+									</li>
+									<li> <a role="button" tabindex="0"><i class="fa fa-fw fa-plus-square"></i> <span>Solicitudes</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/solicitudes",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+										</ul>
+									</li>
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</aside>
+
+		<aside id="rightmenu">
+			<div role="tabpanel">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">Soporte</a></li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="chat">
+
+						<h6>Dudas</h6>
+						<ul>
+							<li class="online">
+								<div class="media"> <a class="pull-left thumb thumb-sm" role="button" tabindex="0"><?php echo Html::img("images/avatar5.png",'','class="media-object"') ?></a>
+									<div class="media-body"> <span class="name">Steffany Teran</span> <span class="message">Cualquier duda por favor no dude en escribir al correo electronico <a href="mailto:info@steffdesign.com">info@steffdesign.com</a></span> </div>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+
+				</div>
+			</div>
+		</aside>
+	</div>

@@ -1,0 +1,103 @@
+    <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent"> 
+                <div class="bg-light lter b-b wrapper-md mb-10">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
+                                <small class="text-muted">Bienvenido al administrador</small>
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <?php echo Html::link("admin/promociones",'<i class="fa fa-magic"></i> Listado Promociones','class="btn btn-raised btn-success fileinput-button"') ?>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-md-12"> 
+                        <section class="boxs boxs-simple"> 
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel"> 
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Categorias - Promociones</a></li>
+                                    </ul>
+                                    
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                             
+                                                    <div class="row">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="first-name">Nombre *</label>
+                                                            <?php echo Form::text('categorias.nombre','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="first-name">Nombre en English*</label>
+                                                            <?php echo Form::text('categorias.nombre_en','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="first-name">Label *</label>
+                                                            <?php echo Form::text('categorias.label','class="form-control" autofocus required') ?>
+                                                        </div>
+                                                        <span class="col-md-12">Label - debe ser el nombre abreviado en minusculas sin caracteres especiales.</span>
+                                                    </div>
+                                                                                                  
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Agregar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+<div class="page static-page-tables"> 
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="boxs ">
+                        <div class="boxs-header dvd dvd-btm">
+                            <h1 class="custom-font"><strong>Listado </strong> Categorias</h1>
+                            
+                        </div>
+                        <div class="boxs-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-middle">
+                                    <thead>
+                                        <tr>
+                                      
+                                            <th>Nombre</th>
+                                            <th>Nombre English</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($categorias as $value) {
+                                           
+                                            echo
+                                            '
+                                            <tr>
+                                            <td>'.$value->nombre.'</td>
+                                            <td>'.$value->nombre_en.'</td>
+                                            </tr>
+                                        ';
+                                        } ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>

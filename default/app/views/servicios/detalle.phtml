@@ -1,0 +1,36 @@
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav_servicios") ?>
+</div>
+
+
+            <section class="home-area" style="margin-top:20px;margin-bottom:20px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <?php echo Html::img($servicio->img,'','alt="" width="100%" style="margin-bottom:3px"') ?>
+                            <?php echo View::partial("menu_prestamos") ?>
+                        </div>
+                        <div class="col-md-9">
+                             <div class="about-right-content" style="padding-top:20px;padding-bottom:50px">
+                                <div class="section-title">
+                                    <h4>Nuestros Servicios</h4>
+                                    <h2><?php echo $servicio->nombre ?></h2>
+                                    
+                                </div>
+                                <div class="button-light-screen" style="margin-bottom:20px">
+                                <?php echo Html::link("prestamos/solicitud/$servicio->id","Solicitar","class='blog-read'") ?>
+                              </div>
+                               <?php echo $servicio->texto ?>
+                              
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div> 
+            </section>
+  
+
+<?php echo View::partial("plan"); ?>
+<?php echo View::partial("footer") ?>

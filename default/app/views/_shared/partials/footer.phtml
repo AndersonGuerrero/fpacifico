@@ -1,0 +1,97 @@
+ <?php $servicioa = Load::model("servicios")->find_by_id("1"); ?>
+<?php $serviciob = Load::model("servicios")->find_by_id("2"); ?>
+<?php $servicioc = Load::model("servicios")->find_by_id("3"); ?>
+<?php $serviciod = Load::model("servicios")->find_by_id("4"); ?>
+<?php $servicioe = Load::model("servicios")->find_by_id("5"); ?>
+<?php $sucursalesa = Load::model("sucursales")->find("sucursales.id>0 limit 0,5"); ?>
+<?php $sucursalesb = Load::model("sucursales")->find("sucursales.id>0 limit 5,10"); ?>
+
+  <section class="why-chose-avacuse section-padding" style="background:#fff;padding-top:40px;padding-bottom:20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                     <div class="services-side-img" style="margin:0;margin-bottom:20px">
+                        <div class="side-img">
+                            <div class="sideimg-title">
+                                <?php echo Html::link("bolsatrabajo",Html::img("images/bolsadeempleo.png",'','style="width:80px;float:left"').'<strong>BOLSA</strong><br><small>de empleo</small>','style="background:#18488A;color:#fff"') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <h5 style="padding-bottom:10px">Entidad regulada por:</h5> 
+                    <?php echo Html::img("images/afiliados/superintendencia.png",'','alt="" width="28%" style="margin-right:10px"') ?>
+                    <?php echo Html::img("images/afiliados/superintendeciadebancos.png",'','alt="" width="28%" style="margin-right:10px"') ?>
+                    <?php echo Html::img("images/afiliados/MICI.png",'','alt="" width="28%" style="margin-right:10px"') ?>
+                </div>
+                 <div class="col-md-5">
+                    <h5 style="padding-bottom:10px">Afiliada a:</h5> 
+                    <?php echo Html::img("images/afiliados/cciap.png",'','alt="" width="15%" style="margin-right:10px"') ?>
+                    <?php echo Html::img("images/afiliados/ANIFI.png",'','alt="" width="25%" style="margin-right:10px"') ?>
+                    <?php echo Html::img("images/afiliados/apc.png",'','alt="" width="15%" style="margin-right:10px"') ?>
+                    <?php echo Html::img("images/afiliados/bolsavalores.png",'','alt="" width="30%"') ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="avacus-footer-section section-padding">
+        <div class="container">
+            <div class="row">
+               <div class="col-sm-3">
+                    <div class="wedget">
+                        <div class="wedget-title">
+                            <h4>Nuestros Servicios</h4>
+                        </div>
+                        <ul>
+                            <li><?php echo Html::link("servicios/detalle/1",$servicioa->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/2",$serviciob->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/3",$servicioc->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/4",$serviciod->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/5",$servicioe->nombre) ?></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="wedget">
+                        <div class="wedget-title">
+                            <h4>Nuestras Sucursales</h4>
+                        </div>
+                        <div class="col-sm-6" style="padding-left:0">
+                        <ul>
+                            <?php foreach ($sucursalesa as $primeras): ?>
+                                 <li><?php echo Html::link("sucursales",$primeras->nombre) ?></li>
+                            <?php endforeach ?>
+                           
+                        </ul>
+                        </div>
+                        <div class="col-sm-6" style="padding-left:0">
+                        <ul>
+                             <?php foreach ($sucursalesb as $segundas): ?>
+                                 <li><?php echo Html::link("sucursales",$segundas->nombre) ?></li>
+                            <?php endforeach ?>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="wedget">
+                        <div class="wedget-title">
+                            <h4>Centros de pago</h4>
+                        </div>
+                        <?php echo Html::img("images/centrospago/logo.png",'','width="30%" style="margin-right:10px;margin-bottom:10px"') ?>
+                        <?php echo Html::img("images/centrospago/logo_romero.png",'','width="55%" style="margin-bottom:10px"') ?>
+                        <?php echo Html::img("images/centrospago/mr_precio.png",'','width="60%" style="margin-right:10px;"') ?>
+                        <?php echo Html::img("images/centrospago/multipagos.png",'','width="20%" style="margin-right:10px;"') ?>
+                        <?php echo Html::img("images/centrospago/western-union-logo.png",'','width="30%"') ?>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center" style="margin-top:50px">
+                    <p>© 2017 - Corporacion Pacifico. Todos los Derechos Reservados. Creado por <a href="http://maspublicidad.net" target="_blank">Maspublicidad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>

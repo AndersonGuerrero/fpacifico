@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Error - Pagina no encontrada</title>
+<link rel="shortcut icon" href="img/images/icono.ico">
+<link rel="icon" href="img/images/icono.ico" type="image/x-icon">
+<meta name="description" content="">
+<meta name="author" content="steffdesign">
+<meta name="robots" content="index/follow">
+<meta name="keyword" content="" />
+<?php Tag::css('bootstrap') ?>
+<?php Tag::css('revolution-slider') ?>
+<?php Tag::css('style') ?>
+<?php Tag::css('jquery.bxslider') ?>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<?php Tag::css('responsive') ?>
+<?php echo Html::includeCss() ?>
+</head>
+
+<body>
+<div class="page-wrapper">
+  
+
+    <div class="preloader"></div> 
+      <?php View::partial('menu_dos') ?>
+      
+      
+    <section class="parallax-section" style="background-image:url(img/images/libro.jpg);">
+        <div class="auto-container">
+            <div class="text-center wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <h2>error 404</h2> 
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section boxed-style" style="margin-bottom:70px">
+            <div class="auto-container">
+
+                 <div class="sec-title">
+                    <h2>Pagina no <span class="theme_color">encontrada</span></h2>
+                    <h4>La url indicada no existe! <br>Por favor haga clic en el siguiente link para ir a la pagina principal <a href="http://construvenca.com">www.construvenca.com</a></h4>
+                      <br><br>
+                      <hr>
+                     <h4>Si intentaste acceder a un curso, en estos momentos estamos en mantenimiento, por favor escribenos a nuestro e-mail: <a href="mailto: infoconstruvenezuela@gmail.com"> infoconstruvenezuela@gmail.com</a></h4>
+                </div>
+            </div>
+    </section>      
+    
+
+      <?php View::partial('footer') ?>
+
+</div>
+
+<?php echo Tag::js('js/jquery') ?>
+<?php echo Tag::js('js/jquery.bxslider') ?>
+<?php echo Tag::js('js/bootstrap.min') ?>
+<?php echo Tag::js('js/revolution.min') ?>
+<?php echo Tag::js('js/jquery.mixitup') ?>
+<?php echo Tag::js('js/jquery.fancybox.pack') ?>
+<?php echo Tag::js('js/owl') ?>
+<?php echo Tag::js('js/jquery.nav') ?>
+<?php echo Tag::js('js/jquery.scrollTo') ?>
+<?php echo Tag::js('js/validate') ?>
+<?php echo Tag::js('js/wow') ?>
+<?php echo Tag::js('js/script') ?>
+
+</body>
+</html>

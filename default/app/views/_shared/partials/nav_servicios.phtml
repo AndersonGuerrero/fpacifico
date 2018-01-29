@@ -1,0 +1,62 @@
+<?php $servicioa = Load::model("servicios")->find_by_id("1"); ?>
+<?php $serviciob = Load::model("servicios")->find_by_id("2"); ?>
+<?php $servicioc = Load::model("servicios")->find_by_id("3"); ?>
+<?php $serviciod = Load::model("servicios")->find_by_id("4"); ?>
+<?php $servicioe = Load::model("servicios")->find_by_id("5"); ?>
+<?php $requi = Load::model("requisitos")->find(); ?>
+
+<nav class="navbar" style="border-bottom: 1px solid #6EB340">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle blacknav collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <?php echo Html::link("./",Html::img("images/logo.png",'','alt="" width="180px"'),'class="navbar-brand"') ?>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!--<ul class="nav notification navbar-right navbar-nav">
+                        <li style="border:0">
+                          <a href="#"><?php //echo Html::img("images/mensaje.png",'','alt="" width="30px"') ?></a>
+                        </li>
+                    </ul>-->
+                    <ul class="nav menu navbar-right navbar-nav">
+                        <li><?php echo Html::link("./","inicio") ?></li>
+                        <li class="current-menu-item">
+                            <a href="#">servicios</a>
+                            <ul>
+                                <li><?php echo Html::link("servicios/detalle/1",$servicioa->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/2",$serviciob->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/3",$servicioc->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/4",$serviciod->nombre) ?></li>
+                                <li><?php echo Html::link("servicios/detalle/5",$servicioe->nombre) ?></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">la empresa</a>
+                            <ul>
+                                <li><?php echo Html::link("empresa","Nuestra Historia") ?></li>
+                                <li><?php echo Html::link("empresa/mision_vision","Misión y Visión") ?></li>
+                                <!--<li><?php //echo Html::link("empresa/presidencia","Mensaje del Presidente") ?></li>
+                                <li><?php //echo Html::link("empresa/junta_directiva","Junta Directiva") ?></li>-->
+                            </ul>
+                        </li>
+                        <li><?php echo Html::link("sucursales","Sucursales") ?></li>
+                        <li><?php echo Html::link("./#promociones","promociones") ?></li>
+                        <li>
+                            <a href="#">requisitos</a>
+                            <ul>
+                                <?php foreach ($requi as $requisi): ?>
+                                    <li><?php echo Html::link("requisitos/detalle/".$requisi->id,$requisi->nombre) ?></li>
+                                <?php endforeach ?>
+                                
+                            </ul>
+                        </li>
+                        <li><?php echo Html::link("./#contacto","contactenos") ?></li>
+                        <li><?php echo Html::link("faq","faq") ?></li>           
+                    </ul>
+                </div>
+            </div>
+        </nav>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Corporacion Pacifico Admin</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<link rel="shortcut icon" href="/img/images/icono.png"/>
+<?php Tag::css('kumbia') ?>
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/css/vendor/animsition.min.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/colorpicker/css/bootstrap-colorpicker.min.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/touchspin/jquery.bootstrap-touchspin.min.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/chosen/chosen.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/summernote/summernote.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/css/main.css">
+<link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/css/style.css">
+
+<!--<script src="//cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>-->
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<?php echo Tag::js('jquery/jquery.min') ?>
+<?php echo Tag::js('jquery/jquery.kumbiaphp') ?>
+
+
+<?php echo Html::includeCss() ?>
+
+</head>
+<body id="oakleaf" class="main_Wrapper">
+	<div id="wrap" class="animsition">
+		<?php View::partial("admin/menu") ?>
+		<?php View::partial("admin/nav") ?>
+		<section id="content">
+			<?php View::content() ?>
+		</section>
+	</div>
+
+
+	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/libscripts.bundle.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/vendorscripts.bundle.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/bootstrapscripts.bundle.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/summernote/summernote.min.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/footable/footable.all.min.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/js/main.js"></script>
+<?php echo Tag::js('combodate') ?><?php echo Tag::js("moment") ?>
+
+	<script type="text/javascript">
+	    $(window).load(function(){
+	        $('#ex1').slider({
+	            formatter: function(value) {
+	                return 'Current value: ' + value;
+	            }
+	        });
+	        $("#ex1").on("slide", function(slideEvt) {
+	            $("#ex1SliderVal").text(slideEvt.value);
+	        });
+
+	        $("#ex2, #ex3, #ex4, #ex5").slider();
+
+	        $('#summernote').summernote({
+	            height: 200
+	        });
+
+	    });
+	</script>
+
+	<script type="text/javascript">
+	$(window).load(function(){
+		$('.footable').footable();
+
+	});
+</script>
+</body>
+</html>

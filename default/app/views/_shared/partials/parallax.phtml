@@ -1,0 +1,14 @@
+<?php $parallax = Load::model("general")->find_by_id("1"); ?>
+<div class="avacus-newslatter-section section-padding" style="background-size:cover;background-attachment: fixed;background-image: url(img/images/familia.jpg);padding-top:100px;padding-bottom:100px">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="news-latter-title">
+                        <h2><span><?php echo $parallax->titulo_am ?></span> <?php echo $parallax->titulo_bl ?></h2><br>
+                        <p><?php echo nl2br($parallax->texto) ?></p>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+</div>
