@@ -1,4 +1,4 @@
-<?php 
+<?php
 class User extends ActiveRecord{
 	public function encriptar($clave = null){
 		if ($clave) {
@@ -12,9 +12,9 @@ class User extends ActiveRecord{
     	$this->validates_uniqueness_of("usuario");
     	$this->validates_uniqueness_of("email");
    	}
-   	public function getInfoUser($id){
-		$user = $this->find("conditions: id = '$id'");
-		return $user;
+ 	public function getInfoUser($id){
+	$user = $this->find("conditions: id = '$id'");
+	return $user;
 	}
 }
 

@@ -3,7 +3,6 @@ Load::models(
     "user","general","banner","servicios","empresa","sucursales",
     "categorias","promociones","requisitos", 'solicitudes');
 
-// Load::lib('excel');
 class AdminController extends AppController
 {
     public function index(){
@@ -34,7 +33,7 @@ class AdminController extends AppController
       View::template("administrador");
       $user = new User();
       if (Auth::is_valid()){
-        $this->usuario = $user->getInfoUser();
+        $this->usuario = $user->getInfoUser(Auth::get('id'));
       }else{
         Flash::valid("Necesita un usuario autenticado");
         Router::redirect("admin");
