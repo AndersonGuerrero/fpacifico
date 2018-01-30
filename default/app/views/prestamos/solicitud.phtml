@@ -220,12 +220,8 @@ $(function(){
               Independiente (micro empresarios)<br>
               <?php echo Form::radio('solicitudes.laboral', 'Otros',array('required'=>'true'))?>
              Otros
-             <!-- <?php echo Form::text('solicitudes.laborals',array(
-               'required'=>'true',
-               'style'=>"display:none",
-               'placeholder'=>"Otros *",
-               'class'=>"form-control"
-             ))?> -->
+             <input id="solicitudes-laboral"
+            class="form-control" placeholder="Otros *" style="display:none">
         </div>
    </div>
   <div class="col-md-12" style="padding:0">
@@ -331,20 +327,23 @@ $(function(){
 <?php echo View::partial("footer") ?>
 
 <script>
-// if($('#solicitudes_laboral8').is(':checked')){
-//   $('#solicitudes_laboral').attr('required', true)
-//   $('#solicitudes_laboral').attr('style', '')
-// }
-//
-// $('#content-laboral').on('change', 'input', function(event) {
-//   if(event.currentTarget.value =='Otros'){
-//     $('#solicitudes_laboral').attr('required', true)
-//     $('#solicitudes_laboral').attr('style', '')
-//   }else{
-//     $('#solicitudes_laboral').attr('required', false)
-//     $('#solicitudes_laboral').attr('style', 'display:none')
-//   }
-// })
+if($('#solicitudes_laboral8').is(':checked')){
+  $('#solicitudes-laboral').attr('required', true)
+  $('#solicitudes-laboral').attr('style', '')
+  $('#solicitudes-laboral').attr('name', 'solicitudes[laboral]')
+}
+
+$('#content-laboral').on('change', 'input', function(event) {
+  if(event.currentTarget.value =='Otros'){
+    $('#solicitudes-laboral').attr('required', true)
+    $('#solicitudes-laboral').attr('style', '')
+    $('#solicitudes-laboral').attr('name', 'solicitudes[laboral]')
+  }else{
+    $('#solicitudes-laboral').attr('required', false)
+    $('#solicitudes-laboral').attr('style', 'display:none')
+    $('#solicitudes-laboral').attr('name', '')
+  }
+})
 
 function updateTextInput(val) {
   document.getElementById('valor').value=val;
