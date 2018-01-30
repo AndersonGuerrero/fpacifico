@@ -1,7 +1,7 @@
 <?php
 Load::models(
     "user","general","banner","servicios","empresa","sucursales",
-    "categorias","promociones","requisitos", 'solicitudes');
+    "categorias","promociones","requisitos", 'solicitudes', 'contactos');
 
 // Load::lib('excel');
 class AdminController extends AppController
@@ -356,6 +356,20 @@ class AdminController extends AppController
       }
     }
 
+    public function ver_contacto($id){
+      View::template("general");
+      if (Auth::is_valid()){
+        $contactos = new Contactos();
+        $servicios = new Servicios();
+        $this->contactos = $contactos->find_by_id((int)$id);
+        $this->servicios = $servicios->find();
+        $this->servicio = $servicios->find_by_id((int)$this->contactos->servicios_id);
+      }else{
+        Flash::valid("Necesita un usuario autenticado");
+        Router::redirect("admin");
+      }
+    }
+
     public function editar_servicio($id){
       View::template("general");
       if (Auth::is_valid()){
@@ -440,6 +454,51 @@ class AdminController extends AppController
         $this->render(NULL);
       }
     }
+
+    public function contactosFile(){
+      View::template(NULL); //Agregado para que no envié todo el html(Beta2). En Beta1 $this->template=NULL
+      View::response('xls');
+      $contactos = new Contactos();
+      if(!$this->contactos = $contactos->find()){
+        Flash::warning('No existen registros para exportar');
+        $this->render(NULL);
+      }
+    }
+
+    public function contactos(){
+     View::template("general");
+     if (Auth::is_valid()){
+       $order = 'order:  created_at desc';
+       $conditions = FALSE;
+       $this->servicios = Load::model("servicios")->find();
+       if(Input::post("servicio")){
+         $conditions = 'conditions:';
+         $and = '';
+         if(Input::post("servicio")){
+           $conditions = $conditions.$and.' servicios_id="'.Input::post("servicio").'"';
+           $and = ' and';
+         }
+       }
+       if($conditions){
+         $this->conditions = $conditions;
+         $this->contactos = (New Contactos)->find($conditions, $order);
+       }else{
+         $this->contactos = (New Contactos)->find($order);
+       }
+
+       if(Input::post("export")){
+        View::template(NULL);
+         View::response('xls');
+         if(!$this->contactos){
+           Flash::warning('No existen registros para exportar');
+           $this->render(NULL);
+         }
+       }
+     }else{
+       Flash::valid("Necesita un usuario autenticado");
+       Router::redirect("admin");
+     }
+   }
 
     public function solicitudes(){
      View::template("general");
@@ -630,6 +689,25 @@ class AdminController extends AppController
             Flash::error('Falló Operación');
         }
          Router::redirect("admin/solicitudes/");
+
+     }else{
+        Flash::valid("Necesita un usuario autenticado");
+        Router::redirect("admin");
+      }
+    }
+
+    public function eliminar_contacto($id)
+    {
+     if (Auth::is_valid()){
+        $contactos = new Contactos();
+        $contactos = Load::model("contactos")->find_by_id($id);
+
+        if ($contactos->delete((int)$id)) {
+            Flash::valid('Operación exitosa');
+        }else{
+            Flash::error('Falló Operación');
+        }
+         Router::redirect("admin/contactos/");
 
      }else{
         Flash::valid("Necesita un usuario autenticado");

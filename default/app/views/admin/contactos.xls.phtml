@@ -1,0 +1,25 @@
+<?php
+require dirname(__FILE__) . '/php-excel.class.php';
+$data = array();
+$data[] = array(
+  'Nombre completo', 'Telefono', 'E-Mail', 'Interesado en',
+  'Como supo de nosotros');
+foreach ($contactos as $key => $value) {
+  $servicio = NULL;
+  foreach ($servicios as $key => $value1) {
+    if($value->servicios_id == $value1->id){
+      $servicio = $value1;
+    }
+  }
+  $data[] = array(
+    $value->nombre_completo,
+    $value->telefono,
+    $value->correo,
+    $servicio->nombre,
+    $value->como_supo
+  );
+}
+$xls = new Excel_XML;
+$xls->addWorksheet('Contactos', $data);
+$xls->sendWorkbook('contactos-'.(new Date()).'.xls');
+?>
