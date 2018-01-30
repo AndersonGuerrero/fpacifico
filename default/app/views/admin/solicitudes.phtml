@@ -1,5 +1,6 @@
 <div class="page static-page-tables">
   <div class="bg-light lter b-b wrapper-md mb-10">
+    <form  action="" method="post">
       <div class="row">
         <div class="col-sm-12 col-xs-12">
           <h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
@@ -9,60 +10,59 @@
             <i class="fa fa-fw fa-file-excel-o"></i> Exportar</button>
         </div>
       </div>
-      <div class="row">
-        <form  action="" method="post">
-          <div class="col-sm-2 col-xs-2">
-              <select class="form-control" name="servicio">
-                <option value="">Todo Servicio</option>
-                <?php foreach ($servicios as $key => $value): ?>
-                  <option <?php if(Input::post("servicio")==$value->id) echo "selected" ?> value="<?php echo $value->id?>"><?php echo $value->nombre?></option>
-                <?php endforeach; ?>
-              </select>
-          </div>
-          <div class="col-sm-2 col-xs-2">
-              <select class="form-control" name="salario">
-                <option value="">Todo Salario</option>
-                <option <?php if(Input::post("salario") == "$ 500") echo "selected" ?> value="$ 500">$ 500</option>
-                <option <?php if(Input::post("salario") == "$ 600") echo "selected" ?> value="$ 600">$ 600</option>
-                <option <?php if(Input::post("salario") == "$ 700") echo "selected" ?> value="$ 700">$ 700</option>
-                <option <?php if(Input::post("salario") == "$ 800") echo "selected" ?> value="$ 800">$ 800</option>
-                <option <?php if(Input::post("salario") == "$ 900") echo "selected" ?> value="$ 900">$ 900</option>
-                <option <?php if(Input::post("salario") == "$ 1,000") echo "selected" ?> value="$ 1,000">$ 1,000</option>
-                <option <?php if(Input::post("salario") == "$ 1,500") echo "selected" ?> value="$ 1,500">$ 1,500</option>
-                <option <?php if(Input::post("salario") == "$ 2,000") echo "selected" ?> value="$ 2,000">$ 2,000</option>
-                <option <?php if(Input::post("salario") == "$ 3,500") echo "selected" ?> value="$ 3,500">$ 3,500</option>
-                <option <?php if(Input::post("salario") == "$ 4,000 ó más") echo "selected" ?> value="$ 4,000 ó más">$ 4,000 ó más</option>
-              </select>
-          </div>
-          <div class="col-sm-2 col-xs-2">
-              <select class="form-control" name="laboral">
-                <option value="">Todos Laborales</option>
-                <option <?php if(Input::post("laboral") == "Fuerza Pública") echo "selected" ?> value="Fuerza Pública">Fuerza Pública</option>
-                <option <?php if(Input::post("laboral") == "Educadores") echo "selected" ?> value="Educadores">Educadores</option>
-                <option <?php if(Input::post("laboral") == "Jubilados") echo "selected" ?> value="Jubilados">Jubilados</option>
-                <option <?php if(Input::post("laboral") == "Gobierno Central") echo "selected" ?> value="Gobierno Central">Gobierno Central</option>
-                <option <?php if(Input::post("laboral") == "Entidades Autónomas y Semi-autónomas") echo "selected" ?> value="Entidades Autónomas y Semi-autónomas">Entidades Autónomas y Semi-autónomas</option>
-                <option <?php if(Input::post("laboral") == "ACP") echo "selected" ?> value="ACP">ACP</option>
-                <option <?php if(Input::post("laboral") == "Empresa Privada") echo "selected" ?> value="Empresa Privada">Empresa Privada</option>
-                <option <?php if(Input::post("laboral") == "Independiente (micro empresarios)") echo "selected" ?> value="Independiente (micro empresarios)">Independiente (micro empresarios)</option>
-              </select>
-          </div>
-          <div class="col-sm-2 col-xs-2">
-              <select class="form-control" name="sucursal">
-                <option value="">Toda Sucursal</option>
-                <?php foreach ($sucursales as $key => $value): ?>
-                  <option <?php if(Input::post("sucursal")==$value->id) echo "selected" ?> value="<?php echo $value->id?>"><?php echo $value->nombre?></option>
-                <?php endforeach; ?>
-              </select>
-          </div>
+        <div class="row">
+            <div class="col-sm-2 col-xs-2">
+                <select class="form-control" name="servicio">
+                  <option value="">Todo Servicio</option>
+                  <?php foreach ($servicios as $key => $value): ?>
+                    <option <?php if(Input::post("servicio")==$value->id) echo "selected" ?> value="<?php echo $value->id?>"><?php echo $value->nombre?></option>
+                  <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <select class="form-control" name="salario">
+                  <option value="">Todo Salario</option>
+                  <option <?php if(Input::post("salario") == "$ 500") echo "selected" ?> value="$ 500">$ 500</option>
+                  <option <?php if(Input::post("salario") == "$ 600") echo "selected" ?> value="$ 600">$ 600</option>
+                  <option <?php if(Input::post("salario") == "$ 700") echo "selected" ?> value="$ 700">$ 700</option>
+                  <option <?php if(Input::post("salario") == "$ 800") echo "selected" ?> value="$ 800">$ 800</option>
+                  <option <?php if(Input::post("salario") == "$ 900") echo "selected" ?> value="$ 900">$ 900</option>
+                  <option <?php if(Input::post("salario") == "$ 1,000") echo "selected" ?> value="$ 1,000">$ 1,000</option>
+                  <option <?php if(Input::post("salario") == "$ 1,500") echo "selected" ?> value="$ 1,500">$ 1,500</option>
+                  <option <?php if(Input::post("salario") == "$ 2,000") echo "selected" ?> value="$ 2,000">$ 2,000</option>
+                  <option <?php if(Input::post("salario") == "$ 3,500") echo "selected" ?> value="$ 3,500">$ 3,500</option>
+                  <option <?php if(Input::post("salario") == "$ 4,000 ó más") echo "selected" ?> value="$ 4,000 ó más">$ 4,000 ó más</option>
+                </select>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <select class="form-control" name="laboral">
+                  <option value="">Todos Laborales</option>
+                  <option <?php if(Input::post("laboral") == "Fuerza Pública") echo "selected" ?> value="Fuerza Pública">Fuerza Pública</option>
+                  <option <?php if(Input::post("laboral") == "Educadores") echo "selected" ?> value="Educadores">Educadores</option>
+                  <option <?php if(Input::post("laboral") == "Jubilados") echo "selected" ?> value="Jubilados">Jubilados</option>
+                  <option <?php if(Input::post("laboral") == "Gobierno Central") echo "selected" ?> value="Gobierno Central">Gobierno Central</option>
+                  <option <?php if(Input::post("laboral") == "Entidades Autónomas y Semi-autónomas") echo "selected" ?> value="Entidades Autónomas y Semi-autónomas">Entidades Autónomas y Semi-autónomas</option>
+                  <option <?php if(Input::post("laboral") == "ACP") echo "selected" ?> value="ACP">ACP</option>
+                  <option <?php if(Input::post("laboral") == "Empresa Privada") echo "selected" ?> value="Empresa Privada">Empresa Privada</option>
+                  <option <?php if(Input::post("laboral") == "Independiente (micro empresarios)") echo "selected" ?> value="Independiente (micro empresarios)">Independiente (micro empresarios)</option>
+                </select>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <select class="form-control" name="sucursal">
+                  <option value="">Toda Sucursal</option>
+                  <?php foreach ($sucursales as $key => $value): ?>
+                    <option <?php if(Input::post("sucursal")==$value->id) echo "selected" ?> value="<?php echo $value->id?>"><?php echo $value->nombre?></option>
+                  <?php endforeach; ?>
+                </select>
+            </div>
 
-          <div class="col-sm-1 col-xs-1">
-            <button style="margin-top: 25px;" type="submit" class="btn btn-raised btn-primary">
-              <i class="fa fa-fw fa-filter"></i>
-              Filtrar</button>
-          </div>
-        </form>
-      </div>
+            <div class="col-sm-1 col-xs-1">
+              <button style="margin-top: 25px;" type="submit" class="btn btn-raised btn-primary">
+                <i class="fa fa-fw fa-filter"></i>
+                Filtrar</button>
+            </div>
+        </div>
+    </form>
   </div>
   <div class="row">
       <div class="col-md-12">

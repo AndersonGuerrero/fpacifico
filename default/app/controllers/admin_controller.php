@@ -479,13 +479,12 @@ class AdminController extends AppController
        }
 
        if(Input::post("export")){
-         View::template(NULL);
+        View::template(NULL);
          View::response('xls');
          if(!$this->solicitudes){
            Flash::warning('No existen registros para exportar');
            $this->render(NULL);
          }
-
        }
      }else{
        Flash::valid("Necesita un usuario autenticado");
