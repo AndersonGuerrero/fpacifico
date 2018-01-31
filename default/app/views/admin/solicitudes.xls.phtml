@@ -2,24 +2,26 @@
 require dirname(__FILE__) . '/php-excel.class.php';
 $data = array();
 $data[] = array(
-  'Nombre', 'Apellido', 'E-Mail', 'Celular',
-  'Laboral', 'Salario', 'Monto deseado', 'Servicio');
+  'Nombre', 'Apellido', 'Correo','Correo2', 'Celular', 'Cedula',
+  'Sexo', 'Servicio', 'Laboral', 'Salario', 'Monto deseado', 'Ocupacion',
+  'Tiempo de servicio', 'Lugar de trabajo', 'Sucursal mas cercana');
 foreach ($solicitudes as $key => $value) {
-  $servicio = NULL;
-  foreach ($servicios as $key => $value1) {
-    if($value->servicios_id == $value1->id){
-      $servicio = $value1;
-    }
-  }
   $data[] = array(
     $value->nombre,
     $value->apellido,
     $value->correo,
+    $value->correo2,
     $value->celular,
+    $value->provincia.'-'.$value->letra.'-'.$value->folio.'-'.$value->asiento,
+    $value->sexo,
+    $value->servicio,
     $value->laboral,
     $value->salario,
     $value->monto_deseado,
-    $servicio->nombre
+    $value->ocupacion,
+    $value->tiempo_servicio,
+    $value->lugar_trabajo,
+    $value->sucursal
   );
 }
 $xls = new Excel_XML;

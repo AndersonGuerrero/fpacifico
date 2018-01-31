@@ -1,0 +1,28 @@
+<?php
+require dirname(__FILE__) . '/php-excel.class.php';
+$data = array();
+$data[] = array(
+  'Nombre', 'Apellido', 'Correo','Correo2', 'Celular', 'Cedula',
+  'Sexo', 'Servicio', 'Laboral', 'Salario', 'Monto deseado', 'Ocupacion',
+  'Tiempo de servicio', 'Lugar de trabajo', 'Sucursal mas cercana');
+  $data[] = array(
+    $solicitud->nombre,
+    $solicitud->apellido,
+    $solicitud->correo,
+    $solicitud->correo2,
+    $solicitud->celular,
+    $solicitud->provincia.'-'.$solicitud->letra.'-'.$solicitud->folio.'-'.$solicitud->asiento,
+    $solicitud->sexo,
+    $solicitud->servicio,
+    $solicitud->laboral,
+    $solicitud->salario,
+    $solicitud->monto_deseado,
+    $solicitud->ocupacion,
+    $solicitud->tiempo_servicio,
+    $solicitud->lugar_trabajo,
+    $solicitud->sucursal
+  );
+$xls = new Excel_XML;
+$xls->addWorksheet('Solicitud', $data);
+$xls->sendWorkbook('solicitud-'.$solicitud->id.'.xls');
+?>

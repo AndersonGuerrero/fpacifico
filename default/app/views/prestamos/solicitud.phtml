@@ -45,7 +45,7 @@
             </div>
         </div>
     <?php echo Form::open() ?>
-    <?php echo Form::hidden('solicitudes.servicios_id', NULL, $servicio->id);?>
+    <?php echo Form::hidden('solicitudes.servicio', NULL, $servicio->nombre);?>
     <div class="loging-form">
       <div class="col-md-12" style="padding:0">
           <div class="col-md-6" style="padding:5px">
@@ -292,11 +292,12 @@ $(function(){
   </div>
     <div class="col-md-6" style="padding:5px">
         <div class="single-input full-input selectarrow form-control" style="margin-top:0;margin-bottom:0">
-          <?php echo Form::dbSelect('solicitudes.sucursales_id', $show = NULL,
-          $data = NULL,'Sucursal mas cercana',
-        $attrs = array(
-          'required'=>'true'
-        ));?>
+          <select name="solicitudes[sucursal]" required>
+            <option value="">Sucursal mas cercana</option>
+            <?php foreach ($sucursales as $key => $value): ?>
+              <option value="<?php echo $value->nombre ?>"><?php echo $value->nombre ?></option>
+            <?php endforeach; ?>
+          </select>
         </div>
   </div>
   <div class="col-md-12" style="padding:5px">

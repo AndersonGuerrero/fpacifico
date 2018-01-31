@@ -470,24 +470,44 @@ class AdminController extends AppController
      if (Auth::is_valid()){
        $order = 'order:  created_at desc';
        $conditions = FALSE;
-       $this->servicios = Load::model("servicios")->find();
-       if(Input::post("servicio")){
-         $conditions = 'conditions:';
-         $and = '';
-         if(Input::post("servicio")){
-           $conditions = $conditions.$and.' servicios_id="'.Input::post("servicio").'"';
-           $and = ' and';
+       $this->splitstr = array();
+       $str_temp = '';
+       $this->contactos_count_total = (New Contactos)->count();
+       if(Input::post("search")){
+         foreach (str_split(Input::post("search")) as $key => $value) {
+           if($value == ' '){
+             $this->splitstr[] = $str_temp;
+             $str_temp = '';
+           }else{
+             $str_temp = $str_temp.$value;
+           }
+           if( strlen(Input::post("search"))-1 == $key){
+             $this->splitstr[] = $str_temp;
+           }
          }
-       }
-       if($conditions){
-         $this->conditions = $conditions;
+         $conditions = 'conditions: ';
+         $count = 0;
+         foreach ($this->splitstr as $key => $value) {
+           if($count == 0){
+             $count++;
+             $conditions = $conditions.' servicio like "%'.$value.'%"';
+           }else{
+             $conditions = $conditions.' or servicio like "%'.$value.'%"';
+           }
+           $conditions = $conditions.' or nombre_completo like "%'.$value.'%"';
+           $conditions = $conditions.' or telefono like "%'.$value.'%"';
+           $conditions = $conditions.' or correo like "%'.$value.'%"';
+           $conditions = $conditions.' or como_supo like "%'.$value.'%"';
+         }
+
          $this->contactos = (New Contactos)->find($conditions, $order);
        }else{
          $this->contactos = (New Contactos)->find($order);
        }
+       $this->contactos_count = count($this->contactos);
 
        if(Input::post("export")){
-        View::template(NULL);
+         View::template(NULL);
          View::response('xls');
          if(!$this->contactos){
            Flash::warning('No existen registros para exportar');
@@ -500,45 +520,63 @@ class AdminController extends AppController
      }
    }
 
+   public function exportar_solicitud($id){
+     $this->solicitud = (New Solicitudes)->find_by_id((int)$id);
+     View::template(NULL);
+   }
+
+   public function exportar_contacto($id){
+     $this->contacto = (New Contactos)->find_by_id((int)$id);
+     View::template(NULL);
+   }
+
     public function solicitudes(){
      View::template("general");
      if (Auth::is_valid()){
        $order = 'order:  created_at desc';
        $conditions = FALSE;
-       $this->servicios = Load::model("servicios")->find();
-       $this->sucursales = Load::model("sucursales")->find();
-       if(Input::post("salario") or
-          Input::post("servicio") or
-          Input::post("laboral") or
-          Input::post("sucursal")){
-         $conditions = 'conditions:';
-         $and = '';
-         if(Input::post("salario")){
-           $conditions = $conditions.' salario="'.Input::post("salario").'"';
-           $and = ' and';
+       $this->splitstr = array();
+       $str_temp = '';
+       $this->solicitudes_count_total = (New Solicitudes)->count();
+       if(Input::post("search")){
+         foreach (str_split(Input::post("search")) as $key => $value) {
+           if($value == ' '){
+             $this->splitstr[] = $str_temp;
+             $str_temp = '';
+           }else{
+             $str_temp = $str_temp.$value;
+           }
+           if( strlen(Input::post("search"))-1 == $key){
+             $this->splitstr[] = $str_temp;
+           }
          }
-         if(Input::post("servicio")){
-           $conditions = $conditions.$and.' servicios_id="'.Input::post("servicio").'"';
-           $and = ' and';
+         $conditions = 'conditions: ';
+         $count = 0;
+         foreach ($this->splitstr as $key => $value) {
+           if($count == 0){
+             $count++;
+             $conditions = $conditions.' servicio like "%'.$value.'%"';
+           }else{
+             $conditions = $conditions.' or servicio like "%'.$value.'%"';
+           }
+           $conditions = $conditions.' or nombre like "%'.$value.'%"';
+           $conditions = $conditions.' or apellido like "%'.$value.'%"';
+           $conditions = $conditions.' or salario like "%'.$value.'%"';
+           $conditions = $conditions.' or monto_deseado like "%'.$value.'%"';
+           $conditions = $conditions.' or laboral like "%'.$value.'%"';
+           $conditions = $conditions.' or sexo like "%'.$value.'%"';
+           $conditions = $conditions.' or created_at like "%'.$value.'%"';
+          //  $conditions = $conditions.' or celular like "%'.$value.'%"';
          }
-         if(Input::post("laboral")){
-           $conditions = $conditions.$and.' laboral="'.Input::post("laboral").'"';
-           $and = ' and';
-         }
-         if(Input::post("sucursal")){
-           $conditions = $conditions.$and.' sucursales_id="'.Input::post("sucursal").'"';
-           $and = ' and';
-         }
-       }
-       if($conditions){
-         $this->conditions = $conditions;
+
          $this->solicitudes = (New Solicitudes)->find($conditions, $order);
        }else{
          $this->solicitudes = (New Solicitudes)->find($order);
        }
+       $this->solicitudes_count = count($this->solicitudes);
 
        if(Input::post("export")){
-        View::template(NULL);
+         View::template(NULL);
          View::response('xls');
          if(!$this->solicitudes){
            Flash::warning('No existen registros para exportar');

@@ -1,0 +1,18 @@
+<?php
+require dirname(__FILE__) . '/php-excel.class.php';
+$data = array();
+$data[] = array(
+  'Nombre completo', 'Telefono', 'E-Mail', 'Interesado en',
+  'Como supo de nosotros', 'Mensaje');
+  $data[] = array(
+    $contacto->nombre_completo,
+    $contacto->telefono,
+    $contacto->correo,
+    $contacto->servicio,
+    $contacto->como_supo,
+    $contacto->mensaje
+  );
+$xls = new Excel_XML;
+$xls->addWorksheet('Contacto', $data);
+$xls->sendWorkbook('contacto-'.$contacto->id.'.xls');
+?>

@@ -9,7 +9,8 @@ class PrestamosController extends AppController
     public function solicitud($id)
     {
     	View::template("solicitud");
-    	$this->servicio = Load::model("servicios")->find_by_id($id);
+      $this->servicio = Load::model("servicios")->find_by_id($id);
+    	$this->sucursales = Load::model("sucursales")->find();
       if (Input::haspost("solicitudes")){
         $solicitudes = new Solicitudes(Input::post("solicitudes"));
         if($solicitudes->save()){

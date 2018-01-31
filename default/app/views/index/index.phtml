@@ -223,10 +223,10 @@
 
                             <div class="col-xs-12">
                                 <div class="select-arrow">
-                                    <select required name="contactos[servicios_id]">
+                                    <select required name="contactos[servicio]">
                                       <option value="">Interesado en</option>
                                       <?php foreach ($servicios as $key => $value): ?>
-                                        <option value="<?php echo $value->id?>"><?php echo $value->nombre?></option>
+                                        <option value="<?php echo $value->nombre?>"><?php echo $value->nombre?></option>
                                       <?php endforeach; ?>
                                     </select>
                                 </div>
