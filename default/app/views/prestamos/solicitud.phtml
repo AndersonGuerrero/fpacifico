@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-    <?php echo Form::open() ?>
+    <form action="" id="solicitudes-form" method="post">
     <?php echo Form::hidden('solicitudes.servicio', NULL, $servicio->nombre);?>
     <div class="loging-form">
       <div class="col-md-12" style="padding:0">
@@ -312,14 +312,20 @@ $(function(){
         </div>
         <div class="col-md-12" style="padding:5px">
         <div class="col-md-4" style="padding:5px">
-          <button class="login-btn text-left">Enviar Ahora</button>
+          <button
+            data-callback='onSubmit'
+            class="g-recaptcha login-btn text-left"
+            data-sitekey="6Lf2kkMUAAAAAJzt5M9hK5X_hgCKEOpYELGhLsuf"
+            data-callback="YourOnSubmitFn">
+            Enviar Ahora
+          </button>
         </div>
         <div class="col-md-8" style="padding:5px">
           <label><?php echo View::content();?></label>
         </div>
         </div>
     </div>
-   <?php echo Form::close() ?>
+    </form>
         </div>
     </div>
 </div>
@@ -367,4 +373,10 @@ function validar(e){
           return false;
       }
   }
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("solicitudes-form").submit();
+   }
 </script>
