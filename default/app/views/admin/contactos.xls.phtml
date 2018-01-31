@@ -14,6 +14,6 @@ foreach ($contactos as $key => $value) {
   );
 }
 $xls = new Excel_XML;
-$xls->addWorksheet('Solicitud', $data);
-$xls->sendWorkbook('solicitid-'.(new Date()).'.xls');
+$xls->addWorksheet('Contactos', $data);
+$xls->sendWorkbook('contactos-'.(new Date()).'.xls');
 ?>
