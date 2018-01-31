@@ -18,7 +18,9 @@ class PrestamosController extends AppController
       // 'remoteip' => $_SERVER['REMOTE_ADDR']
       // );
       // $response = http_post_fields("https://www.google.com/recaptcha/api/siteverify", $fields)
-      // $response['success'] == TRUE
+      // $response = json_decode($response, true)
+      // if($response['success'] == true){
+      //  }
       // }
       if (Input::haspost("solicitudes")){
         $solicitudes = new Solicitudes(Input::post("solicitudes"));
