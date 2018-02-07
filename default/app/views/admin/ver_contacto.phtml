@@ -6,12 +6,6 @@
                     <div class="boxs-body p-0">
                         <div role="tabpanel">
                             <ul class="nav nav-tabs tabs-dark-t" role="tablist">
-                              <li role="presentation">
-                                <a href="<?php echo PUBLIC_PATH.'admin/contactos/' ?>">
-                                  <i class="fa fa-fw fa-mail-reply"></i>
-                                  Regresar a listado
-                                </a>
-                              </li>
                                 <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">
                                   Contacto de <?php echo $contactos->servicio ?></a>
                                 </li>
@@ -100,6 +94,10 @@
                                           </div>
                                         </div>
                                       </div>
+                                        <a style="float:right;" href="<?php echo PUBLIC_PATH.'admin/contactos/' ?>">
+                                          <i class="fa fa-fw fa-mail-reply"></i>
+                                          Regresar a listado
+                                        </a>
                                           <?php echo Form::close() ?>
                                       </div>
                                     </div>
