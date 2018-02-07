@@ -1,4 +1,4 @@
-<div class="page static-page-tables"> 
+<div class="page static-page-tables">
             <!-- bradcome -->
             <div class="bg-light lter b-b wrapper-md mb-10">
                 <div class="row">
@@ -14,21 +14,21 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- row -->
             <div class="row">
                 <div class="col-md-12">
                     <section class="boxs ">
                         <div class="boxs-header dvd dvd-btm">
                             <h1 class="custom-font"><strong>Listado de </strong> Promociones</h1>
-                            
+
                         </div>
                         <div class="boxs-body p-0">
                             <div class="table-responsive">
                                 <table class="table table-middle">
                                     <thead>
                                         <tr>
-                                      
+
                                             <th>Imagen</th>
                                             <th>Nombre</th>
                                             <th>Editar</th>
@@ -36,7 +36,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($promociones as $value) {
-                              
+
                                             echo
                                             '
                                              <tr>
@@ -44,7 +44,7 @@
                                             <td>'.$value->nombre.'</td>
                                             <td class="btn-operation">
                                                 '.Html::link("admin/editar_promocion/$value->id",'<i class="fa fa-edit"></i>','class="btn btn-sm btn-success"').'
-                                                '.Js::link("admin/deletepromocion/$value->id",'<span class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></span>',"¿Esta segur@ que desea eliminar esta promocion?").'    
+                                                '.Js::link("admin/deletepromocion/$value->id",'<span class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></span>',"¿Esta segur@ que desea eliminar esta promocion?").'
                                             </td>
                                             </tr>
                                         ';

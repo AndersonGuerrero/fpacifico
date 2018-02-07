@@ -9,15 +9,11 @@
                               <li role="presentation">
                                 <a href="<?php echo PUBLIC_PATH.'admin/contactos/' ?>">
                                   <i class="fa fa-fw fa-mail-reply"></i>
+                                  Regresar a listado
                                 </a>
                               </li>
                                 <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">
                                   Contacto de <?php echo $contactos->servicio ?></a>
-                                </li>
-                                <li role="presentation" style="float: right;">
-                                  <a href="<?php echo PUBLIC_PATH.'admin/eliminar_contacto/'.$contactos->id ?>" aria-controls="general">
-                                    Eliminar
-                                  </a>
                                 </li>
                                 <li role="presentation" style="float: right;">
                                   <a href="<?php echo PUBLIC_PATH.'admin/exportar_contacto/'.$contactos->id ?>" aria-controls="general">
@@ -29,11 +25,11 @@
                                  <div role="tabpanel" class="tab-pane active" id="general">
                                       <div class="wrap-reset">
                                         <?php echo Form::open() ?>
-                                        <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
-                                           <h4 style="font-weight:700;margin-top:20px">Datos del contacto</h4>
+                                        <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;margin-bottom:10px">
+                                           <h4 style="font-weight:700;margin-top:0px">Datos del contacto</h4>
                                          </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Nombre completo:</label>
                                                 <?php echo Form::text('contactos.nombre_completo',array(
                                                   'class'=>'form-control',
@@ -43,7 +39,7 @@
                                                   'placeholder'=>'Nombre  *'
                                                 ));?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Correo:</label>
                                                 <?php echo Form::text('contactos.correo',array(
                                                   'class'=>'form-control',
@@ -55,7 +51,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Telefono:</label>
                                                 <?php echo Form::input('text', '',array(
                                                   'required'=>'true',
@@ -66,7 +62,7 @@
                                                 $contactos->telefono
                                               );?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Interesado en:</label>
                                                 <?php echo Form::input('text', '',array(
                                                   'required'=>'true',
@@ -79,7 +75,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Como supo de nosotros:</label>
                                                 <?php echo Form::text('contactos.como_supo',array(
                                                   'required'=>'true',
@@ -90,7 +86,7 @@
                                                 ));?>
                                             </div>
 
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Mensaje:</label>
                                                 <?php echo Form::text('contactos.mensaje',array(
                                                   'required'=>'true',

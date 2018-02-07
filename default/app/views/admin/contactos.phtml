@@ -12,7 +12,7 @@
       </div>
         <div class="row">
             <div class="col-sm-4 col-xs-4">
-              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="nombre, Interesado en, Como s...">
+              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="Nombre, Interesado en, Como supo...">
             </div>
             <div class="col-sm-1 col-xs-1">
               <button style="margin-top: 25px;" type="submit" class="btn btn-raised btn-primary">
@@ -33,37 +33,39 @@
               </div>
               <div class="boxs-body p-0">
                   <div class="table-responsive">
-                      <table class="table table-middle">
+                      <table id="table-contactos" class="table table-middle">
                           <thead>
                               <tr>
+                                  <th width="1px"></th>
                                   <th>Nombre completo</th>
                                   <th>Telefono</th>
                                   <th>Correo</th>
                                   <th>Interesado en</th>
                                   <th>Como supo de nosotros</th>
                                   <th>Fecha</th>
-                                  <th></th>
+                                  <th width="70px"></th>
                               </tr>
                           </thead>
                           <tbody>
                               <?php foreach ($contactos as $value) {
                                   echo '
                                   <tr>
+                                  <td>'.$value->id.'</td>
                                   <td>'.$value->nombre_completo.'</td>
                                   <td>'.$value->telefono.'</td>
                                   <td>'.$value->correo.'</td>
                                   <td>'.$value->servicio.'</td>
                                   <td>'.$value->como_supo.'</td>
-                                  <td>'.$value->created_at.'</td>
+                                  <td>'.(new DateTime($value->created_at))->format('Y-m-d').'</td>
                                   <td class="btn-operation">
                                       '.Html::link(
                                       "admin/ver_contacto/$value->id",
                                       '<i class="fa fa-eye"></i>',
-                                      'class="btn btn-sm btn-success"').'
+                                      'class="btn btn-sm btn-success" style="width:30px;padding:5px;"').'
                                       '.Js::link(
                                         "admin/eliminar_contacto/$value->id",
-                                        '<span class="btn btn-sm btn-danger">
-                                        <i class="fa fa-trash-o"></i></span>',
+                                        '<div class="btn btn-sm btn-danger" title="Eliminar" style="width:30px;padding:5px;">
+                                        <i class="fa fa-trash-o"></i></div>',
                                         "¿Esta segur@ que desea eliminar el contacto?").'
                                   </td>
                                   </tr>
@@ -84,4 +86,50 @@
     $('form').submit()
     $('form input[name="export"]').remove()
   })
+  $(function() {
+    const spanish = {
+      sLengthMenu: 'Mostrar _MENU_ registros',
+      sZeroRecords: 'No se encontraron resultados',
+      sEmptyTable: 'Ningún dato disponible en esta tabla',
+      sInfo: '_START_ a _END_ de _TOTAL_',
+      sInfoEmpty: '0 al 0 de 0',
+      sInfoFiltered: '(filtrado de un total de _MAX_ registros)',
+      sInfoPostFix: '',
+      sSearch: '<i class="fa fa-search placeholder-icon-table"></i>',
+      searchPlaceholder: 'Buscar...',
+      sUrl: '',
+      sInfoThousands: '',
+      sLoadingRecords: 'Cargando...',
+      oPaginate: {
+        sFirst: 'Primera',
+        sLast: 'Ultima',
+        sNext: 'Siguiente',
+        sPrevious: 'Anterior'
+      },
+      oAria: {
+        sSortAscending: ': Activar para ordenar la columna de manera ascendente',
+        sSortDescending: ': Activar para ordenar la columna de manera descendente'
+      }
+    }
+    $('#table-contactos').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": false,
+      "autoWidth": false,
+      language: spanish
+    })
+  })
 </script>
+<style media="screen">
+  .paginate_button{
+    color: #777 !important;
+    cursor: pointer;
+    padding: 10px !important;
+  }
+  .dataTables_paginate{
+    float: none !important;
+    text-align:center !important;
+  }
+</style>

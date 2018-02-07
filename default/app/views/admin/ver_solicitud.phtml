@@ -9,15 +9,11 @@
                               <li role="presentation">
                                 <a href="<?php echo PUBLIC_PATH.'admin/solicitudes/' ?>">
                                   <i class="fa fa-fw fa-mail-reply"></i>
+                                  Regresar a listado
                                 </a>
                               </li>
                                 <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">
                                   Solicitud de <?php echo $solicitudes->servicio ?></a>
-                                </li>
-                                <li role="presentation" style="float: right;">
-                                  <a href="<?php echo PUBLIC_PATH.'admin/eliminar_solicitud/'.$solicitudes->id ?>" aria-controls="general">
-                                    Eliminar
-                                  </a>
                                 </li>
                                 <li role="presentation" style="float: right;">
                                   <a href="<?php echo PUBLIC_PATH.'admin/exportar_solicitud/'.$solicitudes->id ?>" aria-controls="general">
@@ -29,11 +25,11 @@
                                  <div role="tabpanel" class="tab-pane active" id="general">
                                       <div class="wrap-reset">
                                         <?php echo Form::open() ?>
-                                        <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
-                                           <h4 style="font-weight:700;margin-top:20px">Datos personales</h4>
+                                        <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;margin-bottom:10px">
+                                           <h4 style="font-weight:700;margin-top:0px">Datos personales</h4>
                                          </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Nombre:</label>
                                                 <?php echo Form::text('solicitudes.nombre',array(
                                                   'class'=>'form-control',
@@ -43,7 +39,7 @@
                                                   'placeholder'=>'Nombre  *'
                                                 ));?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Apellido:</label>
                                                 <?php echo Form::text('solicitudes.apellido',array(
                                                   'class'=>'form-control',
@@ -55,7 +51,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Fecha de Nacimiento:</label>
                                                 <?php echo Form::input('text', '',array(
                                                   'required'=>'true',
@@ -66,7 +62,7 @@
                                                 $solicitudes->fecha_nac
                                               );?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Cedula:</label>
                                                 <?php echo Form::input('text', '',array(
                                                   'required'=>'true',
@@ -80,7 +76,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-12" style="display: -webkit-inline-box;">
+                                            <div class="col-md-12" style="display: -webkit-inline-box;">
                                               <label for="first-name" style="margin-right: 18px;">Sexo:</label>
                                               <?php if ($solicitudes->sexo =='femenino'){ ?>
                                                 <?php echo Html::img("images/femenino.png","",' width="20px"') ?>
@@ -91,11 +87,11 @@
                                                   <?php } ?>
                                             </div>
                                           </div>
-                                          <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
+                                          <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;margin-bottom:10px">
                                              <h4 style="font-weight:700;margin-top:20px">Datos de contacto</h4>
                                            </div>
                                           <div class="row">
-                                            <div class="form-group col-md-12">
+                                            <div class=" col-md-12">
                                                 <label for="first-name">Direccion:</label>
                                                 <?php echo Form::text('solicitudes.direccion',array(
                                                   'required'=>'true',
@@ -109,7 +105,7 @@
                                           </div>
                                           <div class="row">
 
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Telefono de Residencia:</label>
                                                 <?php echo Form::text('solicitudes.telefono_residencia',array(
                                                   'required'=>'true',
@@ -120,7 +116,7 @@
                                                 ));?>
                                             </div>
 
-                                            <div class="form-group col-md-3">
+                                            <div class=" col-md-3">
                                                 <label for="first-name">Telefono de Oficina:</label>
                                                 <?php echo Form::text('solicitudes.telefono_oficina',array(
                                                   'required'=>'true',
@@ -131,7 +127,7 @@
                                                 ));?>
                                             </div>
 
-                                            <div class="form-group col-md-3">
+                                            <div class=" col-md-3">
                                                 <label for="first-name">Celular:</label>
                                                 <?php echo Form::text('solicitudes.celular',array(
                                                   'required'=>'true',
@@ -143,7 +139,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Correo:</label>
                                                 <?php echo Form::input('email', 'solicitudes.correo',array(
                                                   'required'=>'true',
@@ -153,7 +149,7 @@
                                                   'placeholder'=>"Email *",
                                                 ));?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Correo2:</label>
                                                 <?php echo Form::input('email', 'solicitudes.correo2',array(
                                                   'required'=>'true',
@@ -164,11 +160,11 @@
                                                 ));?>
                                             </div>
                                           </div>
-                                          <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;padding-bottom:10px;margin-bottom:10px">
+                                          <div class="col-md-12" style="padding:5px;border-bottom:1px solid #525252;margin-bottom:10px">
                                              <h4 style="font-weight:700;margin-top:20px">Datos laborales</h4>
                                            </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Laboral:</label>
                                                 <?php echo Form::input('text', '',array(
                                                   'required'=>'true',
@@ -178,7 +174,7 @@
                                                 $solicitudes->laboral
                                               );?>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Salario:</label>
                                               <?php echo Form::input('text', '',array(
                                                 'required'=>'true',
@@ -190,7 +186,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Ocupacion:</label>
                                             <?php echo Form::text('solicitudes.ocupacion',array(
                                               'required'=>'true',
@@ -200,7 +196,7 @@
                                             ));?>
                                             </div>
 
-                                            <div class="form-group col-md-6">
+                                            <div class=" col-md-6">
                                                 <label for="first-name">Tiempo de Servicio:</label>
                                             <?php echo Form::text('solicitudes.tiempo_servicio',array(
                                               'required'=>'true',
@@ -211,7 +207,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Lugar de trabajo:</label>
                                             <?php echo Form::text('solicitudes.lugar_trabajo',array(
                                               'required'=>'true',
@@ -221,13 +217,13 @@
                                             ));?>
                                             </div>
 
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Sucursal mas cercana:</label>
                                             <input disabled='true' type="text" class="form-control" value="<?php echo $solicitudes->sucursal ?>">
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-6">
+                                            <div class="col-md-6">
                                                 <label for="first-name">Monto deseado: $</label>
                                                 <?php echo Form::text('solicitudes.monto_deseado',array(
                                                   'required'=>'true',
@@ -239,7 +235,7 @@
                                             </div>
                                           </div>
                                           <div class="row">
-                                            <div class="form-group col-md-12">
+                                            <div class="col-md-12">
                                                 <label for="first-name">Comentario:</label>
                                                 <?php echo Form::textarea('solicitudes.comentario',array(
                                                   'required'=>'true',
@@ -263,3 +259,9 @@
         </div>
     </div>
 </div>
+<style media="screen">
+  .form-group{
+        margin-bottom: 0px !important;
+        margin: 0 !important;
+  }
+</style>
