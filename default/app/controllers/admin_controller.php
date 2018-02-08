@@ -635,6 +635,15 @@ class AdminController extends AppController
          }
        }
 
+       if(Input::post("laboral")){
+         if($count > 0){
+           $conditions = $conditions.' and laboral="'.Input::post("laboral").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' laboral="'.Input::post("laboral").'"';
+         }
+       }
+
        if($conditions){
          $this->solicitudes = (New Solicitudes)->find($conditions, $order);
        }else{

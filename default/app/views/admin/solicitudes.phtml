@@ -7,6 +7,10 @@
           <small class="text-muted">Bienvenido al administrador</small>
         </div>
         <div class="col-sm-4 col-xs-4" style="display:flex;justify-content:flex-end;">
+          <button id="btn-submit-form" type="submit" class="btn btn-raised btn-primary">
+            <i class="fa fa-fw fa-search"></i>
+            Buscar
+          </button>
           <button id="btn-clear" style="" type="button" class="btn btn-raised btn-primary">
             Ver todos
           </button>
@@ -51,13 +55,20 @@
               </select>
             </div>
             <div class="col-sm-2 col-xs-6">
-              <input name="fecha" type="date" class="form-control" value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
+              <select class="form-control" name="laboral">
+                <option value="">Laboral *</option>
+                <option <?php if (Input::post("laboral")=='Fuerza Pública') echo 'selected' ?> value="Fuerza Pública">Fuerza Pública</option>
+                <option <?php if (Input::post("laboral")=='Educadores') echo 'selected' ?> value="Educadores">Educadores</option>
+                <option <?php if (Input::post("laboral")=='Jubilados') echo 'selected' ?> value="Jubilados">Jubilados</option>
+                <option <?php if (Input::post("laboral")=='Gobierno Central') echo 'selected' ?> value="Gobierno Central">Gobierno Central</option>
+                <option <?php if (Input::post("laboral")=='Entidades Autónomas y Semi-autónomas') echo 'selected' ?> value="Entidades Autónomas y Semi-autónomas">Entidades Autónomas y Semi-autónomas</option>
+                <option <?php if (Input::post("laboral")=='ACP') echo 'selected' ?> value="ACP">ACP</option>
+                <option <?php if (Input::post("laboral")=='Empresa Privada') echo 'selected' ?> value="Empresa Privada">Empresa Privada</option>
+                <option <?php if (Input::post("laboral")=='Independiente (micro empresarios)') echo 'selected' ?> value="Independiente (micro empresarios)">Independiente (micro empresarios)</option>
+              </select>
             </div>
             <div class="col-sm-2 col-xs-6">
-              <button id="btn-submit-form" style="margin-top: 25px;float: right;" type="submit" class="btn btn-raised btn-primary">
-                <i class="fa fa-fw fa-search"></i>
-                Buscar
-              </button>
+              <input name="fecha" type="date" class="form-control" value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
             </div>
         </div>
         <?php $conditions?>
