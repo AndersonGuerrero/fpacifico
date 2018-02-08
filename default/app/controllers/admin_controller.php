@@ -472,6 +472,7 @@ class AdminController extends AppController
        $conditions = FALSE;
        $this->splitstr = array();
        $str_temp = '';
+       $this->servicios = (New Servicios)->find();
        $this->contactos_count_total = (New Contactos)->count();
        if(Input::post("search")){
          foreach (str_split(Input::post("search")) as $key => $value) {
@@ -490,20 +491,50 @@ class AdminController extends AppController
          foreach ($this->splitstr as $key => $value) {
            if($count == 0){
              $count++;
-             $conditions = $conditions.' servicio like "%'.$value.'%"';
+             $conditions = $conditions.'(nombre_completo like "%'.$value.'%"';
            }else{
-             $conditions = $conditions.' or servicio like "%'.$value.'%"';
+             $conditions = $conditions.' or nombre_completo like "%'.$value.'%"';
            }
-           $conditions = $conditions.' or nombre_completo like "%'.$value.'%"';
            $conditions = $conditions.' or telefono like "%'.$value.'%"';
            $conditions = $conditions.' or correo like "%'.$value.'%"';
-           $conditions = $conditions.' or como_supo like "%'.$value.'%"';
          }
+         $conditions = $conditions.')';
+       }
 
+       if(Input::post("servicio")){
+         if($count > 0){
+           $conditions = $conditions.' and servicio="'.Input::post("servicio").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' servicio="'.Input::post("servicio").'"';
+         }
+       }
+
+       if(Input::post("como_supo")){
+         if($count > 0){
+           $conditions = $conditions.' and como_supo="'.Input::post("como_supo").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' como_supo="'.Input::post("como_supo").'"';
+         }
+       }
+
+       if(Input::post("fecha")){
+         if($count > 0){
+           $conditions = $conditions.' and created_at like "%'.Input::post("fecha").'%"';
+         }else{
+           $count++;
+           $conditions = $conditions.' created_at like "%'.Input::post("fecha").'%"';
+         }
+       }
+
+       if($conditions){
          $this->contactos = (New Contactos)->find($conditions, $order);
        }else{
          $this->contactos = (New Contactos)->find($order);
        }
+
+
        $this->contactos_count = count($this->contactos);
 
        if(Input::post("export")){
@@ -538,6 +569,7 @@ class AdminController extends AppController
        $this->splitstr = array();
        $str_temp = '';
        $this->solicitudes_count_total = (New Solicitudes)->count();
+       $this->servicios = (New Servicios)->find();
        if(Input::post("search")){
          foreach (str_split(Input::post("search")) as $key => $value) {
            if($value == ' '){
@@ -555,24 +587,62 @@ class AdminController extends AppController
          foreach ($this->splitstr as $key => $value) {
            if($count == 0){
              $count++;
-             $conditions = $conditions.' servicio like "%'.$value.'%"';
+             $conditions = $conditions.'(nombre like "%'.$value.'%"';
            }else{
-             $conditions = $conditions.' or servicio like "%'.$value.'%"';
+             $conditions = $conditions.' or nombre like "%'.$value.'%"';
            }
-           $conditions = $conditions.' or nombre like "%'.$value.'%"';
            $conditions = $conditions.' or apellido like "%'.$value.'%"';
-           $conditions = $conditions.' or salario like "%'.$value.'%"';
-           $conditions = $conditions.' or monto_deseado like "%'.$value.'%"';
+           $conditions = $conditions.' or celular like "%'.$value.'%"';
            $conditions = $conditions.' or laboral like "%'.$value.'%"';
-           $conditions = $conditions.' or sexo like "%'.$value.'%"';
-           $conditions = $conditions.' or created_at like "%'.$value.'%"';
-          //  $conditions = $conditions.' or celular like "%'.$value.'%"';
+           $conditions = $conditions.' or monto_deseado like "%'.$value.'%"';
          }
+         $conditions = $conditions.')';
+       }
 
+       if(Input::post("servicio")){
+         if($count > 0){
+           $conditions = $conditions.' and servicio="'.Input::post("servicio").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' servicio="'.Input::post("servicio").'"';
+         }
+       }
+
+       if(Input::post("sexo")){
+         if($count > 0){
+           $conditions = $conditions.' and sexo="'.Input::post("sexo").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' sexo="'.Input::post("sexo").'"';
+         }
+       }
+
+       if(Input::post("salario")){
+         if($count > 0){
+           $conditions = $conditions.' and salario="'.Input::post("salario").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' salario="'.Input::post("salario").'"';
+         }
+       }
+
+       if(Input::post("fecha")){
+         if($count > 0){
+           $conditions = $conditions.' and created_at like "%'.Input::post("fecha").'%"';
+         }else{
+           $count++;
+           $conditions = $conditions.' created_at like "%'.Input::post("fecha").'%"';
+         }
+       }
+
+       if($conditions){
          $this->solicitudes = (New Solicitudes)->find($conditions, $order);
        }else{
          $this->solicitudes = (New Solicitudes)->find($order);
        }
+
+       $this->conditions = $conditions;
+
        $this->solicitudes_count = count($this->solicitudes);
 
        if(Input::post("export")){

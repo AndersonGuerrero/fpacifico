@@ -11,11 +11,33 @@
         </div>
       </div>
         <div class="row">
-            <div class="col-sm-4 col-xs-4">
-              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="Nombre, Interesado en, Como supo...">
+            <div class="col-sm-3 col-xs-3">
+              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="Nombre, Correo, Telefono...">
             </div>
-            <div class="col-sm-1 col-xs-1">
-              <button style="margin-top: 25px;" type="submit" class="btn btn-raised btn-primary">
+            <div class="col-sm-2 col-xs-3">
+              <select class="form-control" name="servicio">
+                <option value="">Interesado en *</option>
+                <?php foreach ($servicios as $key => $value): ?>
+                  <option <?php if (Input::post("servicio")==$value->nombre) echo 'selected' ?> value="<?php echo $value->nombre ?>"><?php echo $value->nombre ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="col-sm-2 col-xs-3">
+              <select class="form-control" name="como_supo">
+                <option value="">Como supo *</option>
+                <option <?php if (Input::post("como_supo")=='Google') echo 'selected' ?> value="Google">Google</option>
+                <option <?php if (Input::post("como_supo")=='Instagram') echo 'selected' ?> value="Instagram">Instagram</option>
+                <option <?php if (Input::post("como_supo")=='Facebook') echo 'selected' ?> value="Facebook">Facebook</option>
+                <option <?php if (Input::post("como_supo")=='TV') echo 'selected' ?> value="TV">TV</option>
+                <option <?php if (Input::post("como_supo")=='Amigo') echo 'selected' ?> value="Amigo">Amigo</option>
+                <option <?php if (Input::post("como_supo")=='Periodico') echo 'selected' ?> value="Periodico">Periodico</option>
+              </select>
+            </div>
+            <div class="col-sm-3 col-xs-2">
+              <input name="fecha" type="date" class="form-control" value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
+            </div>
+            <div class="col-sm-2 col-xs-1">
+              <button style="margin-top:25px;float:right;" type="submit" class="btn btn-raised btn-primary">
                 <i class="fa fa-fw fa-search"></i>
                 Buscar
               </button>
@@ -56,7 +78,7 @@
                                   <td>'.$value->correo.'</td>
                                   <td>'.$value->servicio.'</td>
                                   <td>'.$value->como_supo.'</td>
-                                  <td>'.(new DateTime($value->created_at))->format('Y-m-d').'</td>
+                                  <td>'.(new DateTime($value->created_at))->format('d-m-Y').'</td>
                                   <td class="btn-operation">
                                       '.Html::link(
                                       "admin/ver_contacto/$value->id",

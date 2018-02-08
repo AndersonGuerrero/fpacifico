@@ -2,25 +2,61 @@
   <div class="bg-light lter b-b wrapper-md mb-10">
     <form  action="" method="post">
       <div class="row">
-        <div class="col-sm-12 col-xs-12">
+        <div class="col-sm-11 col-xs-11">
           <h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
           <small class="text-muted">Bienvenido al administrador</small>
-          <button id="export-btn" style="margin-top:-20px;float:right;"
-            type="button" class="btn btn-raised btn-primary">
-            <i class="fa fa-fw fa-file-excel-o"></i> Exportar</button>
+        </div>
+        <div class="col-sm-1 col-xs-1">
+          <button id="export-btn" style="float:right;"
+          type="button" class="btn btn-raised btn-primary">
+          <i class="fa fa-fw fa-file-excel-o"></i> Exportar</button>
         </div>
       </div>
         <div class="row">
-            <div class="col-sm-4 col-xs-4">
-              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="Ingrese el Nombre, Servicio, Salario, Sexo...">
+            <div class="col-sm-2 col-xs-6">
+              <input name="search" class="form-control" value="<?php echo Input::post("search")?>" placeholder="Nombre, Apellido, Laboral...">
             </div>
-            <div class="col-sm-1 col-xs-1">
-              <button style="margin-top: 25px;" type="submit" class="btn btn-raised btn-primary">
+            <div class="col-sm-2 col-xs-6">
+              <select class="form-control" name="servicio">
+                <option value="">Servicios *</option>
+                <?php foreach ($servicios as $key => $value): ?>
+                  <option <?php if (Input::post("servicio")==$value->nombre) echo 'selected' ?> value="<?php echo $value->nombre ?>"><?php echo $value->nombre ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+              <select class="form-control" name="sexo">
+                <option value="">Sexos *</option>
+                <option <?php if (Input::post("sexo")=='masculino') echo 'selected' ?> value="masculino">Masculino</option>
+                <option <?php if (Input::post("sexo")=='femenino') echo 'selected' ?> value="femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+              <select class="form-control" name="salario">
+                <option value="">Salarios *</option>
+                <option <?php if (Input::post("salario")=='$ 500') echo 'selected' ?> value="$ 500">$ 500</option>
+                <option <?php if (Input::post("salario")=='$ 600') echo 'selected' ?> value="$ 600">$ 600</option>
+                <option <?php if (Input::post("salario")=='$ 700') echo 'selected' ?> value="$ 700">$ 700</option>
+                <option <?php if (Input::post("salario")=='$ 800') echo 'selected' ?> value="$ 800">$ 800</option>
+                <option <?php if (Input::post("salario")=='$ 900') echo 'selected' ?> value="$ 900">$ 900</option>
+                <option <?php if (Input::post("salario")=='$ 1,000') echo 'selected' ?> value="$ 1,000">$ 1,000</option>
+                <option <?php if (Input::post("salario")=='$ 1,500') echo 'selected' ?> value="$ 1,500">$ 1,500</option>
+                <option <?php if (Input::post("salario")=='$ 2,000') echo 'selected' ?> value="$ 2,000">$ 2,000</option>
+                <option <?php if (Input::post("salario")=='$ 3,500') echo 'selected' ?> value="$ 3,500">$ 3,500</option>
+                <option <?php if (Input::post("salario")=='$ 4,000 ó más') echo 'selected' ?> value="$ 4,000 ó más">$ 4,000 ó más</option>
+              </select>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+              <input name="fecha" type="date" class="form-control" value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
+            </div>
+            <div class="col-sm-2 col-xs-6">
+              <button style="margin-top: 25px;float:right" type="submit" class="btn btn-raised btn-primary">
                 <i class="fa fa-fw fa-search"></i>
                 Buscar
               </button>
             </div>
         </div>
+        <?php $conditions?>
     </form>
   <div class="row">
       <div class="col-md-12">
@@ -56,7 +92,7 @@
                                   <td>$ '.($value->monto_deseado).'</td>
                                   <td>'.$value->servicio.'</td>
                                   <td>'.$value->sexo.'</td>
-                                  <td>'.(new DateTime($value->created_at))->format('Y-m-d').'</td>
+                                  <td>'.(new DateTime($value->created_at))->format('d-m-Y').'</td>
                                   <td class="btn-operation">
                                       '.Html::link(
                                       "admin/ver_solicitud/$value->id",
