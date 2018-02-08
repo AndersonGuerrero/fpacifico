@@ -82,6 +82,7 @@
                               </tr>
                           </thead>
                           <tbody>
+                            <?php setlocale(LC_MONETARY, 'en_US'); ?>
                               <?php foreach ($solicitudes as $value) {
                                   echo '
                                   <tr>
@@ -89,7 +90,7 @@
                                   <td>'.$value->nombre.' '.$value->apellido.'</td>
                                   <td>'.$value->laboral.'</td>
                                   <td>'.($value->salario).'</td>
-                                  <td>$ '.($value->monto_deseado).'</td>
+                                  <td>'.(money_format('%(#10n', $value->monto_deseado)).'</td>
                                   <td>'.$value->servicio.'</td>
                                   <td>'.$value->sexo.'</td>
                                   <td>'.(new DateTime($value->created_at))->format('d-m-Y').'</td>

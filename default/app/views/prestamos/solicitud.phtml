@@ -283,7 +283,7 @@ $(function(){
       ));?>
   </div>
     <div class="col-md-6" style="padding:5px">
-      <?php echo Form::text('solicitudes.monto_deseado',array(
+      <?php echo Form::input('number', 'solicitudes.monto_deseado',array(
         'required'=>'true',
         'style'=>"margin-top:0",
         'class'=>"form-control",
@@ -313,14 +313,13 @@ $(function(){
         <div class="col-md-12" style="padding:5px">
         <div class="col-md-4" style="padding:5px">
           <button
-            data-callback='onSubmit'
-            class="g-recaptcha login-btn text-left"
-            data-sitekey="6Lf2kkMUAAAAAJzt5M9hK5X_hgCKEOpYELGhLsuf"
-            data-callback="YourOnSubmitFn">
+            class="login-btn text-left">
             Enviar Ahora
           </button>
         </div>
+
         <div class="col-md-8" style="padding:5px">
+          <div class="g-recaptcha" data-sitekey="6Lcr6EQUAAAAAH28FiyNWCEk9CU95qZNgwGWRHyB"></div>
           <label><?php echo View::content();?></label>
         </div>
         </div>
