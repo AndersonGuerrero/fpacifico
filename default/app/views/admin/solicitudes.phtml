@@ -2,14 +2,18 @@
   <div class="bg-light lter b-b wrapper-md mb-10">
     <form  action="" method="post">
       <div class="row">
-        <div class="col-sm-11 col-xs-11">
+        <div class="col-sm-8 col-xs-8">
           <h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
           <small class="text-muted">Bienvenido al administrador</small>
         </div>
-        <div class="col-sm-1 col-xs-1">
-          <button id="export-btn" style="float:right;"
+        <div class="col-sm-4 col-xs-4" style="display:flex;justify-content:flex-end;">
+          <button id="btn-clear" style="" type="button" class="btn btn-raised btn-primary">
+            Ver todos
+          </button>
+          <button id="export-btn"
           type="button" class="btn btn-raised btn-primary">
-          <i class="fa fa-fw fa-file-excel-o"></i> Exportar</button>
+          <i class="fa fa-fw fa-file-excel-o"></i> Exportar
+          </button>
         </div>
       </div>
         <div class="row">
@@ -50,7 +54,7 @@
               <input name="fecha" type="date" class="form-control" value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
             </div>
             <div class="col-sm-2 col-xs-6">
-              <button style="margin-top: 25px;float:right" type="submit" class="btn btn-raised btn-primary">
+              <button id="btn-submit-form" style="margin-top: 25px;float: right;" type="submit" class="btn btn-raised btn-primary">
                 <i class="fa fa-fw fa-search"></i>
                 Buscar
               </button>
@@ -124,6 +128,12 @@
     $('form input[name="export"]').remove()
   })
   $(function() {
+
+    $('#btn-clear').on('click', function(event) {
+      $('input').val('');$('select').val('');
+      $('#btn-submit-form').click();
+    });
+
     const spanish = {
       sLengthMenu: 'Mostrar _MENU_ registros',
       sZeroRecords: 'No se encontraron resultados',
