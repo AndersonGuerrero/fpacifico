@@ -4,7 +4,7 @@ $data = array();
 $data[] = array(
   'Nombre', 'Apellido', 'Correo','Correo2', 'Celular', 'Provincia', 'Letra', 'Folio', 'Asiento',
   'Sexo', 'Servicio', 'Laboral', 'Salario', 'Monto deseado', 'Ocupacion',
-  'Tiempo de servicio', 'Lugar de trabajo', 'Sucursal mas cercana');
+  'Tiempo de servicio', 'Lugar de trabajo', 'Sucursal mas cercana', 'Fecha', 'Comentario');
 foreach ($solicitudes as $key => $value) {
   $data[] = array(
     $value->nombre,
@@ -24,7 +24,9 @@ foreach ($solicitudes as $key => $value) {
     $value->ocupacion,
     $value->tiempo_servicio,
     $value->lugar_trabajo,
-    $value->sucursal
+    $value->sucursal,
+    (new DateTime($value->created_at))->format('d-m-Y'),
+    $value->comentario,
   );
 }
 $xls = new Excel_XML;
