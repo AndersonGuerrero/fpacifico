@@ -6,7 +6,7 @@
 						<div id="leftmenuNav" class="panel-collapse collapse in" role="tabpanel">
 							<div class="panel-body">
 								<ul id="navigation">
-									<?php if(Auth::get("admin") == "1"):?>
+									<?php if(Auth::get("admin") == "0" or Auth::get("admin") == "2"):?>
 									<li><?php echo Html::link("admin/config",'<i class="fa fa-dashboard"></i> <span>Principal</span>') ?></li>
 
 									<li><?php echo Html::link("admin/general",'<i class="fa fa-arrow-right"></i> <span>Configuraciones Generales</span>') ?></li>
@@ -39,6 +39,7 @@
 										</ul>
 									</li>
 								<?php endif ?>
+								<?php if(Auth::get("admin") == "0" or Auth::get("admin") == "1"):?>
 									<li>
 										<a role="button" tabindex="0"><i class="fa fa-fw fa-plus-square"></i> <span>Solicitudes</span></a>
 										<ul>
@@ -50,6 +51,7 @@
 											<li><?php echo Html::link("admin/contactos",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 										</ul>
 									</li>
+								<?php endif ?>
 								</ul>
 							</div>
 						</div>
