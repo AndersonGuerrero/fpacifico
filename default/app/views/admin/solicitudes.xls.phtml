@@ -2,7 +2,7 @@
 require dirname(__FILE__) . '/php-excel.class.php';
 $data = array();
 $data[] = array(
-  'Nombre', 'Apellido', 'Correo','Correo2', 'Celular', 'Cedula',
+  'Nombre', 'Apellido', 'Correo','Correo2', 'Celular', 'Provincia', 'Letra', 'Folio', 'Asiento',
   'Sexo', 'Servicio', 'Laboral', 'Salario', 'Monto deseado', 'Ocupacion',
   'Tiempo de servicio', 'Lugar de trabajo', 'Sucursal mas cercana');
 foreach ($solicitudes as $key => $value) {
@@ -12,7 +12,10 @@ foreach ($solicitudes as $key => $value) {
     $value->correo,
     $value->correo2,
     $value->celular,
-    $value->provincia.'-'.$value->letra.'-'.$value->folio.'-'.$value->asiento,
+    $value->provincia,
+    $value->letra,
+    $value->folio,
+    $value->asiento,
     $value->sexo,
     $value->servicio,
     $value->laboral,

@@ -18,11 +18,7 @@ class AdminController extends AppController
           $usuario=$post['usuario'];
           $auth = new Auth("model", "class: user", "usuario: $usuario", "clave: $pwd");
           if ($auth->authenticate()) {
-            if (Auth::get("admin") == "1") {
-                Router::redirect("admin/config");
-            }else{
-                Flash::error("Solo puede usar el blog");
-            }
+            Router::redirect("admin/config");
           } else {
              Flash::error("El usuario o clave que ha ingresado es invalido");
           }
@@ -628,10 +624,19 @@ class AdminController extends AppController
 
        if(Input::post("fecha")){
          if($count > 0){
-           $conditions = $conditions.' and created_at like "%'.Input::post("fecha").'%"';
+           $conditions = $conditions.' and created_at >= "'.Input::post("fecha").'"';
          }else{
            $count++;
-           $conditions = $conditions.' created_at like "%'.Input::post("fecha").'%"';
+           $conditions = $conditions.' created_at >= "'.Input::post("fecha").'"';
+         }
+       }
+
+       if(Input::post("fecha2")){
+         if($count > 0){
+           $conditions = $conditions.' and created_at <= "'.Input::post("fecha2").'"';
+         }else{
+           $count++;
+           $conditions = $conditions.' created_at <= "'.Input::post("fecha2").'"';
          }
        }
 
