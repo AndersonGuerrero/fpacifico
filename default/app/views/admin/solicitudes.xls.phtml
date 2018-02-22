@@ -22,7 +22,7 @@ foreach ($solicitudes as $key => $value) {
     $value->salario,
     $value->monto_deseado,
     $value->ocupacion,
-    $value->tiempo_servicio,
+    $value->tiempo_servicio_anos.' años y '.$value->tiempo_servicio_meses.' meses',
     $value->lugar_trabajo,
     $value->sucursal,
     (new DateTime($value->created_at))->format('d-m-Y'),

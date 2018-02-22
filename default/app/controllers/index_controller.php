@@ -15,7 +15,8 @@ class IndexController extends AppController
       if (Input::haspost("contactos")){
         $contactos = new Contactos(Input::post("contactos"));
         if($contactos->save()){
-          Flash::valid("Datos Registrados!");
+          Flash::valid("Datos Registrados gracias!");
+          Router::redirect("index#contacto");
         }else{
           Flash::error("Error al registrar la solicitud");
         }

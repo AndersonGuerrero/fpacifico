@@ -274,13 +274,41 @@ $(function(){
         'placeholder'=>"Lugar de Trabajo *"
       ));?>
   </div>
-    <div class="col-md-6" style="padding:5px">
-      <?php echo Form::text('solicitudes.tiempo_servicio',array(
-        'required'=>'true',
-        'style'=>"margin-top:0",
-        'class'=>"form-control",
-        'placeholder'=>"Tiempo de servicio *"
-      ));?>
+
+  <div class="col-md-2" style="padding:5px">
+    <label for="">Tiempo en empleo actual</label>
+  </div>
+  <div class="col-md-2" style="padding:5px">
+    <select required class="form-control" name="solicitudes[tiempo_servicio_anos]" style="margin-top:0" >
+       <option value>Años *</option>
+       <option value="0">0</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       <option value="7">7</option>
+       <option value="8">8</option>
+       <option value="9">9</option>
+       <option value="10">10</option>
+    </select>
+  </div>
+  <div class="col-md-2" style="padding:5px">
+    <select required class="form-control" name="solicitudes[tiempo_servicio_meses]" style="margin-top:0" >
+       <option value>Meses *</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       <option value="7">7</option>
+       <option value="8">8</option>
+       <option value="9">9</option>
+       <option value="10">10</option>
+       <option value="11">11</option>
+    </select>
   </div>
     <div class="col-md-6" style="padding:5px">
       <?php echo Form::input('number', 'solicitudes.monto_deseado',array(
