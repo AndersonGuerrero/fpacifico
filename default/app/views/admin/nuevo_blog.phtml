@@ -1,0 +1,94 @@
+<style>
+   select {
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+}
+select{
+    float:left;
+    margin-right:5px;
+}
+</style>
+        <div class="page profile-page" style="padding-bottom:0">
+            <div class="pagecontent">
+                <div class="row">
+                     <div class="col-md-12">
+                        <section class="boxs boxs-simple">
+                            <div class="boxs-body p-0">
+                                <div role="tabpanel">
+                                    <ul class="nav nav-tabs tabs-dark-t" role="tablist">
+                                        <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Editar Blog</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="general">
+                                            <div class="wrap-reset">
+                                                <?php echo Form::openMultipart(); ?>
+                                                <form class="profile-settings">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12 legend">
+                                                            <h4><strong>Datos</strong></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="first-name">Titulo</label>
+                                                            <?php echo Form::text(
+                                                              'blog.titulo',
+                                                              array(
+                                                                'required'=>"true",
+                                                                'class'=>"form-control")
+                                                              ) ?>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Contenido</label>
+                                                            <?php echo Form::textarea('blog.texto',
+                                                            array(
+                                                              'class'=>"form-control",
+                                                              'rows'=>"5",
+                                                              'required'=>"true",
+                                                              'cols'=>"7",
+                                                            )) ?>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-3" style="margin-bottom:20px">
+                                                            <div class='custom-input-file' style='width:100%'>
+                                                              <?php echo Form::file('images',array('required'=>'true'),array('required'=>'true')) ?>Imagen (450x430)</div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <?php echo Html::link("admin/blogs","Cancelar","class='btn btn-raised btn-default'") ?>
+                                                            <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <?php echo Form::close(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<script>
+
+$(function(){
+    $('#promociones_fecha_finaliza').combodate({
+    minYear: (new Date).getFullYear(),
+    maxYear:  (new Date).getFullYear() + 4,
+});
+});
+
+CKEDITOR.replace( 'promociones[texto]' );
+CKEDITOR.replace( 'promociones[texto_en]' );
+</script>

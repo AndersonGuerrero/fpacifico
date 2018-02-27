@@ -1,0 +1,131 @@
+<div class="page static-page-tables">
+  <div class="bg-light lter b-b wrapper-md mb-10">
+    <form  action="" method="post">
+      <div class="row">
+        <div class="col-sm-5 col-xs-12">
+          <h1 class="font-thin h3 m-0">Corporacion Pacifico</h1>
+          <small class="text-muted">Bienvenido al administrador</small>
+        </div>
+      </div>
+    </form>
+  <div class="row">
+      <div class="col-md-12">
+          <section class="boxs ">
+              <div class="boxs-header dvd dvd-btm">
+                <h1 class="custom-font"><strong>Listado de </strong> Blogs</h1>
+                <!-- <h1 class="custom-font" style="float: right;"><strong><?php echo $blogs_counter.' de '.$blogs_count_total ?></strong></h1> -->
+              </div>
+              <div class="boxs-body p-0">
+                  <div class="table-responsive">
+                      <table id="table-solicitudes" class="table table-middle">
+                          <thead>
+                              <tr>
+                                  <th width="1px"></th>
+                                  <th width="1px"></th>
+                                  <th>Titulo </th>
+                                  <th>Contenido </th>
+                                  <th width="150px">Fecha </th>
+                                  <th width="70px"></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <?php setlocale(LC_MONETARY, 'en_US');?>
+                              <?php foreach ($blogs as $key => $value){
+                                if(strlen($value->texto) >= 90){
+                                  $texto = substr($value->texto,0 ,90).'...';
+                                }else{
+                                  $texto = $blog->texto;
+                                }
+                                  echo '
+                                  <tr>
+                                    <td>
+                                      <label>'.$value->id.'</label>
+                                    </td>
+                                    <td>
+                                      <img width="90px" src="'.PUBLIC_PATH.'img/upload/blogs/'.$value->imagen.'">
+                                    </td>
+                                    <td>'.$value->titulo.'</td>
+                                  <td>'.$texto.'</td>
+                                  <td>'.(new DateTime($value->created_at))->format('d-m-Y').'</td>
+                                  <td class="btn-operation">
+                                      '.Html::link(
+                                      "admin/editar_blog/$value->id",
+                                      '<i class="fa fa-edit"></i>',
+                                      'style="width:30px;padding:5px;" title="Ver" class="btn btn-sm btn-success"').'
+                                      '.Js::link(
+                                        "admin/eliminar_blog/$value->id",
+                                        '<div class="btn btn-sm btn-danger" title="Eliminar" style="width:30px;padding:5px;">
+                                        <i class="fa fa-trash-o"></i></div>',
+                                        "¿Esta segur@ que desea eliminar el blog?").'
+                                  </td>
+                                  </tr>
+                              ';
+                              } ?>
+
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#export-btn').on('click', function(){
+    $('form').append('<input type="hidden" name="export" value="true">')
+    $('form').submit()
+    $('form input[name="export"]').remove()
+  })
+  $(function() {
+
+    $('#btn-clear').on('click', function(event) {
+      $('input').val('');$('select').val('');
+      $('#btn-submit-form').click();
+    });
+
+    const spanish = {
+      sLengthMenu: 'Mostrar _MENU_ registros',
+      sZeroRecords: 'No se encontraron resultados',
+      sEmptyTable: 'Ningún dato disponible en esta tabla',
+      sInfo: '_START_ a _END_ de _TOTAL_',
+      sInfoEmpty: '0 al 0 de 0',
+      sInfoFiltered: '(filtrado de un total de _MAX_ registros)',
+      sInfoPostFix: '',
+      sSearch: '<i class="fa fa-search placeholder-icon-table"></i>',
+      searchPlaceholder: 'Buscar...',
+      sUrl: '',
+      sInfoThousands: '',
+      sLoadingRecords: 'Cargando...',
+      oPaginate: {
+        sFirst: 'Primera',
+        sLast: 'Ultima',
+        sNext: 'Siguiente',
+        sPrevious: 'Anterior'
+      },
+      oAria: {
+        sSortAscending: ': Activar para ordenar la columna de manera ascendente',
+        sSortDescending: ': Activar para ordenar la columna de manera descendente'
+      }
+    }
+    $('#table-solicitudes').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": false,
+      "autoWidth": true,
+      language: spanish
+    })
+  })
+</script>
+<style media="screen">
+  .paginate_button{
+    color: #777 !important;
+    cursor: pointer;
+    padding: 10px !important;
+  }
+  .dataTables_paginate{
+    float: none !important;
+    text-align:center !important;
+  }
+</style>

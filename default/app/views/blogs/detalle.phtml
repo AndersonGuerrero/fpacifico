@@ -1,0 +1,38 @@
+<div class="Menu_top_bar_area">
+    <?php echo View::partial("menu_inicio") ?>
+    <div id="menubtn"></div>
+    <?php echo View::partial("nav_blog") ?>
+</div>
+
+
+            <section class="home-area" style="margin-top:20px;margin-bottom:20px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <?php echo View::partial("menu_prestamos") ?>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="about-right-content" style="padding-top:20px">
+                                <div class="section-title">
+                                      <h4> <?php echo (new DateTime($blog->created_at))->format('d-m-Y') ?></h4>
+                                      <h2><?php echo $blog->titulo ?></h2>
+                                </div>
+                                <div class="col-md-6">
+                                  <?php echo Html::img('upload/blogs/'.$blog->imagen,'','width="100%"') ?>
+                                   <div class="button-light-screen" style="margin-top:20px">
+                                  </div>
+                                </div>
+                                <div class="col-md-6" style="text-align:justify;">
+                                    <?php echo $blog->texto ?>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+<?php echo View::partial("plan"); ?>
+<?php echo View::partial("footer") ?>

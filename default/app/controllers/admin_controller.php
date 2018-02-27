@@ -1,7 +1,7 @@
 <?php
 Load::models(
     "user","general","banner","servicios","empresa","sucursales",
-    "categorias","promociones","requisitos", 'solicitudes', 'contactos');
+    "categorias","promociones","requisitos", 'solicitudes', 'contactos', 'blogs');
 
 // Load::lib('excel');
 class AdminController extends AppController
@@ -1107,6 +1107,93 @@ class AdminController extends AppController
       }
     }
 
+    public function blogs(){
+     View::template("general");
+     if (!Auth::is_valid()){
+       Flash::valid("Necesita un usuario autenticado");
+       Router::redirect("admin");
+     }
+     $this->blogs=(new Blogs())->find();
+   }
 
+   function editar_blog($id){
+     if (!Auth::is_valid()){
+       Flash::valid("Necesita un usuario autenticado");
+       Router::redirect("admin");
+     }
+     View::template("general");
+     if (Input::haspost("blog")) {
+       $blog = (new Blogs(Input::post("blog")));
+       $path = getcwd()."/img/upload/blogs";
+       if (!empty($_FILES['images']['name'])) {
+         $images = Upload::factory('images', 'image');
+         $_FILES["images"]["name"] = date("Y_m_d_h.i.s").$_FILES['images']['name'];
+         $images->setPath($path);
+         $images->setExtensions(array('jpg', 'png', 'gif','jpeg'));
+         if ($images->isUploaded()) {
+           if ($images->save()){
+               $blog->imagen = $_FILES["images"]["name"];
+           }else{
+           Flash::warning('No se ha podido subir la imagen ...!!!');
+           }
+        }
+       }
+       if ($blog->update()) {
+         Flash::valid("Blog actualizado");
+         Router::redirect("admin/blogs");
+       }else{
+         Flash::error("Error al editar, verifique e intente de nuevo");
+         Router::redirect("admin/editar_blog/$id");
+       }
+     }
+     $this->blog = Load::model("blogs")->find_by_id($id);
+   }
+
+   function nuevo_blog(){
+     if (!Auth::is_valid()){
+       Flash::valid("Necesita un usuario autenticado");
+       Router::redirect("admin");
+     }
+     View::template("general");
+     if (Input::haspost("blog")) {
+       $blog = (new Blogs(Input::post("blog")));
+       $path = getcwd()."/img/upload/blogs";
+       if (!empty($_FILES['images']['name'])) {
+         $images = Upload::factory('images', 'image');
+         $_FILES["images"]["name"] = date("Y_m_d_h.i.s").$_FILES['images']['name'];
+         $images->setPath($path);
+         $images->setExtensions(array('jpg', 'png', 'gif','jpeg'));
+         if ($images->isUploaded()) {
+           if ($images->save()){
+               $blog->imagen = $_FILES["images"]["name"];
+           }else{
+           Flash::warning('No se ha podido subir la imagen ...!!!');
+           }
+        }
+       }
+       if ($blog->save()) {
+         Flash::valid("Blog registrado");
+         Router::redirect("admin/blogs");
+       }else{
+         Flash::error("Error al editar, verifique e intente de nuevo");
+         Router::redirect("admin/nuevo_blog/");
+       }
+     }
+   }
+
+   function eliminar_blog($id){
+     if (Auth::is_valid()){
+       $blog = Load::model("blogs")->find_by_id($id);
+        if ($blog->delete((int)$id)) {
+            Flash::valid('Operación exitosa');
+        }else{
+            Flash::error('Falló Operación');
+        }
+         Router::redirect("admin/blogs");
+     }else{
+        Flash::valid("Necesita un usuario autenticado");
+        Router::redirect("admin");
+      }
+   }
 
 }
