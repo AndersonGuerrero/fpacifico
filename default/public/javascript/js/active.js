@@ -8,7 +8,7 @@
 
             var windowS = $(window),
                 /*windowH = windowS.height(),*/
-                
+
                 windoww = windowS.width(),
                 welcomeS = $('.welcome-text'),
                 homes = $('.home-area'),
@@ -82,7 +82,7 @@
         if ($.fn.countrySelect) {
             $(".country").countrySelect();
         }
-       
+
         // isotop flugins
 
 
@@ -115,7 +115,7 @@
         if ($.fn.slick) {
 
             $(".Modern-Slider").slick({
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 10000,
                 speed: 600,
                 slidesToShow: 1,
@@ -205,7 +205,7 @@
                 nextArrow: '<button type="button" class="slick-next clientnext fa fa-angle-right"></button>'
             });
 
-            //            single product view 
+            //            single product view
 
             $('.product-view-slider').slick({
                 slidesToShow: 1,
@@ -238,7 +238,7 @@
 
         function magnific_active() {
             if ($.fn.magnificPopup) {
-               
+
                 $('.pp').magnificPopup({
                     type: 'iframe',
                     // other options

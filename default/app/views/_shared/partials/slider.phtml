@@ -1,28 +1,26 @@
-<?php $banner = Load::model("banner")->find(); ?> 
-<?php foreach ($banner as $slider): ?>
-                <div class="col-md-9 Modern-Slider">
-                    <div class="item">
-                        <div class="img-fill">
-                            <?php echo Html::img("images/banner1.jpg") ?>
-                            <div class="info">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xs-12 text-left">
-                                            <div class="welcome-text">
-                                                <h1 class="hero-title" style="text-shadow: 1px 2px #333;"><?php echo $slider->titulo_blanco ?> <span style="color:#FBB737"><?php echo $slider->titulo_amarillo ?></span></h1>
-                                                <p><?php echo $slider->texto ?></p>
-                                                <div class="welcome-btn">
-                                                    <?php echo Html::link($slider->urla,$slider->btna,'class="read-btn"') ?>
-                                                    <?php echo Html::link($slider->urlb,$slider->btnb,'class="buy-btn"') ?>
-                                                </div>
-                                            </div>
-                                        </div>
+<?php $banner = Load::model("banner")->find(); ?>
+    <div class="col-md-9 Modern-Slider">
+      <?php foreach ($banner as $slider): ?>
+        <div class="item">
+            <div class="img-fill">
+                <?php echo Html::img($slider->img) ?>
+                <div class="info">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">
+                                <div class="welcome-text">
+                                    <h1 class="hero-title" style="text-shadow: 1px 2px #333;"><?php echo $slider->titulo_blanco ?> <span style="color:#FBB737"><?php echo $slider->titulo_amarillo ?></span></h1>
+                                    <p><?php echo $slider->texto ?></p>
+                                    <div class="welcome-btn">
+                                        <?php echo Html::link($slider->urla,$slider->btna,'class="read-btn"') ?>
+                                        <?php echo Html::link($slider->urlb,$slider->btnb,'class="buy-btn"') ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                   
                 </div>
-<?php endforeach; ?>
+            </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
