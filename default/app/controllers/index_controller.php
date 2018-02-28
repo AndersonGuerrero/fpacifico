@@ -1,5 +1,5 @@
 <?php
-Load::models("user","general","banner","servicios","categorias","promociones","requisitos", "contactos");
+Load::models("user","general","banner","servicios","categorias","promociones","requisitos", "contactos", "video");
 
 
 class IndexController extends AppController
@@ -12,6 +12,8 @@ class IndexController extends AppController
     	$this->promociones = Load::model("promociones")->find();
     	$this->requisitos = Load::model("requisitos")->find();
       $this->servicios = Load::model("servicios")->find();
+      $video = new Video();
+      $this->video = $video->find_first();
       if (Input::haspost("contactos")){
         $contactos = new Contactos(Input::post("contactos"));
         if($contactos->save()){

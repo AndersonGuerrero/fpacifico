@@ -1,7 +1,7 @@
 <?php
 Load::models(
     "user","general","banner","servicios","empresa","sucursales",
-    "categorias","promociones","requisitos", 'solicitudes', 'contactos', 'blogs');
+    "categorias","promociones","requisitos", 'solicitudes', 'contactos', 'blogs', 'video');
 
 // Load::lib('excel');
 class AdminController extends AppController
@@ -31,6 +31,27 @@ class AdminController extends AppController
       $user = new User();
       if (Auth::is_valid()){
         $this->usuario = $user->getInfoUser(Auth::get('id'));
+      }else{
+        Flash::valid("Necesita un usuario autenticado");
+        Router::redirect("admin");
+      }
+    }
+
+    public function video(){
+      View::template("administrador");
+      if (Auth::is_valid()){
+        if (Input::haspost("video")) {
+          $video = new Video(Input::post("video"));
+          if ($video->update()) {
+            Flash::valid("Informacion actualizada");
+            Router::redirect("admin/video");
+          }else{
+            Flash::error("Error al editar, verifique e intente de nuevo");
+            Router::redirect("admin/video");
+          }
+        }
+        $video = new Video();
+        $this->video = $video->find_first();
       }else{
         Flash::valid("Necesita un usuario autenticado");
         Router::redirect("admin");
