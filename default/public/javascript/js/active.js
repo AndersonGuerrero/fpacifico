@@ -116,8 +116,8 @@
 
             $(".Modern-Slider").slick({
                 autoplay: true,
-                autoplaySpeed: 10000,
-                speed: 600,
+                autoplaySpeed: 8000,
+                speed: 400,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 pauseOnHover: false,

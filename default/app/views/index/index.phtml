@@ -193,9 +193,22 @@
     <section id="video" class="why-chose-avacuse section-padding" style="background:#fff">
             <div class="container">
                 <div class="row" style="text-align:center;">
-                  <iframe width="560" height="315" src="<?php echo $video->link?>"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                </iframe>
+                  <div class="col-xs-6">
+                    <iframe width="560" height="315" src="<?php echo $video->link?>"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="news-latter-title">
+                        <h2><?php echo $video->titulo ?></h2><br>
+                        <p><?php echo $video->texto ?></p>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="why-content-2">
+                      <a href="<?php echo $video->link_mas?>">Mas videos</a>
+                    </div>
+                  </div>
                 </div>
             </div>
     </section>
@@ -258,7 +271,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="single-inpuut">
-                                  <?php echo Form::text('contactos.mensaje',array(
+                                  <?php echo Form::textarea('contactos.mensaje',array(
                                     'required'=>'true',
                                     'placeholder'=>'Mensaje',
                                     'rows'=>"5",

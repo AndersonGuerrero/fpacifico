@@ -15,8 +15,29 @@
                                         <form class="profile-settings">
                                             <div class="row">
                                                 <div class="form-group col-sm-12">
-                                                    <label for="first-name">Link *</label>
+                                                    <label for="first-name">Link del video *</label>
                                                     <input type="text" name="video[link]" value="<?php echo $video->link?>" autofocus class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label for="first-name">Link mas videos *</label>
+                                                    <input
+                                                    type="text" name="video[link_mas]"
+                                                    value="<?php echo $video->link_mas?>" 
+                                                    autofocus class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label for="first-name">Titulo *</label>
+                                                    <input type="text" name="video[titulo]" value="<?php echo $video->titulo?>" autofocus class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label for="first-name">Texto *</label>
+                                                    <textarea name="video[texto]" rows="8" required class="form-control" cols="80"><?php echo $video->texto?></textarea>
                                                 </div>
                                             </div>
                                             <input type="hidden" name="video[id]" value="<?php echo $video->id?>">
@@ -26,7 +47,6 @@
                                                     <button type="submit" value="submit" class="btn btn-raised btn-primary">Guardar</button>
                                                 </div>
                                             </div>
-
                                         </form>
                                         <?php echo Form::close(); ?>
                                     </div>

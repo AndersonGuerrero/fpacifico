@@ -3,23 +3,23 @@
     height: 30px;
     border-radius: 3px;
     border: 1px solid #aaa;
-}
-select{
-    float:left;
-    margin-right:5px;
-}
-</style> 
+  }
+  select{
+      float:left;
+      margin-right:5px;
+  }
+</style>
         <div class="page profile-page" style="padding-bottom:0">
-            <div class="pagecontent"> 
+            <div class="pagecontent">
                 <div class="row">
-                     <div class="col-md-12"> 
-                        <section class="boxs boxs-simple"> 
+                     <div class="col-md-12">
+                        <section class="boxs boxs-simple">
                             <div class="boxs-body p-0">
-                                <div role="tabpanel"> 
+                                <div role="tabpanel">
                                     <ul class="nav nav-tabs tabs-dark-t" role="tablist">
                                         <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Editar Promocion</a></li>
                                     </ul>
-                                    
+
                                     <div class="tab-content">
                                          <div role="tabpanel" class="tab-pane active" id="general">
                                             <div class="wrap-reset">
@@ -42,7 +42,7 @@ select{
                                                                     echo '<option value="'.$value->id.'">'.$value->nombre.'</option>';
                                                                 } ?>
                                                             </select>
-                                                        </div> 
+                                                        </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-12 legend">
@@ -53,7 +53,7 @@ select{
                                                         <div class="form-group col-md-12">
                                                             <label for="first-name">Nombre</label>
                                                             <?php echo Form::text('promociones.nombre','class="form-control"') ?>
-                                                        </div> 
+                                                        </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="last-name">Descripcion</label>
                                                             <?php echo Form::textarea('promociones.descripcion','class="form-control"') ?>
@@ -62,7 +62,15 @@ select{
                                                             <label for="last-name">Texto</label>
                                                             <?php echo Form::textarea('promociones.texto','class="form-control"') ?>
                                                         </div>
-                                                       
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto boton</label>
+                                                            <?php echo Form::text('promociones.btn_aplicar_texto','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Link boton</label>
+                                                            <?php echo Form::text('promociones.btn_aplicar_link','class="form-control"') ?>
+                                                        </div>
+
 
                                                     </div>
                                                     <div class="row">
@@ -74,7 +82,7 @@ select{
                                                         <div class="form-group col-md-12">
                                                             <label for="first-name">Nombre</label>
                                                             <?php echo Form::text('promociones.nombre_en','class="form-control"') ?>
-                                                        </div> 
+                                                        </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="last-name">Descripcion</label>
                                                             <?php echo Form::textarea('promociones.descripcion_en','class="form-control"') ?>
@@ -83,18 +91,22 @@ select{
                                                             <label for="last-name">Texto</label>
                                                             <?php echo Form::textarea('promociones.texto_en','class="form-control"') ?>
                                                         </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="last-name">Texto boton</label>
+                                                            <?php echo Form::text('promociones.btn_aplicar_texto_en','class="form-control"') ?>
+                                                        </div>
 
                                                     </div>
 
-                                                 
+
                                                    <?php echo Form::hidden("promociones.id") ?>
-                                                   
+
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-md-3" style="margin-bottom:20px">
                                                             <div class='custom-input-file' style='width:100%'><?php echo Form::file('images',"","") ?>Imagen</div>
                                                         </div>
-                                                    </div>                                                
+                                                    </div>
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -113,7 +125,7 @@ select{
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
 
 <script>
 
@@ -121,7 +133,7 @@ $(function(){
     $('#promociones_fecha_finaliza').combodate({
     minYear: (new Date).getFullYear(),
     maxYear:  (new Date).getFullYear() + 4,
-});     
+});
 });
 
 CKEDITOR.replace( 'promociones[texto]' );

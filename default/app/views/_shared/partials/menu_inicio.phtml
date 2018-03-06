@@ -12,13 +12,18 @@
                         <ul class="single-topbar">
                             <li>
                                 <?php echo Html::img("images/es.png",'','alt="" width="18px" style="margin-right:4px"') ?>
-                                <span style="margin-right:10px">ES</span><?php echo Html::img("images/en.png",'','alt="" width="18px" style="margin-right:4px"') ?>
-                                <span>EN</span></li></li>
-
-                            <li>
+                                <span style="margin-right:10px">ES</span>
+                                  <?php echo Html::img("images/en.png",'','alt="" width="18px" style="margin-right:4px"') ?>
+                                <span>EN</span>
+                            </li>
                             <li>
                                 <span class="fa fa-phone"></span>
-                                <span><a style="color:#fff" href="tel:<?php echo $generales->tlfa ?>"><?php echo $generales->tlfa ?></a></span></li>
+                                <span>
+                                  <a style="color:#fff" href="tel:<?php echo $generales->tlfa ?>">
+                                    <?php echo $generales->tlfa ?>
+                                  </a>
+                                </span>
+                            </li>
                             <li>
                                 <span class="fa fa-whatsapp"></span>
                                 <span><a style="color:#fff" href="tel:<?php echo $generales->tlfb ?>"><?php echo $generales->tlfb ?></a></span>
@@ -29,18 +34,37 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-5 col-xs-12">
                         <div class="topbar-right">
                             <ul>
-                                <li class="social-icon">
+                                <li class="social-icon" style="margin-right:10px !important">
                                     <a href="<?php echo $generales->facebook ?>" class="fa fa-facebook"></a>
                                     <a href="<?php echo $generales->twitter ?>" class="fa fa-twitter"></a>
                                     <a href="<?php echo $generales->youtube ?>" class="fa fa-youtube"></a>
                                     <a href="<?php echo $generales->instagram ?>" class="fa fa-instagram"></a>
                                 </li>
+                                <li class="hidden-lg hidden-sm hidden-md" style="margin-right:10px !important">
+                                    <span style="color:#FBB737;" class="fa fa-phone"></span>
+                                    <span>
+                                      <a style="color:#fff" href="tel:<?php echo $generales->tlfa ?>">
+                                        <?php echo $generales->tlfa ?>
+                                      </a>
+                                    </span>
+                                </li>
+                                <li class="hidden-lg hidden-sm hidden-md" style="margin-right:10px !important">
+                                    <span style="color:#FBB737;" class="fa fa-whatsapp"></span>
+                                    <span><a style="color:#fff" href="tel:<?php echo $generales->tlfb ?>">
+                                      <?php echo $generales->tlfb ?></a>
+                                    </span>
+                                </li>
+                                <li class="hidden-lg hidden-sm hidden-md" style="margin-right:10px !important">
+                                    <span style="color:#FBB737;" class="fa fa-envelope"></span>
+                                    <span><a style="color:#fff" href="mailto:<?php echo $generales->email ?>"><?php echo $generales->email ?></a></span>
+                                </li>
                                 <li>
                                   <a class="getAquate" href="#"
-                                  data-toggle="modal" data-target="#Prestamos">Solicitar Préstamo</a></li>
+                                  data-toggle="modal" data-target="#Prestamos">Solicitar Préstamo</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

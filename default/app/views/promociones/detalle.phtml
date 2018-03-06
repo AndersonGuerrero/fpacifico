@@ -3,8 +3,6 @@
     <div id="menubtn"></div>
     <?php echo View::partial("nav_promociones") ?>
 </div>
-
-
             <section class="home-area" style="margin-top:20px;margin-bottom:20px">
                 <div class="container">
                     <div class="row">
@@ -12,7 +10,7 @@
                             <?php echo View::partial("menu_prestamos") ?>
                         </div>
                         <div class="col-md-9">
-                            <div class="about-right-content" style="padding-top:20px"> 
+                            <div class="about-right-content" style="padding-top:20px">
                                 <div class="section-title">
                                       <h4>Promoción valida hasta el <?php echo implode( '/', array_reverse( explode( '-', $promociones->fecha_finaliza ) ) )?></h4>
                                       <h2><?php echo $promociones->nombre ?></h2>
@@ -20,20 +18,18 @@
                                 <div class="col-md-6">
                                   <?php echo Html::img($promociones->img,'','width="100%"') ?>
                                    <div class="button-light-screen" style="margin-top:20px">
-                                    <a href="#" class="blog-read">Aplicar</a>
+                                    <a href="<?php echo $promociones->btn_aplicat_link ?>" class="blog-read"><?php echo $promociones->btn_aplicat_texto ?></a>
                                   </div>
                                 </div>
                                 <div class="col-md-6">
                                     <?php echo $promociones->texto ?>
                                   </div>
-
-                              
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </section>
-  
+
 
 <?php echo View::partial("plan"); ?>
 <?php echo View::partial("footer") ?>
