@@ -2,15 +2,15 @@
  <section class="referir-barra">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     <div class="quote-text">
-                        <?php echo Html::img("referido.jpg",'','width="150px" style="float:left;margin-right:20px"') ?>
+                        <?php echo Html::img(
+                          $plan->img_banner,'',
+                          'width="250px" height="150px" style="float:left;margin-right:20px"') ?>
                         <h3><?php echo $plan->texto_referir ?></h3>
-                    </div>
-                </div>
-                <div class="col-sm-4 text-right">
-                    <div class="Buttons-on-Dark">
-                        <a href="#" class="button-three" data-toggle="modal" data-target="#Plan"><?php echo $plan->titulo_btn ?></a>
+                        <div class="Buttons-on-Dark">
+                          <a href="#" class="button-three" data-toggle="modal" data-target="#Plan"><?php echo $plan->titulo_btn ?></a>
+                        </div>
                     </div>
                 </div>
             </div>

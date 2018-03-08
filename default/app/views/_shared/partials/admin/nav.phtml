@@ -9,15 +9,15 @@
 									<?php if(Auth::get("admin") == "0" or Auth::get("admin") == "2"):?>
 									<li><?php echo Html::link("admin/config",'<i class="fa fa-dashboard"></i> <span>Principal</span>') ?></li>
 
-									<li><?php echo Html::link("admin/general",'<i class="fa fa-arrow-right"></i> <span>Configuraciones Generales</span>') ?></li>
+									<li><?php echo Html::link("admin/general",'<i class="fa fa-cogs"></i> <span>Configuraciones Generales</span>') ?></li>
 									<li><a role="button" tabindex="0"><i class="fa fa-photo"></i> <span>Banners</span></a>
 										<ul>
 											<li><?php echo Html::link("admin/banners",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 											<li><?php echo Html::link("admin/nuevo_banner",'<i class="fa fa-angle-right"></i> Agregar nuevo') ?></li>
 										</ul>
 									</li>
-									<li> <?php echo Html::link("admin/servicios",'<i class="fa fa-magic"></i> <span>Servicios</span>') ?></li>
-									<li> <?php echo Html::link("admin/empresa",'<i class="fa fa-star"></i> <span>Empresa</span>') ?></li>
+									<li> <?php echo Html::link("admin/servicios",'<i class="fa fa-cubes"></i> <span>Servicios</span>') ?></li>
+									<li> <?php echo Html::link("admin/empresa",'<i class="fa fa-briefcase"></i> <span>Empresa</span>') ?></li>
 
 									<li> <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>Sucursales</span></a>
 										<ul>
@@ -25,14 +25,14 @@
 											<li><?php echo Html::link("admin/nueva_sucursal",'<i class="fa fa-angle-right"></i> Agregar Nueva') ?></li>
 										</ul>
 									</li>
-									<li> <a role="button" tabindex="0"><i class="fa fa-book"></i> <span>Promociones</span></a>
+									<li> <a role="button" tabindex="0"><i class="fa fa-bullhorn"></i> <span>Promociones</span></a>
 										<ul>
 											<li><?php echo Html::link("admin/promociones",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 											<li><?php echo Html::link("admin/agregar_promocion",'<i class="fa fa-angle-right"></i> Agregar') ?></li>
 											<li><?php //echo Html::link("admin/categorias",'<i class="fa fa-angle-right"></i> Listado Categorias') ?></li>
 										</ul>
 									</li>
-									<li> <a role="button" tabindex="0"><i class="fa fa-book"></i> <span>Requisitos</span></a>
+									<li> <a role="button" tabindex="0"><i class="fa fa-check-square"></i> <span>Requisitos</span></a>
 										<ul>
 											<li><?php echo Html::link("admin/requisitos",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 											<li><?php echo Html::link("admin/agregar_requisito",'<i class="fa fa-angle-right"></i> Agregar') ?></li>
@@ -41,17 +41,12 @@
 								<?php endif ?>
 								<?php if(Auth::get("admin") == "0" or Auth::get("admin") == "1"):?>
 									<li>
-										<a role="button" tabindex="0"><i class="fa fa-fw fa-plus-square"></i> <span>Solicitudes</span></a>
+										<a role="button" tabindex="0"><i class="fa fa-fw fa-phone"></i> <span>Solicitudes</span></a>
 										<ul>
 											<li><?php echo Html::link("admin/solicitudes",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 										</ul>
 									</li>
-									<li> <a role="button" tabindex="0"><i class="fa fa-fw fa-plus-square"></i> <span>Contactos</span></a>
-										<ul>
-											<li><?php echo Html::link("admin/contactos",'<i class="fa fa-angle-right"></i> Listado') ?></li>
-										</ul>
-									</li>
-									<li> <a role="button" tabindex="0"><i class="fa fa-fw fa-plus-square"></i> <span>Blogs</span></a>
+									<li> <a role="button" tabindex="0"><i class="fa fa-fw fa-rss-square"></i> <span>Blogs</span></a>
 										<ul>
 											<li><?php echo Html::link("admin/blogs",'<i class="fa fa-angle-right"></i> Listado') ?></li>
 											<li><?php echo Html::link("admin/nuevo_blog",'<i class="fa fa-angle-right"></i> Agregar') ?></li>
@@ -59,8 +54,13 @@
 									</li>
 									<li>
 										<a role="button" tabindex="0" href="<?php echo PUBLIC_PATH.'admin/video' ?>">
-											<i class="fa fa-fw fa-plus-square"></i> <span>Video</span>
+											<i class="fa fa-fw fa-video-camera"></i> <span>Video</span>
 										</a>
+									</li>
+									<li> <a role="button" tabindex="0"><i class="fa fa-fw fa-group"></i> <span>Contactos</span></a>
+										<ul>
+											<li><?php echo Html::link("admin/contactos",'<i class="fa fa-angle-right"></i> Listado') ?></li>
+										</ul>
 									</li>
 								<?php endif ?>
 								</ul>

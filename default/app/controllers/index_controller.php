@@ -16,6 +16,24 @@ class IndexController extends AppController
       $this->video = $video->find_first();
       if (Input::haspost("contactos")){
         $contactos = new Contactos(Input::post("contactos"));
+
+        $headers = sprintf("From: %s<%s>\r\nReply-To: s%\r\nX-Mailer: PHP/%s",
+          Input::post("contactos.nombre_completo"),
+          Input::post("contactos.correo"),
+          Input::post("contactos.correo"),
+          phpversion()
+        );
+
+        $message = sprintf(
+          " Nombre: %s \n Telefono: %s \n Email: %s \n Interesado en: %s \n Como supo de nosotros: %s \n\n Mensaje: %s",
+          Input::post("contactos.nombre_completo"),
+          Input::post("contactos.telefono"),
+          Input::post("contactos.correo"),
+          Input::post("contactos.servicio"),
+          Input::post("contactos.como_supo"),
+          Input::post("contactos.mensaje"));
+        $success = mail("mercadeofp@fpacifico.com", "Mensaje de Contacto", $message, $headers );
+
         if($contactos->save()){
           Flash::valid("Datos Registrados gracias!");
           Router::redirect("index#contacto");

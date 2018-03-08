@@ -1,14 +1,14 @@
         <div class="page profile-page" style="padding-bottom:0">
             <div class="pagecontent">
                 <div class="row">
-                     <div class="col-md-12"> 
-                        <section class="boxs boxs-simple"> 
+                     <div class="col-md-12">
+                        <section class="boxs boxs-simple">
                             <div class="boxs-body p-0">
-                                <div role="tabpanel"> 
+                                <div role="tabpanel">
                                     <ul class="nav nav-tabs tabs-dark-t" role="tablist">
                                         <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">Configuraciones Generales</a></li>
                                     </ul>
-                                    
+
                                     <div class="tab-content">
                                          <div role="tabpanel" class="tab-pane active" id="general">
                                             <div class="wrap-reset">
@@ -21,20 +21,54 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="form-group col-sm-4">
+                                                        <div class="form-group col-sm-3">
                                                             <label for="first-name">Telf. Principal *</label>
                                                             <?php echo Form::text('general.tlfa','class="form-control" autofocus required') ?>
                                                         </div>
-                                                        <div class="form-group col-sm-4">
+                                                        <div class="form-group col-sm-3">
                                                             <label for="last-name">Celular o WhatsApp *</label>
                                                             <?php echo Form::text('general.tlfb','class="form-control"') ?>
                                                         </div>
-                                                        <div class="form-group col-sm-4">
+                                                        <div class="form-group col-sm-3">
+                                                            <label for="last-name">Celular o WhatsApp *</label>
+                                                            <?php echo Form::text('general.tlfc','class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-3">
                                                             <label for="email">E-mail *</label>
                                                             <?php echo Form::email('general.email','class="form-control" required') ?>
                                                         </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="sucursal_principal">Sucursal Principal *</label>
+                                                            <?php echo Form::text(
+                                                              'general.sucursal_principal',
+                                                              'class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="sucursal_principal">Horario *</label>
+                                                            <?php echo Form::text(
+                                                              'general.horario1',
+                                                              'class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <label for="sucursal_principal">*</label>
+                                                            <?php echo Form::text(
+                                                              'general.horario2',
+                                                              'class="form-control"') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-8">
+                                                            <label for="Direccion">Dirección *</label>
+                                                            <?php echo Form::textarea(
+                                                              'general.direccion',
+                                                              'class="form-control" required') ?>
+                                                        </div>
+                                                        <div class="form-group col-sm-4">
+                                                            <div class='custom-input-file'>
+                                                              <?php echo Form::file('img_sucursal',"","") ?>
+                                                              Imagen de Sucursal Principal
+                                                            </div>
+                                                        </div>
                                                     </div>
-                        
+
                                                     <hr>
                                                     <div class="row">
                                                         <div class="form-group col-md-12 legend">
@@ -61,7 +95,7 @@
                                                             <label for="flickr">Youtube *</label>
                                                             <?php echo Form::text('general.youtube','class="form-control"') ?>
                                                         </div>
-                                                    </div>                                                 
+                                                    </div>
                                                     <hr>
 
                                                     <div class="row">
@@ -117,7 +151,7 @@
                                                         <div class="col-md-3" style="margin-bottom:20px">
                                                             <div class='custom-input-file'><?php echo Form::file('pdfdimg',"","") ?>PDF 4</div>
                                                         </div>
-                                                      
+
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-12 legend">
@@ -155,7 +189,7 @@
                                                         <div class="col-md-3" style="margin-bottom:20px">
                                                             <div class='custom-input-file'><?php echo Form::file('pdfdimg_en',"","") ?>PDF 4</div>
                                                         </div>
-                                                      
+
                                                     </div>
                                                     <hr>
 
@@ -186,19 +220,22 @@
                                                             <?php echo Form::text('general.titulo_btn_en','class="form-control" required') ?>
                                                         </div>
                                                     </div>
-               
+
                                                     <div class="row">
                                                         <div class="col-md-3" style="margin-bottom:20px">
-                                                           <?php echo Html::img($general->img,"","width='100%'") ?>
+                                                           <?php echo Html::img($general->img_banner,"","width='100%'") ?>
+                                                           <div class='custom-input-file' style="margin-top:10px;"><?php echo Form::file('img_banner',"","") ?>Imagen Banner 250x150</div>
                                                         </div>
                                                         <div class="col-md-3" style="margin-bottom:20px">
-                                                            <div class='custom-input-file'><?php echo Form::file('images',"","") ?>Imagen</div>
+                                                           <?php echo Html::img($general->img,"","width='100%'") ?>
+                                                           <div class='custom-input-file' style="margin-top:10px;">
+                                                             <?php echo Form::file('images',"","") ?>Imagen
+                                                           </div>
                                                         </div>
                                                         <div class="col-md-3" style="margin-bottom:20px">
                                                            <?php echo Html::img($general->img_en,"","width='100%'") ?>
-                                                        </div>
-                                                        <div class="col-md-3" style="margin-bottom:20px">
-                                                            <div class='custom-input-file'><?php echo Form::file('images_en',"","") ?>Imagen version English</div>
+                                                           <div class='custom-input-file' style="margin-top:10px;">
+                                                             <?php echo Form::file('images_en',"","") ?>Imagen version English</div>
                                                         </div>
                                                     </div>
 
@@ -243,7 +280,7 @@
                                                         <div class="col-md-3" style="margin-bottom:20px">
                                                             <div class='custom-input-file'><?php echo Form::file('parallax',"","") ?>Imagen</div>
                                                         </div>
-                                                      
+
                                                     </div>
                                                     <hr>
 
@@ -257,12 +294,12 @@
                                                             <label for="first-name">Texto Spanish*</label>
                                                             <?php echo Form::textarea('general.bolsa','class="form-control" autofocus required') ?>
                                                         </div>
-                                                      
+
                                                       <div class="form-group col-sm-6">
                                                             <label for="first-name">Texto English*</label>
                                                             <?php echo Form::textarea('general.bolsa_en','class="form-control" autofocus required') ?>
                                                         </div>
-                                                      
+
                                                     </div>
 
 
@@ -285,7 +322,7 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
 
 <script>
     CKEDITOR.replace( 'general[bolsa]' );

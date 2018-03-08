@@ -84,6 +84,34 @@ class AdminController extends AppController
                          }
                        }
                 }
+                if (!empty($_FILES['img_banner']['name'])) {
+                    $img_banner = Upload::factory('img_banner', 'image');
+                    $_FILES["img_banner"]["name"] = date("Y_m_d_h.i.s").$_FILES['img_banner']['name'];
+                    $img_banner->setPath($path);
+                    $img_banner->setExtensions(array('jpg', 'png', 'gif','jpeg'));
+                        if ($img_banner->isUploaded()) {
+                            if ($img_banner->save()){
+                                $general->img_banner = "upload/general/".$_FILES["img_banner"]["name"];
+                            }else{
+                            Flash::warning('No se ha podido subir la imagen ...!!!');
+                         }
+                       }
+                }
+
+                if (!empty($_FILES['img_sucursal']['name'])) {
+                    $img_sucursal = Upload::factory('img_sucursal', 'image');
+                    $_FILES["img_sucursal"]["name"] = date("Y_m_d_h.i.s").$_FILES['img_sucursal']['name'];
+                    $img_sucursal->setPath($path);
+                    $img_sucursal->setExtensions(array('jpg', 'png', 'gif','jpeg'));
+                        if ($img_sucursal->isUploaded()) {
+                            if ($img_sucursal->save()){
+                                $general->img_sucursal_principal = "upload/general/".$_FILES["img_sucursal"]["name"];
+                            }else{
+                            Flash::warning('No se ha podido subir la imagen ...!!!');
+                         }
+                       }
+                }
+
 
 
                  if (!empty($_FILES['images_en']['name'])) {

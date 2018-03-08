@@ -194,7 +194,7 @@
             <div class="container">
                 <div class="row" style="text-align:center;">
                   <div class="col-xs-6">
-                    <iframe width="560" height="315" src="<?php echo $video->link?>"
+                    <iframe width="560" height="315" src="<?php echo str_replace('watch?v=','embed/',  $video->link) ?>"
                       frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                     </iframe>
                   </div>
@@ -292,37 +292,44 @@
                 </div>
                 <div class="col-md-4">
                     <h3 class="fomr-title">Información de Contacto</h3>
-                    <?php echo Html::img("images/sucursales/CASA MATRIZ.jpg",'','alt="" width="100px" style="float:left;margin-right:10px"') ?>
-                    <p><strong>Sucursal Principal:</strong><br> CALLE 50 - CASA MATRIZ - Panamá</p>
+                    <?php echo Html::img($general->img_sucursal_principal,'','alt="" width="100px" style="float:left;margin-right:10px"') ?>
+                    <p><strong>Sucursal Principal:</strong><br><?php echo $general->sucursal_principal ?></p>
                     <div class="map-accourdion" style="float:left;margin-top:20px">
                                         <div class="contact-address">
                                             <ul>
                                                 <li>
                                                     <span class="fa fa-home"></span>
-                                                    <p><strong>Dirección:</strong> Calle 50 entre Ave. Federico Boyd y Calle Uruguay, Edificio Pacífico Planta Baja.</p>
+                                                    <p><strong>Dirección:</strong>
+                                                      <?php echo $general->direccion ?>
+                                                    </p>
                                                 </li>
                                                 <li>
                                                     <span class="fa fa-phone"></span>
                                                     <p><strong>Teléfonos fijos:</strong></p>
-                                                    <p>340-9000 </p>
+                                                    <p><?php echo $general->tlfa ?></p>
                                                 </li>
                                                 <li>
                                                     <span class="fa fa-whatsapp"></span>
                                                     <p><strong>Celular, Whatsapp:</strong></p>
-                                                    <p> 6349-2140</p>
-                                                    <p> 6983-8008</p>
+                                                    <p><?php echo $general->tlfb ?></p>
+                                                    <p><?php echo $general->tlfc ?></p>
                                                 </li>
 
                                                 <li>
                                                     <span class="fa fa-envelope"></span>
                                                     <p><strong>Email:</strong></p>
-                                                    <p><a href="mailto:<?php echo $general->email ?>" style="color:#fff"><?php echo $general->email ?></a></p>
+                                                    <p>
+                                                      <a href="mailto:<?php echo $general->email ?>" style="color:#fff">
+                                                        <?php echo $general->email ?></a>
+                                                      </p>
                                                 </li>
                                                 <li>
                                                     <span class="fa fa-clock-o"></span>
                                                     <p><strong>Horario:</strong></p>
-                                                    <p>Lunes-Viernes: 08:00am-05:00pm</p>
-                                                    <p>Sábados: 09:00am-01:00pm</p>
+                                                    <p><?php echo $general->horario1 ?></p>
+                                                    <?php if ($general->horario2): ?>
+                                                      <p><?php echo $general->horario2 ?></p>
+                                                    <?php endif; ?>
                                                 </li>
                                             </ul>
                                         </div>
