@@ -18,20 +18,21 @@ class IndexController extends AppController
         $contactos = new Contactos(Input::post("contactos"));
 
         $headers = sprintf("From: %s<%s>\r\nReply-To: s%\r\nX-Mailer: PHP/%s",
-          Input::post("contactos.nombre_completo"),
-          Input::post("contactos.correo"),
-          Input::post("contactos.correo"),
+          $_POST["contactos"]['nombre_completo'],
+          $_POST["contactos"]['correo'],
+          $_POST["contactos"]['correo'],
           phpversion()
         );
 
         $message = sprintf(
           " Nombre: %s \n Telefono: %s \n Email: %s \n Interesado en: %s \n Como supo de nosotros: %s \n\n Mensaje: %s",
-          Input::post("contactos.nombre_completo"),
-          Input::post("contactos.telefono"),
-          Input::post("contactos.correo"),
-          Input::post("contactos.servicio"),
-          Input::post("contactos.como_supo"),
-          Input::post("contactos.mensaje"));
+          $_POST["contactos"]['nombre_completo'],
+          $_POST["contactos"]['telefono'],
+          $_POST["contactos"]['correo'],
+          $_POST["contactos"]['servicio'],
+          $_POST["contactos"]['como_supo'],
+          $_POST["contactos"]['mensaje']
+        );
         $success = mail("mercadeofp@fpacifico.com", "Mensaje de Contacto", $message, $headers );
 
         if($contactos->save()){

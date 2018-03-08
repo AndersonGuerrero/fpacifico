@@ -60,7 +60,7 @@ class AdminController extends AppController
 
     public function general(){
       $id = 1;
-      View::template("administrador");
+      View::template("general");
       if (Auth::is_valid()){
         $general = new General();
         if (Input::haspost("general")) {
