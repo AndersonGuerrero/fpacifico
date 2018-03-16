@@ -399,10 +399,10 @@
             padding-bottom: 10px;
         }
         .welcome-btn a {
-            height: 40px;
-            line-height: 42px;
-            width: 130px;
-            font-size: 12px;
+            height: 30px;
+            line-height: 32px;
+            min-width: 110px;
+            font-size: 9px;
         }
         .welcome-btn a.read-btn {
             margin-right: 5px;
