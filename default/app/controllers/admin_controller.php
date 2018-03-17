@@ -672,20 +672,22 @@ class AdminController extends AppController
        }
 
        if(Input::post("fecha")){
+         $fecha = date('Y-m-d',strtotime(Input::post("fecha")));
          if($count > 0){
-           $conditions = $conditions.' and created_at >= "'.Input::post("fecha").'"';
+           $conditions = $conditions.' and created_at >= "'.$fecha.'"';
          }else{
            $count++;
-           $conditions = $conditions.' created_at >= "'.Input::post("fecha").'"';
+           $conditions = $conditions.' created_at >= "'.$fecha.'"';
          }
        }
 
        if(Input::post("fecha2")){
+         $fecha = date('Y-m-d',strtotime(Input::post("fecha2")));
          if($count > 0){
-           $conditions = $conditions.' and created_at <= "'.Input::post("fecha2").'"';
+           $conditions = $conditions.' and created_at <= "'.$fecha.'"';
          }else{
            $count++;
-           $conditions = $conditions.' created_at <= "'.Input::post("fecha2").'"';
+           $conditions = $conditions.' created_at <= "'.$fecha.'"';
          }
        }
 

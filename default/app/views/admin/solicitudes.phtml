@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-sm-2 col-xs-6">
               <select class="form-control" name="servicio">
-                <option value="">Servicios *</option>
+                <option value="">Servicios</option>
                 <?php foreach ($servicios as $key => $value): ?>
                   <option <?php if (Input::post("servicio")==$value->nombre) echo 'selected' ?> value="<?php echo $value->nombre ?>"><?php echo $value->nombre ?></option>
                 <?php endforeach; ?>
@@ -34,14 +34,14 @@
             </div>
             <div class="col-sm-2 col-xs-6">
               <select class="form-control" name="sexo">
-                <option value="">Sexos *</option>
+                <option value="">Sexos</option>
                 <option <?php if (Input::post("sexo")=='masculino') echo 'selected' ?> value="masculino">Masculino</option>
                 <option <?php if (Input::post("sexo")=='femenino') echo 'selected' ?> value="femenino">Femenino</option>
               </select>
             </div>
             <div class="col-sm-2 col-xs-6">
               <select class="form-control" name="salario">
-                <option value="">Salarios *</option>
+                <option value="">Salarios</option>
                 <option <?php if (Input::post("salario")=='$ 500') echo 'selected' ?> value="$ 500">$ 500</option>
                 <option <?php if (Input::post("salario")=='$ 600') echo 'selected' ?> value="$ 600">$ 600</option>
                 <option <?php if (Input::post("salario")=='$ 700') echo 'selected' ?> value="$ 700">$ 700</option>
@@ -56,7 +56,7 @@
             </div>
             <div class="col-sm-2 col-xs-6">
               <select class="form-control" name="laboral">
-                <option value="">Laboral *</option>
+                <option value="">Laboral</option>
                 <option <?php if (Input::post("laboral")=='Fuerza Pública') echo 'selected' ?> value="Fuerza Pública">Fuerza Pública</option>
                 <option <?php if (Input::post("laboral")=='Educadores') echo 'selected' ?> value="Educadores">Educadores</option>
                 <option <?php if (Input::post("laboral")=='Jubilados') echo 'selected' ?> value="Jubilados">Jubilados</option>
@@ -68,22 +68,22 @@
               </select>
             </div>
             <div class="col-sm-2 col-xs-6">
-              <div class="form-group">
+              <div class="form-group" id="datetimepicker1">
                 <input
-                name="fecha" type="date" class="form-control"
+                name="fecha" type="text" class="form-control" id="datetimepicker01"
                 value="<?php echo Input::post("fecha")?>" placeholder="Fecha">
               </div>
             </div>
-            <div class="col-sm-2 col-xs-6">
-              <div class="form-group">
+            <div class="col-sm-2 col-xs-6" >
+              <div class="form-group" id="datetimepicker2">
                 <input
-                name="fecha2" type="date"
+                id="datetimepicker02"
+                name="fecha2" type="text"
                 class="form-control" value="<?php echo Input::post("fecha2")?>"
                 placeholder="Fecha">
               </div>
             </div>
         </div>
-        <?php echo $conditions?>
     </form>
   <div class="row">
       <div class="col-md-12">

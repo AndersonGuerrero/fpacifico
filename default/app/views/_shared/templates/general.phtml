@@ -15,10 +15,16 @@
 <link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/summernote/summernote.css">
 <link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/css/main.css">
 <link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/css/style.css">
+<!-- <link rel="stylesheet" href="<?php echo PUBLIC_PATH ?>assets/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css"> -->
+<style media="screen">
+	.day{
+		cursor: pointer;
+	}
+</style>
 
 <!--<script src="//cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>-->
-<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <?php echo Tag::js('jquery/jquery.min') ?>
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <?php echo Tag::js('jquery/jquery.kumbiaphp') ?>
 
 
@@ -35,14 +41,16 @@
 	</div>
 
 
+	<?php echo Tag::js('combodate') ?>
+	<?php echo Tag::js("moment") ?>
 	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/libscripts.bundle.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/vendorscripts.bundle.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/bundles/bootstrapscripts.bundle.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/summernote/summernote.min.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/footable/footable.all.min.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="<?php echo PUBLIC_PATH ?>assets/js/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="<?php echo PUBLIC_PATH ?>assets/js/main.js"></script>
-<?php echo Tag::js('combodate') ?><?php echo Tag::js("moment") ?>
 
 	<script type="text/javascript">
 	    $(window).load(function(){
@@ -67,7 +75,20 @@
 	<script type="text/javascript">
 	$(window).load(function(){
 		$('.footable').footable();
-
+		$('#datetimepicker01').datetimepicker(
+			{
+				widgetParent: $('#datetimepicker1'),
+				// inline: true,
+				format: 'DD-MM-YYYY',
+			}
+		);
+		$('#datetimepicker02').datetimepicker(
+			{
+				widgetParent: $('#datetimepicker2'),
+				// inline: true,
+				format: 'DD-MM-YYYY',
+			}
+		);
 	});
 </script>
 </body>
